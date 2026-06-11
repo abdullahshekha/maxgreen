@@ -164,25 +164,6 @@ function InstallationMockup() {
             </div>
           ))}
         </div>
-        {/* Panel grid */}
-        <div className="bg-gray-950 rounded-xl p-4">
-          <p className="text-xs text-gray-500 mb-3 font-semibold">
-            Rooftop Layout &mdash; 10 kW System
-          </p>
-          <div className="grid grid-cols-5 gap-1.5">
-            {Array.from({ length: 20 }).map((_, i) => (
-              <div
-                key={i}
-                className={`aspect-video rounded-sm ${
-                  i < 14 ? "bg-green-600" : "bg-gray-700"
-                }`}
-              />
-            ))}
-          </div>
-          <p className="mt-2 text-xs text-green-400 font-semibold">
-            14 / 20 panels installed
-          </p>
-        </div>
       </div>
     </div>
   );
