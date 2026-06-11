@@ -191,7 +191,7 @@ export default function SolarCalculator() {
                   </div>
                 </div>
 
-                <
+                <a
                   href="#get-quote"
                   className="mt-6 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
                 >
