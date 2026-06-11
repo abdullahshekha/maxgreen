@@ -39,7 +39,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Header */}
-          <div className="sticky top-24">
+          <div className="lg:sticky lg:top-24">
             <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
               Why MaxGreen
             </span>
