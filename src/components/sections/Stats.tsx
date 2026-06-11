@@ -3,7 +3,7 @@ import { Sun, Users, MapPin, Award } from "lucide-react";
 const stats = [
   {
     icon: Sun,
-    value: "500+",
+    value: "2000+",
     label: "Solar Installations",
     description: "Homes & businesses powered",
   },
@@ -15,15 +15,15 @@ const stats = [
   },
   {
     icon: MapPin,
-    value: "2",
-    label: "Major Cities",
-    description: "Karachi & Lahore",
+    value: "3",
+    label: "Cities Serving",
+    description: "Karachi, Lahore & more",
   },
   {
     icon: Users,
-    value: "98%",
-    label: "Client Satisfaction",
-    description: "5-star rated service",
+    value: "2 Years",
+    label: "Free After-Sales Service",
+    description: "Post-installation support",
   },
 ];
 
