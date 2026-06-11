@@ -48,9 +48,11 @@ export default function Navbar() {
             <Image
               src="/images/MaxGreen-logo.png"
               alt="MaxGreen Energy"
-              width={160}
-              height={48}
-              className="h-10 w-auto object-contain"
+              width={208}
+              height={62}
+              className={`h-[3.25rem] w-auto object-contain transition-all duration-300 ${
+                isScrolled ? "" : "brightness-0 invert"
+              }`}
               priority
             />
           </Link>
