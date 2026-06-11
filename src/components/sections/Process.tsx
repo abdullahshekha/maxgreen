@@ -48,7 +48,7 @@ const monitoringStats = [
 
 function ConsultationMockup() {
   return (
-    <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl min-h-[400px]">
+    <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Browser chrome */}
       <div className="bg-gray-800 px-4 py-3 flex items-center gap-3">
         <div className="flex gap-1.5">
@@ -117,7 +117,7 @@ function ConsultationMockup() {
 
 function InstallationMockup() {
   return (
-    <div className="bg-gray-900 rounded-3xl p-3 shadow-2xl min-h-[400px]">
+    <div className="bg-gray-900 rounded-3xl p-3 shadow-2xl">
       <div className="bg-white rounded-2xl overflow-hidden p-5">
         <div className="flex justify-between items-center mb-5">
           <p className="text-sm font-extrabold text-gray-900">Installation Tracker</p>
@@ -171,7 +171,7 @@ function InstallationMockup() {
 
 function MonitoringMockup() {
   return (
-    <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl min-h-[400px]">
+    <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl">
       {/* Title bar */}
       <div className="bg-gray-800 px-4 py-3 flex items-center justify-between">
         <div className="flex gap-1.5">
