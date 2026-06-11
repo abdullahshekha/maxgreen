@@ -191,13 +191,7 @@ export default function SolarCalculator() {
                   </div>
                 </div>
 
-                <div className="mt-6 p-4 bg-gray-50 rounded-xl text-sm text-gray-500">
-                  <strong className="text-gray-700">Estimated system cost:</strong>{" "}
-                  PKR {result.systemCost.toLocaleString()} — actual cost depends on brand,
-                  type, and site conditions. Get an exact quote below.
-                </div>
-
-                <a
+                <
                   href="#get-quote"
                   className="mt-6 inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-xl transition-colors"
                 >
