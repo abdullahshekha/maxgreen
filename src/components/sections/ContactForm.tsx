@@ -77,8 +77,8 @@ export default function ContactForm() {
                 },
                 {
                   label: "Email",
-                  value: "info@maxgreenenergy.com.pk",
-                  href: "mailto:info@maxgreenenergy.com.pk",
+                  value: "sales@maxgreenenergy.com.pk",
+                  href: "mailto:sales@maxgreenenergy.com.pk",
                 },
                 {
                   label: "Karachi Office",

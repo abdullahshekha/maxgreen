@@ -59,11 +59,11 @@ export default function Footer() {
                 +92 300 034 1048
               </a>
               <a
-                href="mailto:info@maxgreenenergy.com.pk"
+                href="mailto:sales@maxgreenenergy.com.pk"
                 className="flex items-center gap-2 hover:text-green-400 transition-colors"
               >
                 <Mail className="w-4 h-4 text-green-600" />
-                info@maxgreenenergy.com.pk
+                sales@maxgreenenergy.com.pk
               </a>
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
