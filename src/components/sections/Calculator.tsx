@@ -47,7 +47,7 @@ export default function SolarCalculator() {
 
   return (
     <section id="calculator" className="py-20 sm:py-28 bg-gray-50">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
@@ -153,39 +153,39 @@ export default function SolarCalculator() {
                   Your Solar System Recommendation
                 </h3>
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="bg-green-50 border border-green-100 rounded-2xl p-5">
-                    <Zap className="w-6 h-6 text-green-600 mb-2" />
-                    <div className="text-2xl font-extrabold text-green-700">
+                  <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
+                    <Zap className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="text-2xl font-extrabold text-white">
                       {result.recommendedKW} kW
                     </div>
-                    <div className="text-xs text-green-600 font-semibold mt-1">
+                    <div className="text-xs text-green-400 font-semibold mt-1">
                       Recommended System
                     </div>
                   </div>
-                  <div className="bg-blue-50 border border-blue-100 rounded-2xl p-5">
-                    <TrendingDown className="w-6 h-6 text-blue-600 mb-2" />
-                    <div className="text-2xl font-extrabold text-blue-700">
+                  <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
+                    <TrendingDown className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="text-2xl font-extrabold text-white">
                       PKR {result.monthlyBillReduction.toLocaleString()}
                     </div>
-                    <div className="text-xs text-blue-600 font-semibold mt-1">
+                    <div className="text-xs text-green-400 font-semibold mt-1">
                       Monthly Savings
                     </div>
                   </div>
-                  <div className="bg-amber-50 border border-amber-100 rounded-2xl p-5">
-                    <TrendingDown className="w-6 h-6 text-amber-600 mb-2" />
-                    <div className="text-2xl font-extrabold text-amber-700">
+                  <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
+                    <TrendingDown className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="text-2xl font-extrabold text-white">
                       PKR {Math.round(result.annualSavings / 1000)}K
                     </div>
-                    <div className="text-xs text-amber-600 font-semibold mt-1">
+                    <div className="text-xs text-green-400 font-semibold mt-1">
                       Annual Savings
                     </div>
                   </div>
-                  <div className="bg-purple-50 border border-purple-100 rounded-2xl p-5">
-                    <Clock className="w-6 h-6 text-purple-600 mb-2" />
-                    <div className="text-2xl font-extrabold text-purple-700">
+                  <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
+                    <Clock className="w-6 h-6 text-green-400 mb-2" />
+                    <div className="text-2xl font-extrabold text-white">
                       {result.paybackMonths} mo
                     </div>
-                    <div className="text-xs text-purple-600 font-semibold mt-1">
+                    <div className="text-xs text-green-400 font-semibold mt-1">
                       Payback Period
                     </div>
                   </div>

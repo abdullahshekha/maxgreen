@@ -41,7 +41,7 @@ export default function FAQ() {
 
   return (
     <section className="py-20 sm:py-28 bg-gray-50">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
