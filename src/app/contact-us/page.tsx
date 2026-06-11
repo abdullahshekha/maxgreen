@@ -37,7 +37,7 @@ export default function ContactPage() {
         title="Get in Touch With Us"
         subtitle="Our solar experts are ready to help. Reach out for a free consultation, site assessment, or any questions about going solar."
       />
-      <ContactForm />
+      <ContactForm light />
       <Footer />
     </main>
   );

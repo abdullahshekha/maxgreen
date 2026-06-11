@@ -9,7 +9,7 @@ const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
 const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
-export default function ContactForm() {
+export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -51,18 +51,18 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="get-quote" className="py-20 sm:py-28 bg-green-950">
+    <section id="get-quote" className={`py-20 sm:py-28 ${light ? "bg-white" : "bg-green-950"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left: Info */}
           <div>
-            <span className="inline-block text-green-400 font-bold text-sm tracking-widest uppercase mb-3">
+            <span className={`inline-block font-bold text-sm tracking-widest uppercase mb-3 ${light ? "text-green-600" : "text-green-400"}`}>
               Get In Touch
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6">
+            <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-6 ${light ? "text-gray-900" : "text-white"}`}>
               Ready to Switch to Solar?
             </h2>
-            <p className="text-green-300 text-lg leading-relaxed mb-10">
+            <p className={`text-lg leading-relaxed mb-10 ${light ? "text-gray-500" : "text-green-300"}`}>
               Get a free, no-obligation consultation from our solar experts.
               We&apos;ll assess your needs and provide a detailed proposal within 24 hours.
             </p>
@@ -92,20 +92,20 @@ export default function ContactForm() {
                 },
               ].map((item) => (
                 <div key={item.label} className="flex gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
+                  <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${light ? "bg-green-600" : "bg-green-400"}`} />
                   <div>
-                    <div className="text-green-500 text-xs font-bold uppercase tracking-wide mb-0.5">
+                    <div className={`text-xs font-bold uppercase tracking-wide mb-0.5 ${light ? "text-gray-400" : "text-green-500"}`}>
                       {item.label}
                     </div>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-white font-semibold hover:text-green-300 transition-colors"
+                        className={`font-semibold transition-colors ${light ? "text-gray-900 hover:text-green-600" : "text-white hover:text-green-300"}`}
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-white font-semibold">{item.value}</span>
+                      <span className={`font-semibold ${light ? "text-gray-900" : "text-white"}`}>{item.value}</span>
                     )}
                   </div>
                 </div>

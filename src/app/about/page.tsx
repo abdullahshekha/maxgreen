@@ -128,8 +128,8 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/inner/MAX-Green-web-ui-Fornt-01.png"
-                alt="MaxGreen Energy solar installation"
+                src="/images/inner/27073.jpg"
+                alt="MaxGreen Energy solar installation team"
                 width={600}
                 height={450}
                 className="rounded-2xl shadow-xl w-full object-cover"
