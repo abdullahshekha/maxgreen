@@ -37,9 +37,9 @@ export default function WhyUs() {
   return (
     <section className="py-20 sm:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left: Header */}
-          <div>
+          <div className="sticky top-24">
             <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
               Why MaxGreen
             </span>
