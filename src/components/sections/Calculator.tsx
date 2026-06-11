@@ -65,7 +65,7 @@ export default function SolarCalculator() {
         <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
           <div className="p-6 sm:p-10">
             {/* Method Toggle */}
-            <div className="flex gap-2 bg-gray-100 p-1 rounded-xl mb-8 max-w-xs">
+            <div className="flex gap-2 bg-gray-100 p-1 rounded-xl mb-8 w-[30rem] max-w-full">
               <button
                 onClick={() => { setMethod("average"); setResult(null); }}
                 className={`flex-1 py-2 px-4 rounded-lg text-sm font-semibold transition-all ${
