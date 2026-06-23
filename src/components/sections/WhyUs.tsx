@@ -1,35 +1,59 @@
-import { CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, MapPin, ArrowRight } from "lucide-react";
 
-const reasons = [
+const kProjects = [
   {
-    title: "Customized Solar System Design",
-    description:
-      "We analyze your electricity usage, roof space, and budget to create a tailored solar solution — not a one-size-fits-all package.",
+    title: "GlaxoSmithKline (GSK)",
+    badge: "Industrial / Pharma · 30 kW",
+    points: [
+      "30 kW on-grid industrial solar system",
+      "NEPRA-compliant design & installation",
+      "Full performance monitoring setup",
+      "Significant reduction in operational energy costs",
+    ],
   },
   {
-    title: "NEPRA-Compliant Installation Standards",
-    description:
-      "All installations follow strict regulatory and safety guidelines ensuring smooth NEPRA approvals and legal compliance.",
+    title: "Karachi Public School — 2 Campuses",
+    badge: "Commercial / Education · 15 kW each",
+    points: [
+      "15 kW system installed per campus",
+      "Net metering fully integrated",
+      "Sustainable energy model for institutions",
+      "Consistent electricity bill savings every month",
+    ],
   },
   {
-    title: "Ongoing Technical Support",
-    description:
-      "Our relationship doesn't end after installation. We provide maintenance guidance and performance monitoring for the long haul.",
+    title: "Askari 2 Residential Community",
+    badge: "Residential / Community · 10 kW",
+    points: [
+      "Community-level rooftop solar project",
+      "Custom NEPRA-compliant structure",
+      "Net metering approved & activated",
+      "2 years free after-sales service included",
+    ],
+  },
+];
+
+const lProjects = [
+  {
+    title: "DHA Phase 6 — Residential Installations",
+    badge: "Residential · 5–20 kW",
+    points: [
+      "Custom rooftop designs per property",
+      "NEPRA-compliant structures throughout",
+      "Electricity bills dropped to ZERO",
+      "2 years free after-sales service",
+    ],
   },
   {
-    title: "High ROI & Faster Payback Period",
-    description:
-      "Our high-efficiency systems are engineered to maximize savings, helping you recover your investment in record time.",
-  },
-  {
-    title: "Dedicated Project Manager for Every Client",
-    description:
-      "From consultation to activation, a dedicated expert handles your project ensuring clear communication at every step.",
-  },
-  {
-    title: "Premium Components & 25-Year Warranty",
-    description:
-      "We only use Tier-1 solar panels and trusted inverter brands, backed by manufacturer warranties that protect your investment.",
+    title: "Commercial & Office Buildings",
+    badge: "Commercial / Office · 15–30 kW",
+    points: [
+      "Offices, plazas & commercial units served",
+      "Full net metering support provided",
+      "Dedicated project manager assigned",
+      "Performance monitoring included",
+    ],
   },
 ];
 
@@ -44,37 +68,129 @@ export default function WhyUs() {
               Why MaxGreen
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Why Thousands Trust MaxGreen Energy
+              Proven Results Across Karachi &amp; Lahore
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
-              We don&apos;t just install solar systems — we design long-term energy
-              solutions that reduce electricity bills, increase property value,
-              and provide energy independence for generations.
+              With 9+ years of experience and 2100+ completed projects, MaxGreen
+              Energy has delivered custom NEPRA-compliant solar systems for
+              homes, schools, factories, and commercial buildings — making
+              electricity bills drop to ZERO.
             </p>
-            <a
-              href="#get-quote"
+
+            {/* City stats */}
+            <div className="grid grid-cols-2 gap-4 mb-8">
+              {[
+                { city: "Karachi", stat: "1500+", label: "Installations" },
+                { city: "Lahore", stat: "600+", label: "Installations" },
+              ].map((item) => (
+                <div
+                  key={item.city}
+                  className="rounded-2xl bg-green-950 p-5 text-center"
+                >
+                  <div className="flex items-center justify-center gap-1 text-green-400 text-xs font-bold tracking-widest uppercase mb-2">
+                    <MapPin className="w-3.5 h-3.5" />
+                    {item.city}
+                  </div>
+                  <div className="text-3xl font-extrabold text-white mb-0.5">
+                    {item.stat}
+                  </div>
+                  <div className="text-green-300 text-xs font-semibold">
+                    {item.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/contact-us/"
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
             >
               Get a Free Consultation
-            </a>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Right: Features list */}
-          <div className="space-y-5">
-            {reasons.map((reason) => (
-              <div
-                key={reason.title}
-                className="flex gap-4 p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
-              >
-                <CheckCircle2 className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
-                <div>
-                  <h4 className="font-bold text-gray-900 mb-1">{reason.title}</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">
-                    {reason.description}
-                  </p>
-                </div>
+          {/* Right: Project cards by city */}
+          <div className="space-y-8">
+            {/* Karachi */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-4 h-4 text-green-600" />
+                <span className="text-green-600 font-bold text-sm tracking-widest uppercase">
+                  Karachi Projects
+                </span>
               </div>
-            ))}
+              <div className="space-y-4">
+                {kProjects.map((project) => (
+                  <div
+                    key={project.title}
+                    className="p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
+                  >
+                    <h4 className="font-extrabold text-gray-900 mb-1">
+                      {project.title}
+                    </h4>
+                    <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full mb-3">
+                      {project.badge}
+                    </span>
+                    <ul className="space-y-1.5">
+                      {project.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-2 text-sm text-gray-600"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Lahore */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="w-4 h-4 text-green-600" />
+                <span className="text-green-600 font-bold text-sm tracking-widest uppercase">
+                  Lahore Projects
+                </span>
+              </div>
+              <div className="space-y-4">
+                {lProjects.map((project) => (
+                  <div
+                    key={project.title}
+                    className="p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
+                  >
+                    <h4 className="font-extrabold text-gray-900 mb-1">
+                      {project.title}
+                    </h4>
+                    <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full mb-3">
+                      {project.badge}
+                    </span>
+                    <ul className="space-y-1.5">
+                      {project.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex items-start gap-2 text-sm text-gray-600"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <Link
+              href="/projects/"
+              className="inline-flex items-center gap-2 font-bold text-sm text-green-600 hover:text-green-700 transition-colors"
+            >
+              View all our projects
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>
