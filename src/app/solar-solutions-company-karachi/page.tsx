@@ -31,7 +31,7 @@ const reasons = [
   },
   {
     title: "Proven Track Record",
-    description: "Over 1,500+ successful solar installations across Karachi — from DHA and Clifton to Gulshan-e-Iqbal and PECHS.",
+    description: "Over 2,100+ successful solar installations across Karachi — from DHA and Clifton to Gulshan-e-Iqbal and PECHS.",
   },
   {
     title: "Full NEPRA Compliance",
@@ -84,8 +84,9 @@ export default function KarachiPage() {
       <Navbar />
       <PageHero
         breadcrumb="Karachi"
-        title="Solar Solutions Company in Karachi"
+        title="MaxGreen Energy is DHA&apos;s No. 1 Choice and Karachi&apos;s Top-Rated Solar Company"
         subtitle="MaxGreen Energy is Karachi&apos;s trusted solar provider — delivering custom solar systems for homes, businesses, and industries across the city."
+        bgImage="/images/solar/commercial.jpeg"
       />
 
       {/* Intro */}
@@ -103,7 +104,7 @@ export default function KarachiPage() {
                 MaxGreen Energy is a trusted solar energy company in Karachi, delivering customized solar solutions for homes, businesses, and industries. Our Karachi office in DHA Phase 6 serves clients across the city — from North Nazimabad to Defence, Gulshan-e-Iqbal to PECHS.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                With over 1,500 installations in Karachi alone, we understand the local grid infrastructure, K-Electric net metering processes, and rooftop conditions across the city&apos;s diverse neighbourhoods.
+                With over 2,100 installations in Karachi alone, we understand the local grid infrastructure, K-Electric net metering processes, and rooftop conditions across the city&apos;s diverse neighbourhoods.
               </p>
               <div className="bg-gray-50 rounded-2xl p-6 space-y-3">
                 <div className="flex items-start gap-3">
@@ -167,7 +168,7 @@ export default function KarachiPage() {
               Why MaxGreen in Karachi
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-5">
-              The Best Solar Company in Karachi
+              DHA and Askari No.1 Choice in Karachi
             </h2>
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
@@ -194,9 +195,9 @@ export default function KarachiPage() {
           </div>
           <div className="grid sm:grid-cols-2 gap-6">
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg">
-              <Image src="/images/projects/gsk-1.jpg" alt="GlaxoSmithKline solar installation Karachi" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
+              <Image src="/images/projects/gsk-1.jpg" alt="MM Oils 1 MW solar installation Karachi" fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" loading="lazy" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-                <div className="text-white font-bold text-sm">GlaxoSmithKline (GSK) – 30 kW</div>
+                <div className="text-white font-bold text-sm">MM Oils – 1 MW (1,000 kW)</div>
               </div>
             </div>
             <div className="relative h-64 rounded-2xl overflow-hidden shadow-lg">

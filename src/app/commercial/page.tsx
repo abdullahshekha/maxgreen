@@ -73,6 +73,7 @@ export default function CommercialPage() {
         breadcrumbHref="/solutions/"
         title="Solar Solutions for Commercial"
         subtitle="Clean energy solutions designed for offices, schools, hospitals, and commercial buildings — reducing costs and improving sustainability."
+        bgImage="/images/solar/commercial.jpeg"
       />
 
       {/* Intro */}
@@ -109,7 +110,7 @@ export default function CommercialPage() {
             </div>
             <div>
               <Image
-                src="/images/inner/Mask-Group-3.png"
+                src="/images/solar/commercial.jpeg"
                 alt="Commercial solar installation by MaxGreen Energy"
                 width={600}
                 height={450}

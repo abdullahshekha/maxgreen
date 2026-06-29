@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
@@ -6,12 +7,23 @@ interface PageHeroProps {
   breadcrumbHref?: string;
   title: string;
   subtitle?: string;
+  bgImage?: string;
 }
 
-export default function PageHero({ breadcrumb, breadcrumbHref, title, subtitle }: PageHeroProps) {
+export default function PageHero({ breadcrumb, breadcrumbHref, title, subtitle, bgImage }: PageHeroProps) {
   return (
     <section className="relative bg-green-950 pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden">
-      {/* Background pattern */}
+      {/* Background photo */}
+      {bgImage && (
+        <Image
+          src={bgImage}
+          alt=""
+          fill
+          className="object-cover opacity-20"
+          priority
+        />
+      )}
+      {/* Background dot pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{backgroundImage: "radial-gradient(circle, #92c31e 1px, transparent 1px)", backgroundSize: "32px 32px"}} />
       </div>

@@ -86,6 +86,7 @@ export default function LahorePage() {
         breadcrumb="Lahore"
         title="Trusted Solar Solution in Lahore"
         subtitle="MaxGreen Energy is Lahore&apos;s trusted solar provider — delivering customised solar systems for homes, businesses, and industries across the city."
+        bgImage="/images/solar/lahore.jpeg"
       />
 
       {/* Intro */}

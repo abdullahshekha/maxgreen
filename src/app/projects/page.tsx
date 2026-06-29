@@ -7,12 +7,21 @@ import Footer from "@/components/ui/Footer";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
-  title: "Our Solar Projects - 2 MW Installations by MaxGreen Energy",
+  title: "Our Solar Projects - 14 MW+ Installations by MaxGreen Energy",
   description:
-    "Our Solar Projects - 2 MW Installations by MaxGreen Energy",
+    "Explore MaxGreen Energy's portfolio of 14 MW+ solar installations across Pakistan — residential, commercial and industrial projects in Karachi, Lahore and Islamabad.",
 };
 
 const projects = [
+  {
+    title: "MM Oils – 1 MW Industrial Installation",
+    category: "Industrial",
+    location: "Karachi",
+    size: "1,000 kW (1 MW)",
+    image: "/images/projects/gsk-1.jpg",
+    description:
+      "A landmark 1 Megawatt industrial solar installation for MM Oils in Karachi — one of MaxGreen&apos;s largest projects to date, delivering massive energy cost savings and full grid integration.",
+  },
   {
     title: "Karachi Public School – Malir Campus",
     category: "Commercial / Education",
@@ -94,7 +103,8 @@ export default function ProjectsPage() {
       <PageHero
         breadcrumb="Projects"
         title="Our Solar Projects"
-        subtitle="From residential rooftops to industrial-scale installations — explore our growing portfolio of 2 MW+ in completed solar projects across Pakistan."
+        subtitle="From residential rooftops to industrial-scale installations — explore our growing portfolio of 14 MW+ in completed solar projects across Pakistan."
+        bgImage="/images/solar/industrial.jpeg"
       />
 
       {/* Stats Banner */}
@@ -102,10 +112,10 @@ export default function ProjectsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
             {[
-              { value: "2 MW+", label: "Total Capacity Installed" },
-              { value: "2000+", label: "Solar Installations" },
+              { value: "14 MW+", label: "Total Capacity Installed" },
+              { value: "2100+", label: "Solar Installations" },
               { value: "3", label: "Cities Served" },
-              { value: "10+", label: "Years of Experience" },
+              { value: "9+", label: "Years of Experience" },
             ].map((stat) => (
               <div key={stat.label}>
                 <div className="text-3xl font-extrabold text-white mb-1">{stat.value}</div>

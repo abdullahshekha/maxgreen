@@ -119,9 +119,9 @@ export default function Solutions() {
                 {/* Link */}
                 <Link
                   href={solution.href}
-                  className="inline-flex items-center gap-2 font-bold text-sm text-green-600 hover:text-green-700 group-hover:gap-3 transition-all"
+                  className="inline-flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5 text-sm"
                 >
-                  Learn more
+                  Learn More
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

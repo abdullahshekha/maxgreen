@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-  { icon: Sun, value: "2000+", label: "Solar Installations" },
-  { icon: Award, value: "10+", label: "Years of Excellence" },
+  { icon: Sun, value: "2100+", label: "Solar Installations" },
+  { icon: Award, value: "9+", label: "Years of Excellence" },
   { icon: Users, value: "3", label: "Cities Served" },
   { icon: Zap, value: "2 Years", label: "Free After-Sales Service" },
 ];
@@ -99,7 +99,8 @@ export default function AboutPage() {
       <PageHero
         breadcrumb="About Us"
         title="Pakistan&apos;s Trusted Solar Innovators"
-        subtitle="We are a leading solar company in Pakistan, specialising in residential, commercial, and industrial solar solutions — backed by years of excellence."
+        subtitle="We are a leading solar company in Pakistan, specialising in residential, commercial, and industrial solar solutions — backed by 9 Years of experience."
+        bgImage="/images/solar/about-us.jpeg"
       />
 
       {/* Who We Are */}

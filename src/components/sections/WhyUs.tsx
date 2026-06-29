@@ -1,15 +1,15 @@
 import Link from "next/link";
-import { CheckCircle2, MapPin, ArrowRight } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 
-const kProjects = [
+const projects = [
   {
-    title: "GlaxoSmithKline (GSK)",
-    badge: "Industrial / Pharma · 30 kW",
+    title: "MM Oils — 1 MW Industrial Installation",
+    badge: "Industrial · 1,000 kW (1 MW)",
     points: [
-      "30 kW on-grid industrial solar system",
-      "NEPRA-compliant design & installation",
-      "Full performance monitoring setup",
-      "Significant reduction in operational energy costs",
+      "1 MW large-scale industrial solar system installed",
+      "NEPRA-compliant design with full grid integration",
+      "Substantial reduction in monthly energy expenditure",
+      "Complete turnkey service from design to commissioning",
     ],
   },
   {
@@ -32,12 +32,9 @@ const kProjects = [
       "2 years free after-sales service included",
     ],
   },
-];
-
-const lProjects = [
   {
     title: "DHA Phase 6 — Residential Installations",
-    badge: "Residential · 5–20 kW",
+    badge: "Residential · 6–20 kW",
     points: [
       "Custom rooftop designs per property",
       "NEPRA-compliant structures throughout",
@@ -47,7 +44,7 @@ const lProjects = [
   },
   {
     title: "Commercial & Office Buildings",
-    badge: "Commercial / Office · 15–30 kW",
+    badge: "Commercial / Office · 20–50 kW",
     points: [
       "Offices, plazas & commercial units served",
       "Full net metering support provided",
@@ -68,7 +65,7 @@ export default function WhyUs() {
               Why MaxGreen
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
-              Proven Results Across Karachi &amp; Lahore
+              Proven Results All Over Pakistan
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               With 9+ years of experience and 2100+ completed projects, MaxGreen
@@ -77,28 +74,10 @@ export default function WhyUs() {
               electricity bills drop to ZERO.
             </p>
 
-            {/* City stats */}
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {[
-                { city: "Karachi", stat: "1500+", label: "Installations" },
-                { city: "Lahore", stat: "600+", label: "Installations" },
-              ].map((item) => (
-                <div
-                  key={item.city}
-                  className="rounded-2xl bg-green-950 p-5 text-center"
-                >
-                  <div className="flex items-center justify-center gap-1 text-green-400 text-xs font-bold tracking-widest uppercase mb-2">
-                    <MapPin className="w-3.5 h-3.5" />
-                    {item.city}
-                  </div>
-                  <div className="text-3xl font-extrabold text-white mb-0.5">
-                    {item.stat}
-                  </div>
-                  <div className="text-green-300 text-xs font-semibold">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
+            {/* Single Pakistan-wide stat */}
+            <div className="rounded-2xl bg-green-950 p-6 text-center mb-8">
+              <div className="text-4xl font-extrabold text-white mb-1">2100+</div>
+              <div className="text-green-300 text-sm font-semibold">Projects All Over Pakistan</div>
             </div>
 
             <Link
@@ -110,79 +89,32 @@ export default function WhyUs() {
             </Link>
           </div>
 
-          {/* Right: Project cards by city */}
-          <div className="space-y-8">
-            {/* Karachi */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <MapPin className="w-4 h-4 text-green-600" />
-                <span className="text-green-600 font-bold text-sm tracking-widest uppercase">
-                  Karachi Projects
+          {/* Right: Project cards */}
+          <div className="space-y-4">
+            {projects.map((project) => (
+              <div
+                key={project.title}
+                className="p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
+              >
+                <h4 className="font-extrabold text-gray-900 mb-1">
+                  {project.title}
+                </h4>
+                <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full mb-3">
+                  {project.badge}
                 </span>
+                <ul className="space-y-1.5">
+                  {project.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-2 text-sm text-gray-600"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="space-y-4">
-                {kProjects.map((project) => (
-                  <div
-                    key={project.title}
-                    className="p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
-                  >
-                    <h4 className="font-extrabold text-gray-900 mb-1">
-                      {project.title}
-                    </h4>
-                    <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full mb-3">
-                      {project.badge}
-                    </span>
-                    <ul className="space-y-1.5">
-                      {project.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-2 text-sm text-gray-600"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Lahore */}
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <MapPin className="w-4 h-4 text-green-600" />
-                <span className="text-green-600 font-bold text-sm tracking-widest uppercase">
-                  Lahore Projects
-                </span>
-              </div>
-              <div className="space-y-4">
-                {lProjects.map((project) => (
-                  <div
-                    key={project.title}
-                    className="p-5 rounded-2xl border border-gray-100 hover:border-green-200 hover:bg-green-50/50 transition-all duration-200 group"
-                  >
-                    <h4 className="font-extrabold text-gray-900 mb-1">
-                      {project.title}
-                    </h4>
-                    <span className="inline-block text-xs font-semibold text-green-700 bg-green-100 px-2.5 py-0.5 rounded-full mb-3">
-                      {project.badge}
-                    </span>
-                    <ul className="space-y-1.5">
-                      {project.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-start gap-2 text-sm text-gray-600"
-                        >
-                          <CheckCircle2 className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
 
             <Link
               href="/projects/"

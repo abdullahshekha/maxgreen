@@ -35,16 +35,6 @@ const benefits = [
   },
 ];
 
-const industries = [
-  { name: "Textile Mills", icon: "🧵" },
-  { name: "Food Processing", icon: "🍞" },
-  { name: "Pharmaceutical", icon: "💊" },
-  { name: "Steel &amp; Metals", icon: "⚙️" },
-  { name: "Warehousing &amp; Logistics", icon: "📦" },
-  { name: "Cold Storage", icon: "❄️" },
-  { name: "Cement &amp; Construction", icon: "🏗️" },
-  { name: "Chemical Plants", icon: "🧪" },
-];
 
 export default function IndustrialPage() {
   return (
@@ -74,6 +64,7 @@ export default function IndustrialPage() {
         breadcrumbHref="/solutions/"
         title="Industrial Solar Solutions"
         subtitle="Large-scale solar systems engineered for Pakistan&apos;s factories, mills, and warehouses — from 5 kW to 100+ kW."
+        bgImage="/images/solar/industrial.jpeg"
       />
 
       {/* Intro */}
@@ -110,7 +101,7 @@ export default function IndustrialPage() {
             </div>
             <div>
               <Image
-                src="/images/inner/image-2.png"
+                src="/images/solar/industrial.jpeg"
                 alt="Industrial solar installation by MaxGreen Energy"
                 width={600}
                 height={450}
@@ -147,28 +138,6 @@ export default function IndustrialPage() {
                 </div>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="py-20 sm:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
-              Industries We Serve
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-5">
-              Solar for Every Industrial Sector
-            </h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {industries.map((ind) => (
-              <div key={ind.name} className="rounded-2xl border border-gray-100 p-5 text-center hover:shadow-md transition-all hover:-translate-y-0.5">
-                <div className="text-3xl mb-3">{ind.icon}</div>
-                <div className="font-bold text-gray-800 text-sm" dangerouslySetInnerHTML={{ __html: ind.name }} />
-              </div>
-            ))}
           </div>
         </div>
       </section>

@@ -74,6 +74,7 @@ export default function SolutionsPage() {
         breadcrumb="Solutions"
         title="Solar Installation in Pakistan"
         subtitle="Our expertise in solar energy technology ensures you get the most efficient and reliable solar solutions, whether you&apos;re a homeowner or a business owner."
+        bgImage="/images/solar/residential.jpeg"
       />
 
       {/* Solution Cards */}

@@ -71,6 +71,7 @@ export default function ResidentialPage() {
         breadcrumbHref="/solutions/"
         title="Solar System for Home"
         subtitle="Power your home with clean, affordable solar energy. Custom residential systems designed to cut bills and provide energy independence."
+        bgImage="/images/solar/residential.jpeg"
       />
 
       {/* Intro */}

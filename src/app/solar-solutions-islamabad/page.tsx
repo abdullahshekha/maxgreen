@@ -80,6 +80,7 @@ export default function IslamabadPage() {
         breadcrumb="Islamabad"
         title="Solar Solutions Company in Islamabad"
         subtitle="MaxGreen Energy brings trusted solar expertise to Islamabad — delivering clean, custom solar systems for homes, businesses, and industries across the capital."
+        bgImage="/images/solar/islamabad.jpeg"
       />
 
       {/* Intro */}
