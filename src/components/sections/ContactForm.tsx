@@ -195,6 +195,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                     >
                       <option value="Karachi">Karachi</option>
                       <option value="Lahore">Lahore</option>
+                      <option value="Islamabad">Islamabad</option>
                     </select>
                   </div>
                 </div>
