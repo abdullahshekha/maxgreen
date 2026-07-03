@@ -18,7 +18,7 @@ const projects = [
     category: "Industrial",
     location: "Karachi",
     size: "1,000 kW (1 MW)",
-    image: "/images/projects/gsk-1.jpg",
+    image: "/images/projects/mm-oils-main.jpg",
     description:
       "A landmark 1 Megawatt industrial solar installation for MM Oils in Karachi — one of MaxGreen&apos;s largest projects to date, delivering massive energy cost savings and full grid integration.",
   },
@@ -59,22 +59,49 @@ const projects = [
       "A residential community solar project at Askari 2, demonstrating how neighbourhood-level solar adoption can dramatically reduce collective energy bills.",
   },
   {
-    title: "Commercial Complex Installation",
-    category: "Commercial",
-    location: "Pakistan",
-    size: "25 kW",
-    image: "/images/projects/Rectangle-21731.png",
+    title: "Sheikh Tube Mill – 700 kW On-Grid Solar Power System",
+    category: "Industrial",
+    location: "Karachi",
+    size: "700 kW",
+    image: "/images/projects/sheikh-tube-mill.png",
     description:
-      "A modern commercial solar system delivering clean energy for a multi-unit commercial complex, with full net metering integration and monitoring.",
+      "MaxGreen Energy successfully designed and installed a 700 kW On-Grid Solar Power System for Sheikh Tube Mill, delivering a reliable and cost-effective renewable energy solution for industrial operations, in partnership with technology partner Sungrow.",
   },
   {
-    title: "Rooftop Solar System",
-    category: "Commercial / Office",
-    location: "Pakistan",
-    size: "20 kW",
-    image: "/images/projects/Rectangle-21732-3.png",
+    title: "Qaim Automotive – 260 kW On-Grid Solar Power System",
+    category: "Industrial",
+    location: "Karachi",
+    size: "260 kW",
+    image: "/images/projects/qaim-automotive.jpg",
     description:
-      "A premium rooftop solar installation demonstrating MaxGreen&apos;s commitment to clean, professional installations that meet the highest technical and aesthetic standards.",
+      "MaxGreen Energy successfully completed a 260 kW On-Grid Solar Power System for Qaim Automotive, helping the business reduce its electricity expenses while transitioning to clean and sustainable energy.",
+  },
+  {
+    title: "Subway – 25 kW On-Grid Solar Power System",
+    category: "Commercial",
+    location: "Karachi",
+    size: "25 kW",
+    image: "/images/projects/subway.webp",
+    description:
+      "MaxGreen Energy successfully installed a 25 kW On-Grid Solar Power System for Subway (Rashid Minhas Road), enabling the restaurant to reduce energy costs while embracing a cleaner and more sustainable source of power.",
+  },
+  {
+    title: "Karachi Broast – 20 kW On-Grid Solar Power System",
+    category: "Commercial",
+    location: "Karachi",
+    size: "20 kW",
+    image: "/images/projects/karachi-broast.webp",
+    description:
+      "MaxGreen Energy successfully installed a 20 kW On-Grid Solar Power System for Karachi Broast (Rashid Minhas Road), providing an energy-efficient solution to support the restaurant&apos;s daily operations while reducing electricity costs.",
+  },
+  {
+    title: "Hotel County Inn – 70 kW On-Grid Solar Power System",
+    category: "Commercial",
+    location: "Karachi",
+    size: "70 kW",
+    image: "/images/projects/hotel-county-inn.jpeg",
+    description:
+      "MaxGreen Energy successfully delivered a 70 kW On-Grid Solar Power System for Hotel County Inn, helping the hotel reduce its electricity costs while adopting a clean and sustainable energy solution.",
   },
 ];
 
@@ -104,7 +131,7 @@ export default function ProjectsPage() {
         breadcrumb="Projects"
         title="Our Solar Projects"
         subtitle="From residential rooftops to industrial-scale installations — explore our growing portfolio of 14 MW+ in completed solar projects across Pakistan."
-        bgImage="/images/solar/industrial.jpeg"
+        bgImage="/images/solar/projects.jpeg"
       />
 
       {/* Stats Banner */}

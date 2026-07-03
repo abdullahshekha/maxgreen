@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 const images = [
+  { src: "/images/gallery/mm-oils-supporting.jpg", alt: "MM Oils 1 MW industrial solar installation" },
   { src: "/images/gallery/141280255_3761391490610763_3387233819776720571_n.jpg", alt: "MaxGreen solar installation" },
   { src: "/images/gallery/151095551_3837310889685489_4310667464715404164_n.jpg", alt: "MaxGreen solar project" },
   { src: "/images/gallery/321435789_1779805325738262_6005205314212540954_n.jpg", alt: "Solar panel installation" },

@@ -78,8 +78,8 @@ export default function Footer() {
             {/* Social */}
             <div className="flex gap-3 mt-6">
               {[
-                { icon: Facebook, href: "https://www.facebook.com/MaxGreenEnergyPk/", label: "Facebook" },
-                { icon: Instagram, href: "https://www.instagram.com/maxgreen_energy/", label: "Instagram" },
+                { icon: Facebook, href: "https://www.facebook.com/share/18smy6akyA/?mibextid=wwXIfr", label: "Facebook" },
+                { icon: Instagram, href: "https://www.instagram.com/maxgreenenergypakistan?igsh=dHJtc2VzeTE5c2Fs", label: "Instagram" },
                 { icon: Linkedin, href: "https://www.linkedin.com/company/maxenergypakistan/", label: "LinkedIn" },
               ].map(({ icon: Icon, href, label }) => (
                 <a

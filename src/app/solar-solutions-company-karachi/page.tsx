@@ -84,9 +84,9 @@ export default function KarachiPage() {
       <Navbar />
       <PageHero
         breadcrumb="Karachi"
-        title="MaxGreen Energy is DHA&apos;s No. 1 Choice and Karachi&apos;s Top-Rated Solar Company"
-        subtitle="MaxGreen Energy is Karachi&apos;s trusted solar provider — delivering custom solar systems for homes, businesses, and industries across the city."
-        bgImage="/images/solar/commercial.jpeg"
+        title="Karachi&apos;s Top-Rated Solar Company"
+        subtitle="MaxGreen Energy is DHA&apos;s No. 1 Choice, delivering custom solar systems for homes, businesses, and industries across the city."
+        bgImage="/images/solar/karachi.jpeg"
       />
 
       {/* Intro */}

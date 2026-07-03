@@ -71,7 +71,7 @@ export default function ResidentialPage() {
         breadcrumbHref="/solutions/"
         title="Solar System for Home"
         subtitle="Power your home with clean, affordable solar energy. Custom residential systems designed to cut bills and provide energy independence."
-        bgImage="/images/solar/residential.jpeg"
+        bgImage="/images/solar/solar-system-for-home.jpeg"
       />
 
       {/* Intro */}
@@ -108,7 +108,7 @@ export default function ResidentialPage() {
             </div>
             <div>
               <Image
-                src="/images/inner/Mask-Group-1.png"
+                src="/images/inner/residential-main.jpeg"
                 alt="Residential solar installation by MaxGreen Energy"
                 width={600}
                 height={450}

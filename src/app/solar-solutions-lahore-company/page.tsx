@@ -123,7 +123,7 @@ export default function LahorePage() {
             </div>
             <div>
               <Image
-                src="/images/inner/Rectangle-21718.png"
+                src="/images/inner/lahore-main.jpeg"
                 alt="Solar installation in Lahore by MaxGreen Energy"
                 width={600}
                 height={450}

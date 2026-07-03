@@ -113,7 +113,7 @@ export default function IslamabadPage() {
             </div>
             <div>
               <Image
-                src="/images/inner/image-3.png"
+                src="/images/inner/islamabad-main.jpeg"
                 alt="Solar installation in Islamabad by MaxGreen Energy"
                 width={600}
                 height={450}

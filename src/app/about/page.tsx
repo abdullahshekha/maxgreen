@@ -129,7 +129,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <Image
-                src="/images/inner/27073.jpg"
+                src="/images/inner/about-us-main.jpeg"
                 alt="MaxGreen Energy solar installation team"
                 width={600}
                 height={450}

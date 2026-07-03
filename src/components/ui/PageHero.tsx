@@ -28,7 +28,7 @@ export default function PageHero({ breadcrumb, breadcrumbHref, title, subtitle, 
         <div className="absolute inset-0" style={{backgroundImage: "radial-gradient(circle, #92c31e 1px, transparent 1px)", backgroundSize: "32px 32px"}} />
       </div>
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-950 via-green-950/95 to-green-900/80" />
+      <div className="absolute inset-0 bg-gradient-to-r from-green-950/90 via-green-900/75 to-green-900/40" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Breadcrumb */}

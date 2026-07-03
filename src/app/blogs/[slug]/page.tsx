@@ -214,10 +214,10 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-5 text-sm text-green-300">
-            <span className="flex items-center gap-1.5">
+            <Link href="/author/taha-alam/" className="flex items-center gap-1.5 hover:text-green-400 transition-colors">
               <User className="w-4 h-4" />
               {blog.author}
-            </span>
+            </Link>
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {formatDate(blog.date)}
