@@ -3,6 +3,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import PageHero from "@/components/ui/PageHero";
 import SolarCalculator from "@/components/sections/Calculator";
+import ContactForm from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = {
   title: "Solar Cost Estimator - Estimate System Size & Savings",
@@ -38,6 +39,7 @@ export default function CostEstimatorPage() {
         subtitle="Enter your monthly electricity consumption and instantly get your recommended system size, projected savings, and payback period."
       />
       <SolarCalculator />
+      <ContactForm />
       <Footer />
     </main>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
@@ -13,6 +13,15 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  useEffect(() => {
+    const handleEstimate = (e: Event) => {
+      const { capacity } = (e as CustomEvent<{ capacity: string }>).detail;
+      setForm((prev) => ({ ...prev, capacity }));
+    };
+    window.addEventListener("solar-estimate", handleEstimate);
+    return () => window.removeEventListener("solar-estimate", handleEstimate);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>

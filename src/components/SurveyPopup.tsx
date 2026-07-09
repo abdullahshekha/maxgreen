@@ -1,11 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, CheckCircle2, Sun } from "lucide-react";
+import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 
 export default function SurveyPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -24,10 +25,28 @@ export default function SurveyPopup() {
     sessionStorage.setItem("survey_dismissed", "1");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    sessionStorage.setItem("survey_dismissed", "1");
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          phone: form.phone,
+          city: form.city,
+          capacity: form.capacity,
+          message: "Requested via the free solar survey popup.",
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setIsSubmitted(true);
+      setStatus("idle");
+      sessionStorage.setItem("survey_dismissed", "1");
+    } catch {
+      setStatus("error");
+    }
   };
 
   if (!isVisible) return null;
@@ -142,11 +161,25 @@ export default function SurveyPopup() {
                 />
               </div>
 
+              {status === "error" && (
+                <p className="text-red-500 text-sm">
+                  Something went wrong. Please try again or call us directly.
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg mt-2"
+                disabled={status === "loading"}
+                className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 disabled:bg-green-400 text-white font-bold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg mt-2"
               >
-                Book My Free Survey
+                {status === "loading" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Book My Free Survey"
+                )}
               </button>
 
               <p className="text-center text-xs text-gray-400">

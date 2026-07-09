@@ -43,6 +43,9 @@ export default function SolarCalculator() {
     const paybackMonths = Math.round(systemCost / monthlyBillReduction);
 
     setResult({ recommendedKW, annualSavings, paybackMonths, systemCost, monthlyBillReduction });
+    window.dispatchEvent(
+      new CustomEvent("solar-estimate", { detail: { capacity: `${recommendedKW} kW` } })
+    );
   };
 
   return (
