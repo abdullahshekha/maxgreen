@@ -2,12 +2,6 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import emailjs from "emailjs-com";
-
-// ⚠️ Replace these with your actual EmailJS credentials from emailjs.com
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
@@ -30,19 +24,12 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
     e.preventDefault();
     setStatus("loading");
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          phone: form.phone,
-          email: form.email,
-          city: form.city,
-          capacity: form.capacity,
-          message: form.message,
-        },
-        EMAILJS_PUBLIC_KEY
-      );
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Request failed");
       setStatus("success");
       setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "" });
     } catch {
