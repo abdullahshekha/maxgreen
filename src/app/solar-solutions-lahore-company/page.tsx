@@ -30,8 +30,8 @@ const reasons = [
     description: "Our Lahore-based team handles all LESCO net metering approvals, ensuring seamless grid connection and billing adjustments for your solar system.",
   },
   {
-    title: "500+ Lahore Installations",
-    description: "A growing portfolio of successful solar installations across Lahore — from DHA and Gulberg to Model Town and Johar Town.",
+    title: "2,100+ Installations Across Pakistan",
+    description: "A growing portfolio of successful solar installations, serving Lahore neighbourhoods from DHA and Gulberg to Model Town and Johar Town.",
   },
   {
     title: "Dedicated Lahore Team",

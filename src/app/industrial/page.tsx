@@ -9,7 +9,7 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Industrial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
-    "MaxGreen Energy's industrial solar solutions scale from 5 kW to 100+ kW for factories, mills, warehouses. Reduce operating costs, improve sustainability &amp; ROI.",
+    "MaxGreen Energy's industrial solar solutions scale from 100 kW to 3 MW+ for factories, mills, warehouses. Reduce operating costs, improve sustainability &amp; ROI.",
 };
 
 const benefits = [
@@ -20,7 +20,7 @@ const benefits = [
   },
   {
     icon: Zap,
-    title: "5 kW to 100+ kW Systems",
+    title: "100 kW to 3 MW+ Systems",
     description: "From small factories to large manufacturing plants, we design and install scalable solar systems that match your exact energy demand.",
   },
   {
@@ -63,7 +63,7 @@ export default function IndustrialPage() {
         breadcrumb="Industrial Solar"
         breadcrumbHref="/solutions/"
         title="Industrial Solar Solutions"
-        subtitle="Large-scale solar systems engineered for Pakistan&apos;s factories, mills, and warehouses — from 5 kW to 100+ kW."
+        subtitle="Large-scale solar systems engineered for Pakistan&apos;s factories, mills, and warehouses — from 100 kW to 3 MW+."
         bgImage="/images/solar/industrial.jpeg"
       />
 

@@ -2384,7 +2384,7 @@ export const blogs = ([
     date: "2025-10-29",
     category: "Commercial",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/Max-Green-Logo-01.png",
+    featuredImage: "/images/blogs/maximizing-roi-on-solar-investments-for-businesses.jpg",
     readTime: 4,
     sections: [
       { type: "h2", content: "Introduction" },

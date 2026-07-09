@@ -37,10 +37,10 @@ const benefits = [
 ];
 
 const packages = [
-  { size: "5 kW", usage: "2–3 AC", monthlyUnits: "600 units", description: "Ideal for small homes with moderate energy consumption." },
-  { size: "10 kW", usage: "4–5 AC", monthlyUnits: "1,200 units", description: "Perfect for medium-sized homes with regular air conditioner use." },
-  { size: "15 kW", usage: "6–8 AC", monthlyUnits: "1,800 units", description: "Suited for large homes or small offices with heavy appliance loads." },
-  { size: "20 kW+", usage: "8+ AC", monthlyUnits: "2,400+ units", description: "Custom systems for villa-sized homes or high-consumption households." },
+  { size: "6 kW", usage: "1 AC + Other Appliances", monthlyUnits: "720 units", description: "Ideal for small homes with moderate energy consumption." },
+  { size: "10 kW", usage: "3 AC + Other Appliances", monthlyUnits: "1,200 units", description: "Perfect for medium-sized homes with regular air conditioner use." },
+  { size: "15 kW", usage: "4 AC + Other Appliances", monthlyUnits: "1,800 units", description: "Suited for large homes or small offices with heavy appliance loads." },
+  { size: "20 kW+", usage: "6 AC + Other Appliances", monthlyUnits: "2,400+ units", description: "Custom systems for villa-sized homes or high-consumption households." },
 ];
 
 export default function ResidentialPage() {

@@ -31,7 +31,7 @@ const reasons = [
   },
   {
     title: "Proven Track Record",
-    description: "Over 2,100+ successful solar installations across Karachi — from DHA and Clifton to Gulshan-e-Iqbal and PECHS.",
+    description: "Over 2,100+ successful solar installations across Pakistan — serving Karachi neighbourhoods from DHA and Clifton to Gulshan-e-Iqbal and PECHS.",
   },
   {
     title: "Full NEPRA Compliance",
@@ -104,7 +104,7 @@ export default function KarachiPage() {
                 MaxGreen Energy is a trusted solar energy company in Karachi, delivering customized solar solutions for homes, businesses, and industries. Our Karachi office in DHA Phase 6 serves clients across the city — from North Nazimabad to Defence, Gulshan-e-Iqbal to PECHS.
               </p>
               <p className="text-gray-500 text-lg leading-relaxed mb-8">
-                With over 2,100 installations in Karachi alone, we understand the local grid infrastructure, K-Electric net metering processes, and rooftop conditions across the city&apos;s diverse neighbourhoods.
+                With over 2,100+ installations completed across Pakistan, we understand the local grid infrastructure, K-Electric net metering processes, and rooftop conditions across Karachi&apos;s diverse neighbourhoods.
               </p>
               <div className="bg-gray-50 rounded-2xl p-6 space-y-3">
                 <div className="flex items-start gap-3">
