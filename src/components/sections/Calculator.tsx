@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator, Zap, TrendingDown, Clock } from "lucide-react";
+import { Calculator, Zap, TrendingDown } from "lucide-react";
 
 const PRICE_PER_UNIT = 45; // PKR per kWh
-const SYSTEM_COST_PER_KW = 120000; // PKR per kW
 const PANEL_EFFICIENCY = 0.8;
 
 export default function SolarCalculator() {
@@ -14,8 +13,6 @@ export default function SolarCalculator() {
   const [result, setResult] = useState<null | {
     recommendedKW: number;
     annualSavings: number;
-    paybackMonths: number;
-    systemCost: number;
     monthlyBillReduction: number;
   }>(null);
 
@@ -37,12 +34,10 @@ export default function SolarCalculator() {
     if (totalMonthlyUnits <= 0) return;
 
     const recommendedKW = Math.ceil((totalMonthlyUnits / (30 * 4 * PANEL_EFFICIENCY)) * 10) / 10;
-    const systemCost = recommendedKW * SYSTEM_COST_PER_KW;
     const monthlyBillReduction = totalMonthlyUnits * PRICE_PER_UNIT * 0.7;
     const annualSavings = monthlyBillReduction * 12;
-    const paybackMonths = Math.round(systemCost / monthlyBillReduction);
 
-    setResult({ recommendedKW, annualSavings, paybackMonths, systemCost, monthlyBillReduction });
+    setResult({ recommendedKW, annualSavings, monthlyBillReduction });
     window.dispatchEvent(
       new CustomEvent("solar-estimate", { detail: { capacity: `${recommendedKW} kW` } })
     );
@@ -155,7 +150,7 @@ export default function SolarCalculator() {
                 <h3 className="text-lg font-extrabold text-gray-900 mb-6">
                   Your Solar System Recommendation
                 </h3>
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
                     <Zap className="w-6 h-6 text-green-400 mb-2" />
                     <div className="text-2xl font-extrabold text-white">
@@ -181,15 +176,6 @@ export default function SolarCalculator() {
                     </div>
                     <div className="text-xs text-green-400 font-semibold mt-1">
                       Annual Savings
-                    </div>
-                  </div>
-                  <div className="bg-green-950 border border-green-900 rounded-2xl p-5">
-                    <Clock className="w-6 h-6 text-green-400 mb-2" />
-                    <div className="text-2xl font-extrabold text-white">
-                      {result.paybackMonths} mo
-                    </div>
-                    <div className="text-xs text-green-400 font-semibold mt-1">
-                      Payback Period
                     </div>
                   </div>
                 </div>
