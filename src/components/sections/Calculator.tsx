@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Calculator, Zap, TrendingDown } from "lucide-react";
 
-const PRICE_PER_UNIT = 45; // PKR per kWh
+const PRICE_PER_UNIT = 50; // PKR per kWh
 const PANEL_EFFICIENCY = 0.8;
 
 export default function SolarCalculator() {
@@ -34,7 +34,7 @@ export default function SolarCalculator() {
     if (totalMonthlyUnits <= 0) return;
 
     const recommendedKW = Math.ceil((totalMonthlyUnits / (30 * 4 * PANEL_EFFICIENCY)) * 10) / 10;
-    const monthlyBillReduction = totalMonthlyUnits * PRICE_PER_UNIT * 0.7;
+    const monthlyBillReduction = totalMonthlyUnits * PRICE_PER_UNIT;
     const annualSavings = monthlyBillReduction * 12;
 
     setResult({ recommendedKW, annualSavings, monthlyBillReduction });
