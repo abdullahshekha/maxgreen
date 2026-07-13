@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     "MaxGreen Energy",
     "best solar company DHA",
   ],
+  icons: {
+    icon: "/images/maxgreen-favicon.png",
+    shortcut: "/images/maxgreen-favicon.png",
+    apple: "/images/maxgreen-favicon.png",
+  },
   openGraph: {
     title: "MaxGreen Energy — Top Rated Solar Company Across Pakistan",
     description:
@@ -33,9 +38,9 @@ export const metadata: Metadata = {
     siteName: "MaxGreen Energy",
     images: [
       {
-        url: "/images/MaxGreen-logo.png",
+        url: "/images/maxgreen-favicon.png",
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: "MaxGreen Energy",
       },
     ],
@@ -47,6 +52,7 @@ export const metadata: Metadata = {
     title: "MaxGreen Energy — Top Rated Solar Company Across Pakistan",
     description:
       "9+ years, 2100+ projects. Custom NEPRA-compliant solar systems for homes and businesses.",
+    images: ["/images/maxgreen-favicon.png"],
   },
   robots: "index, follow",
 };

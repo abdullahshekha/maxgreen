@@ -44,9 +44,9 @@ export default function Hero() {
 
           {/* Subtext */}
           <p className="text-lg sm:text-xl text-gray-200 leading-relaxed mb-10 max-w-xl">
-            Maxgreen Energy with 9+ years of experience and top rated solar
-            company in DHA provides custom NEPRA Compliant structures making
-            sure your electricity bills drop to ZERO.
+            Maxgreen Energy is a top-rated solar company in Pakistan, with
+            9+ years of experience it provides custom NEPRA Compliant
+            structures making sure your electricity bills drop to ZERO.
           </p>
 
           {/* CTA Buttons */}
