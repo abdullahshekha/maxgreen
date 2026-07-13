@@ -34,3 +34,15 @@ Thumbs.db
 
 # Claude Code local config
 .claude/
+CLAUDE.md
+
+# Source/original files not needed in the deployed site
+/Blogs/
+/More Blogs/
+/Inner-Pages/
+/Solar_images/
+/NewImages/
+/NewProjects/
+/NewBannerImages/
+/*.zip
+/*.pdf
