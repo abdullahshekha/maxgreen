@@ -15,7 +15,7 @@ A full redesign of **maxgreenenergy.com.pk** — Pakistan's solar energy company
 | Tailwind CSS | 3.4 | Config in `tailwind.config.ts` |
 | Font | Montserrat | Loaded via `next/font/google`, class: `font-montserrat` |
 | Icons | lucide-react | Only use lucide — no other icon lib |
-| Email | emailjs-com | ContactForm — credentials NOT yet configured |
+| Email | nodemailer + cPanel SMTP | Server-side via `/api/contact` route — see Email System section |
 | Images | next/image | Always use `<Image>` from next/image |
 
 **Why 15.3.9:** Vercel blocked earlier version (15.3.2) due to CVE-2025-66478. Always keep Next.js at latest 15.x.
@@ -36,19 +36,32 @@ MaxGreen/
 ├── public/
 │   └── images/
 │       ├── background-hero.jpeg  ← Homepage hero banner image
-│       ├── Hero-Image.png        (old hero — unused)
 │       ├── MaxGreen-logo.png
+│       ├── maxgreen-favicon.png  ← Favicon + OpenGraph/Twitter share image (set in layout.tsx metadata)
 │       ├── clients/              (10 client logos for marquee)
 │       ├── gallery/              (20 installation photos → /gallery/)
-│       ├── projects/             (6 project photos → /projects/)
-│       ├── inner/                (inner page photos)
-│       └── blogs/                (10 blog featured images)
+│       ├── projects/             (7 project photos → /projects/)
+│       ├── inner/                (inner page photos, incl. about-us-main/residential-main/lahore-main/islamabad-main.jpeg)
+│       ├── team/                 (taha-alam.jpeg — author bio photo)
+│       ├── solar/                ← Hero background images for inner pages — 9 unique images, no sharing
+│       │   ├── about-us.jpeg     → About Us hero
+│       │   ├── commercial.jpeg   → Commercial hero
+│       │   ├── industrial.jpeg   → Industrial hero
+│       │   ├── islamabad.jpeg    → Islamabad hero
+│       │   ├── lahore.jpeg       → Lahore hero
+│       │   ├── residential.jpeg  → Solutions hero
+│       │   ├── solar-system-for-home.jpeg → Solar System for Home hero
+│       │   ├── karachi.jpeg      → Karachi hero
+│       │   └── projects.jpeg     → Projects hero
+│       └── blogs/                (109 blog featured images)
 │
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx            ← Root layout + WhatsApp button + SurveyPopup
 │   │   ├── page.tsx              ← Homepage
 │   │   ├── globals.css
+│   │   ├── api/
+│   │   │   └── contact/route.ts  ← POST endpoint — sends both emails via nodemailer/SMTP
 │   │   ├── about/page.tsx
 │   │   ├── solutions/page.tsx
 │   │   ├── solar-system-for-home/page.tsx
@@ -57,12 +70,13 @@ MaxGreen/
 │   │   ├── projects/page.tsx
 │   │   ├── gallery/page.tsx
 │   │   ├── contact-us/page.tsx
-│   │   ├── cost-estimator/page.tsx
+│   │   ├── cost-estimator/page.tsx  ← SolarCalculator + ContactForm (both required for #get-quote anchor to work)
 │   │   ├── solar-solutions-company-karachi/page.tsx
 │   │   ├── solar-solutions-lahore-company/page.tsx
 │   │   ├── solar-solutions-islamabad/page.tsx
+│   │   ├── author/taha-alam/page.tsx  ← Syed Taha Alam Shah bio page, linked from blog post bylines
 │   │   └── blogs/
-│   │       ├── data.ts           ← All blog data (Blog[] array, sorted by date)
+│   │       ├── data.ts           ← All blog data (Blog[] array, sorted by date) — 109 blogs
 │   │       ├── page.tsx          ← Blog listing (server component)
 │   │       ├── BlogsList.tsx     ← Client component — category filter + cards
 │   │       └── [slug]/page.tsx   ← Dynamic blog post (SSG via generateStaticParams)
@@ -72,7 +86,7 @@ MaxGreen/
 │       ├── ui/
 │       │   ├── Navbar.tsx
 │       │   ├── Footer.tsx
-│       │   └── PageHero.tsx      ← Reusable dark-green hero for inner pages
+│       │   └── PageHero.tsx      ← Reusable dark-green hero — supports bgImage prop
 │       │
 │       └── sections/
 │           ├── Hero.tsx
@@ -88,7 +102,9 @@ MaxGreen/
 │           └── ContactForm.tsx
 │
 ├── Blogs/                        ← Original WordPress HTML saves (source files only)
+├── More Blogs/                   ← 99 blogs already uploaded (source files only)
 ├── Inner-Pages/                  ← Original WordPress HTML saves (source files only)
+├── Solar_images/                 ← Source images (already copied to public/images/solar/)
 ├── package.json
 ├── next.config.ts
 ├── tailwind.config.ts
@@ -108,12 +124,90 @@ MaxGreen/
 5. Solutions — "What We Offer"
 6. Process — "How It Works"
 7. Calculator
-8. WhyUs — "Why MaxGreen" (real project data, divided Karachi/Lahore)
+8. WhyUs — "Why MaxGreen"
 9. FAQ
 10. ContactForm
 11. Footer
 
 **Removed from homepage:** Stats (repetitive), Journey (not suitable for Pakistani market)
+
+**Hero subtext (updated 2026-07-13):** "Maxgreen Energy is a top-rated solar company in Pakistan, with 9+ years of experience it provides custom NEPRA Compliant structures making sure your electricity bills drop to ZERO." — in `src/components/sections/Hero.tsx`.
+
+---
+
+## Site-Wide Numbers — CRITICAL
+
+Always use these exact numbers everywhere on the site. Never use any other values.
+
+| Stat | Correct value | Never use |
+|------|--------------|-----------|
+| Solar installations | **2100+** | 2000+, 1500+ |
+| Years of experience | **9+** | 10+, 8+ |
+| Cities served | **3** | — |
+| After-sales service | **2 Years** | — |
+| Total capacity (Projects page) | **14 MW+** | 2 MW+ |
+
+---
+
+## PageHero Component
+
+`src/components/ui/PageHero.tsx` — reusable for all inner pages.
+
+Props: `breadcrumb`, `breadcrumbHref?`, `title`, `subtitle?`, `bgImage?`
+
+**`bgImage` prop:** optional path to a photo from `public/images/solar/`. Rendered at `opacity-20` behind the dot overlay and gradient. All inner pages now use this, each with its own unique image (no sharing between pages).
+
+**Gradient overlay:** matches the homepage `Hero.tsx` opacity exactly — `bg-gradient-to-r from-green-950/90 via-green-900/75 to-green-900/40`. Keep these in sync if either changes.
+
+```tsx
+<PageHero
+  breadcrumb="About Us"
+  title="Page Title"
+  subtitle="Supporting text."
+  bgImage="/images/solar/about-us.jpeg"
+/>
+```
+
+---
+
+## Email System
+
+Contact form and survey popup both send email via `src/app/api/contact/route.ts` (server-side, `nodemailer` + cPanel SMTP) — **not** EmailJS (removed, package uninstalled).
+
+**How it works:**
+- POST body: `{ name, phone, email?, city, capacity?, message? }` — `name`, `phone`, `city` required; `email`/`capacity`/`message` optional.
+- Sends a **sales notification** (all fields) to every address in `SALES_NOTIFY_EMAILS`.
+- If `email` was provided, also sends a **client auto-reply** ("query received, rep will follow up in 24–48 hours") to that address. Skipped silently if no email (e.g. SurveyPopup doesn't collect one).
+
+**Env vars required** (`.env.local` locally, Vercel Environment Variables in production — must be added there too or the live site can't send):
+```
+SMTP_HOST=mail.maxgreenenergy.com.pk
+SMTP_PORT=465
+SMTP_USER=sales@maxgreenenergy.com.pk
+SMTP_PASSWORD=<cpanel mailbox password>
+SALES_NOTIFY_EMAILS=sales@maxgreenenergy.com.pk,brandsmen.pk@gmail.com,tahashah085@gmail.com
+```
+
+**Known quirk:** `mail.maxgreenenergy.com.pk`'s SSL cert is issued for the shared-hosting domain (`registrar-servers.com`), not the mailbox's own domain, so `nodemailer` needs `tls: { rejectUnauthorized: false }` in the transporter config or the connection fails with an `ESOCKET` cert mismatch. Don't remove that option without re-verifying SMTP still connects.
+
+**Callers of `/api/contact`:**
+- `ContactForm.tsx` — main quote form (homepage, cost-estimator page)
+- `SurveyPopup.tsx` — free survey modal (no email field, so client auto-reply is skipped, sales notification still sent)
+
+**Capacity auto-fill:** `Calculator.tsx` dispatches a `window` CustomEvent named `solar-estimate` with `{ capacity: "<N> kW" }` after "Calculate My System" runs. `ContactForm.tsx` listens for it and pre-fills the "Solar Capacity Required" field. This is why `ContactForm` must be present on any page that also renders `Calculator` — they communicate via this global event, not props.
+
+---
+
+## WhyUs Section (homepage)
+
+No Karachi/Lahore city split. Single stat: **2100+ Projects All Over Pakistan**.
+
+5 project cards (unified list):
+1. MM Oils — 1 MW Industrial (Karachi) — real photo now used: `mm-oils-main.jpg`
+2. Karachi Public School — 2 Campuses · 15 kW each
+3. Askari 2 Residential Community · 10 kW
+4. DHA Phase 6 — Residential Installations · **6–20 kW**
+5. Commercial & Office Buildings · **20–50 kW**
 
 ---
 
@@ -189,7 +283,7 @@ gray-500   #6b7280   ← Body/description text
 Blogs live at `/blogs/` (listing) and `/blogs/[slug]/` (individual posts).
 
 **Data file:** `src/app/blogs/data.ts`
-- Exports `blogs: Blog[]` (sorted newest first)
+- Exports `blogs: Blog[]` (sorted newest first) — **109 blogs total**
 - Exports `getBlogBySlug(slug)`
 - Each `Blog` has: `slug`, `title`, `metaDescription`, `date`, `category`, `author`, `featuredImage`, `readTime`, `sections: BlogSection[]`
 - `BlogSection.type`: `"h2" | "h3" | "h4" | "p" | "ul" | "ol" | "table"`
@@ -198,9 +292,32 @@ Blogs live at `/blogs/` (listing) and `/blogs/[slug]/` (individual posts).
 
 **To add a new blog:** append to the array in `data.ts`. The listing page and static params update automatically.
 
-**Current blogs (10):** All in `data.ts`, images in `public/images/blogs/`. 113 more blogs pending client approval on these 10 before uploading.
-
 **Blog categories:** Commercial | Residential | Industrial
+
+**Author:** All 109 blogs credit `author: "Taha Alam"` (Syed Taha Alam Shah, Co-Founder). The byline on `[slug]/page.tsx` links to `/author/taha-alam/`, a dedicated bio page with his photo (`public/images/team/taha-alam.jpeg`) and full bio text. Byline text stays short ("Taha Alam") — don't expand it to the full name.
+
+---
+
+## Projects Page
+
+`src/app/projects/page.tsx` — 10 project cards. 2026-07-03 update replaced two generic placeholder entries ("Commercial Complex Installation", "Rooftop Solar System") with 5 real completed installations, all in Karachi:
+- Sheikh Tube Mill — 700 kW On-Grid (Industrial, Sungrow technology partner)
+- Qaim Automotive — 260 kW On-Grid (Industrial)
+- Subway (Rashid Minhas Road) — 25 kW On-Grid (Commercial)
+- Karachi Broast (Rashid Minhas Road) — 20 kW On-Grid (Commercial)
+- Hotel County Inn — 70 kW On-Grid (Commercial)
+
+Images for these live in `public/images/projects/` (sheikh-tube-mill.png, qaim-automotive.jpg, subway.webp, karachi-broast.webp, hotel-county-inn.jpeg).
+
+---
+
+## Favicon & Social Share Image
+
+`public/images/maxgreen-favicon.png` is wired up in `src/app/layout.tsx`'s `metadata` export:
+- `icons.icon` / `icons.shortcut` / `icons.apple` — favicon everywhere
+- `openGraph.images` and `twitter.images` — social share preview image
+
+Added 2026-07-13, replacing a root-level copy of the same file (deleted — real copy lives under `public/images/`). If the favicon/share image needs to change, only edit this one file/reference; don't create a second copy at the repo root.
 
 ---
 
@@ -208,30 +325,20 @@ Blogs live at `/blogs/` (listing) and `/blogs/[slug]/` (individual posts).
 
 ### Priority 1 — Must Do Before Launch
 
-- [ ] **EmailJS setup** — `src/components/sections/ContactForm.tsx`
-  - Replace `YOUR_SERVICE_ID`, `YOUR_TEMPLATE_ID`, `YOUR_PUBLIC_KEY`
-  - Template variables: `from_name`, `phone`, `email`, `city`, `capacity`, `message`
-
-- [ ] **Connect SurveyPopup to EmailJS** — `src/components/SurveyPopup.tsx`
-  - Currently shows thank-you message but doesn't send data anywhere
-  - Wire up emailjs send on form submit
-
-- [ ] **Add Islamabad to ContactForm city dropdown** — `src/components/sections/ContactForm.tsx`
-  - Currently only has Karachi and Lahore
+- [x] **Contact form + SurveyPopup email delivery** — done 2026-07-09. Server-side `/api/contact` route via `nodemailer`/SMTP. See Email System section above.
 
 ### Priority 2 — Tracking & SEO
 
 - [ ] **Google Tag Manager** — GTM ID: `GTM-56F3Q5JB` → add to `src/app/layout.tsx`
 - [ ] **Facebook Pixel** — Pixel ID: `2338526033244683` → add to `src/app/layout.tsx`
-- [ ] **robots.txt + sitemap.xml** — use `next-sitemap` package
+- [ ] **robots.txt + sitemap.xml** — use `next-sitemap` package (109 blog slugs to include)
 - [ ] **Google Analytics 4** — add GA4 tag in `layout.tsx`
 
 ### Priority 3 — Blogs
 
-- [ ] **113 more blogs to upload** — waiting for client feedback on the first 10 currently live
-  - Source files are in `Blogs/` folder (WordPress HTML saves)
-  - Process: extract content → audit for malware → add to `data.ts` → copy images to `public/images/blogs/`
-  - Same workflow used for first 10 blogs
+- [ ] **Remaining blogs from `Blogs/` folder** — waiting for client feedback on existing 109 live blogs
+  - Source files in `Blogs/` folder (WordPress HTML saves)
+  - Same Python extraction process used for `More Blogs/`
 
 ### Priority 4 — Nice-to-Have
 
@@ -251,8 +358,8 @@ Blogs live at `/blogs/` (listing) and `/blogs/[slug]/` (individual posts).
 | Karachi Office | DHA Phase 6 Bukhari Commercial, Karachi |
 | Lahore Office | DHA Phase 6 Fairways, Lahore |
 | WhatsApp | https://api.whatsapp.com/send?phone=923099084534&text=Hello%20there!%20I%20am%20contacting%20you%20from%20your%20website%20maxgreenenergy.com.pk |
-| Facebook | https://www.facebook.com/MaxGreenEnergyPk/ |
-| Instagram | https://www.instagram.com/maxgreen_energy/ |
+| Facebook | https://www.facebook.com/share/18smy6akyA/?mibextid=wwXIfr |
+| Instagram | https://www.instagram.com/maxgreenenergypakistan?igsh=dHJtc2VzeTE5c2Fs |
 | LinkedIn | https://www.linkedin.com/company/maxenergypakistan/ |
 | GTM ID | GTM-56F3Q5JB |
 | Facebook Pixel ID | 2338526033244683 |
@@ -281,3 +388,12 @@ Type `children` prop as `React.ReactNode` in layout components.
 
 **Git push 403 error**
 Run `gh auth switch --user abdullahshekha` to switch to the correct GitHub account.
+
+**Unused variable after removing a section**
+If you remove a section that used a `const` array, delete the array too or the ESLint build will fail.
+
+**City pages must not break down the 2,100+ figure**
+Karachi/Lahore/Islamabad location pages must always cite the single Pakistan-wide **2,100+** installations stat (see Site-Wide Numbers). Never invent a city-specific count like "500+ Lahore installations" or "2,100 in Karachi alone" — client corrected this 2026-07-09.
+
+**Missing blog featured image**
+If a blog's `featuredImage` points at the logo placeholder (`/images/blogs/Max-Green-Logo-01.png`), the real image usually still exists in the original WordPress export — check `More Blogs/<Blog Title>_files/` or `Blogs/<Blog Title>_files/` for a numeric-named `.jpg` (the actual featured photo; everything else in that folder is site scripts/CSS). Copy it into `public/images/blogs/<slug>.jpg` and update `data.ts`.
