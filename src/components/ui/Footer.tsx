@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Phone, Mail, MapPin } from "lucide-react";
+import { trackConversion } from "@/lib/gtag";
 
 const footerLinks = {
   Solutions: [
@@ -54,6 +57,7 @@ export default function Footer() {
             <div className="space-y-3 text-sm">
               <a
                 href="tel:+923000341048"
+                onClick={() => trackConversion("phone_click")}
                 className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Phone className="w-4 h-4 text-green-500" />
@@ -61,6 +65,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:sales@maxgreenenergy.com.pk"
+                onClick={() => trackConversion("email_click")}
                 className="flex items-center gap-2 text-gray-300 hover:text-green-400 transition-colors"
               >
                 <Mail className="w-4 h-4 text-green-500" />

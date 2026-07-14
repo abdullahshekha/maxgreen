@@ -6,6 +6,7 @@ import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import PageHero from "@/components/ui/PageHero";
 import FAQ from "@/components/sections/FAQ";
+import TrackedContactLink from "@/components/TrackedContactLink";
 
 export const metadata: Metadata = {
   title: "Solar Solutions Company in Islamabad | MaxGreen Energy",
@@ -103,11 +104,11 @@ export default function IslamabadPage() {
               <div className="bg-gray-50 rounded-2xl p-6 space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <a href="tel:+923000341048" className="text-gray-700 text-sm hover:text-green-600">+92 300 034 1048</a>
+                  <TrackedContactLink href="tel:+923000341048" type="phone" className="text-gray-700 text-sm hover:text-green-600">+92 300 034 1048</TrackedContactLink>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-green-600 flex-shrink-0" />
-                  <a href="mailto:sales@maxgreenenergy.com.pk" className="text-gray-700 text-sm hover:text-green-600">sales@maxgreenenergy.com.pk</a>
+                  <TrackedContactLink href="mailto:sales@maxgreenenergy.com.pk" type="email" className="text-gray-700 text-sm hover:text-green-600">sales@maxgreenenergy.com.pk</TrackedContactLink>
                 </div>
               </div>
             </div>

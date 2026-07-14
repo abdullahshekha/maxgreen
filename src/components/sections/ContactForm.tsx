@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { trackConversion } from "@/lib/gtag";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
@@ -39,6 +40,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
         body: JSON.stringify(form),
       });
       if (!res.ok) throw new Error("Request failed");
+      trackConversion("lead_form_submit");
       setStatus("success");
       setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "" });
     } catch {
@@ -66,25 +68,29 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
             {/* Contact details */}
             <div className="space-y-5">
               {[
-                {
+  {
                   label: "Phone",
                   value: "+92 300 034 1048",
                   href: "tel:+923000341048",
+                  onClick: () => trackConversion("phone_click"),
                 },
                 {
                   label: "Email",
                   value: "sales@maxgreenenergy.com.pk",
                   href: "mailto:sales@maxgreenenergy.com.pk",
+                  onClick: () => trackConversion("email_click"),
                 },
                 {
                   label: "Karachi Office",
                   value: "402, 44-C, Lane 5, Bukhari Commercial, Phase 6, DHA",
                   href: null,
+                  onClick: undefined,
                 },
                 {
                   label: "Lahore Office",
                   value: "Building 101, Fairways, DHA Phase 6",
                   href: null,
+                  onClick: undefined,
                 },
               ].map((item) => (
                 <div key={item.label} className="flex gap-3">
@@ -96,6 +102,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                     {item.href ? (
                       <a
                         href={item.href}
+                        onClick={item.onClick}
                         className={`font-semibold transition-colors ${light ? "text-gray-900 hover:text-green-600" : "text-white hover:text-green-300"}`}
                       >
                         {item.value}

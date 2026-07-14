@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Phone } from "lucide-react";
+import { trackConversion } from "@/lib/gtag";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -117,6 +118,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-2">
             <a
               href="tel:+923000341048"
+              onClick={() => trackConversion("phone_click")}
               className={`flex items-center gap-2 text-sm font-semibold transition-colors ${
                 isScrolled ? "text-gray-700" : "text-white"
               }`}
@@ -207,6 +209,7 @@ export default function Navbar() {
           <div className="pt-3 border-t border-gray-100 flex flex-col gap-3">
             <a
               href="tel:+923000341048"
+              onClick={() => trackConversion("phone_click")}
               className="flex items-center justify-center gap-2 text-sm font-semibold text-gray-700 hover:text-green-600"
             >
               <Phone className="w-4 h-4" />

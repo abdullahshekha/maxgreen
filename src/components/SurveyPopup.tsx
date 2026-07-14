@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
+import { trackConversion } from "@/lib/gtag";
 
 export default function SurveyPopup() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +42,7 @@ export default function SurveyPopup() {
         }),
       });
       if (!res.ok) throw new Error("Request failed");
+      trackConversion("lead_form_submit");
       setIsSubmitted(true);
       setStatus("idle");
       sessionStorage.setItem("survey_dismissed", "1");
