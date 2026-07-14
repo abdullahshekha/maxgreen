@@ -48,14 +48,14 @@ export default function TechnicalPartners() {
           {allPartners.map((partner, i) => (
             <div
               key={`${partner.name}-${i}`}
-              className="flex-shrink-0 w-36 h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center px-4 hover:shadow-md transition-shadow"
+              className="relative flex-shrink-0 w-36 h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center px-4 hover:shadow-md hover:z-10 transition-shadow"
             >
               <Image
                 src={partner.src}
                 alt={partner.name}
                 width={120}
                 height={60}
-                className="object-contain max-h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain max-h-12 w-auto transition-transform duration-300 hover:scale-125"
               />
             </div>
           ))}

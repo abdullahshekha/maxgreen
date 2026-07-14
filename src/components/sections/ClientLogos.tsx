@@ -45,14 +45,14 @@ export default function ClientLogos() {
           {allClients.map((client, i) => (
             <div
               key={`${client.name}-${i}`}
-              className="flex-shrink-0 w-36 h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center px-4 hover:shadow-md transition-shadow"
+              className="relative flex-shrink-0 w-36 h-20 bg-white rounded-xl shadow-sm border border-gray-100 flex items-center justify-center px-4 hover:shadow-md hover:z-10 transition-shadow"
             >
               <Image
                 src={client.src}
                 alt={client.name}
                 width={120}
                 height={60}
-                className="object-contain max-h-12 w-auto filter grayscale hover:grayscale-0 transition-all duration-300"
+                className="object-contain max-h-12 w-auto transition-transform duration-300 hover:scale-125"
               />
             </div>
           ))}
