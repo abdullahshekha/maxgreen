@@ -37,7 +37,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, source: "contact-form" }),
       });
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");

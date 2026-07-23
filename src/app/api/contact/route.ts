@@ -1,5 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from "nodemailer";
+import { appendLeadToSheet } from "@/lib/googleSheets";
+
+export const runtime = "nodejs";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -15,13 +18,34 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(request: NextRequest) {
+  const { name, phone, email, city, capacity, message, source } = await request.json();
+
+  if (!name || !phone || !city) {
+    return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  let sheetOk = false;
+  let emailOk = false;
+
+  // Durable backup write — always attempted, never blocks the email path below.
   try {
-    const { name, phone, email, city, capacity, message } = await request.json();
+    await appendLeadToSheet({
+      timestamp: new Date().toISOString(),
+      name,
+      phone,
+      email: email || "Not provided",
+      city,
+      capacity: capacity || "Not specified",
+      message: message || "No additional message",
+      source: source === "survey-popup" ? "survey-popup" : "contact-form",
+    });
+    sheetOk = true;
+  } catch (error) {
+    console.error("[contact-api][sheets] append failed:", error);
+  }
 
-    if (!name || !phone || !city) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
-    }
-
+  // Email notifications — always attempted, never blocked by the sheet path above.
+  try {
     const salesRecipients = (process.env.SALES_NOTIFY_EMAILS || process.env.SMTP_USER || "")
       .split(",")
       .map((addr) => addr.trim())
@@ -57,9 +81,23 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    return NextResponse.json({ success: true });
+    emailOk = true;
   } catch (error) {
-    console.error("Contact form email error:", error);
+    console.error("[contact-api][email] send failed:", error);
+  }
+
+  if (!sheetOk && !emailOk) {
+    console.error("[contact-api] DEGRADED: both sheet and email failed — lead NOT captured", {
+      name,
+      phone,
+      city,
+    });
     return NextResponse.json({ error: "Failed to send email" }, { status: 500 });
   }
+
+  if (!sheetOk || !emailOk) {
+    console.error(`[contact-api] DEGRADED: sheet=${sheetOk} email=${emailOk}`);
+  }
+
+  return NextResponse.json({ success: true });
 }

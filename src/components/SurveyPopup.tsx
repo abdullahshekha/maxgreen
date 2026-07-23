@@ -39,6 +39,7 @@ export default function SurveyPopup() {
           city: form.city,
           capacity: form.capacity,
           message: "Requested via the free solar survey popup.",
+          source: "survey-popup",
         }),
       });
       if (!res.ok) throw new Error("Request failed");
