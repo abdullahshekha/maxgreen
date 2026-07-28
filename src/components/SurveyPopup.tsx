@@ -13,11 +13,12 @@ export default function SurveyPopup() {
     phone: "",
     city: "",
     capacity: "",
+    company: "", // honeypot — hidden from real users, left blank; bots tend to fill every field
   });
 
   useEffect(() => {
     if (sessionStorage.getItem("survey_dismissed")) return;
-    const timer = setTimeout(() => setIsVisible(true), 5000);
+    const timer = setTimeout(() => setIsVisible(true), 15000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -40,6 +41,7 @@ export default function SurveyPopup() {
           capacity: form.capacity,
           message: "Requested via the free solar survey popup.",
           source: "survey-popup",
+          company: form.company,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -56,10 +58,19 @@ export default function SurveyPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-start sm:items-center justify-center overflow-y-auto p-4 bg-black/60 backdrop-blur-sm"
       onClick={(e) => e.target === e.currentTarget && dismiss()}
     >
-      <div className="relative w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden animate-fade-up">
+      {/* Close button — fixed to the viewport (not the card) so it's always reachable, even if the card is taller than the screen */}
+      <button
+        onClick={dismiss}
+        aria-label="Close popup"
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 z-[110] w-9 h-9 rounded-full bg-white shadow-lg hover:bg-gray-100 flex items-center justify-center text-gray-700 transition-colors"
+      >
+        <X className="w-5 h-5" />
+      </button>
+
+      <div className="relative w-full max-w-md my-8 sm:my-0 bg-white rounded-3xl shadow-2xl overflow-hidden animate-fade-up">
         {/* Green header band */}
         <div className="bg-green-950 px-8 pt-8 pb-6 text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-green-600/20 border border-green-400/30 mb-4">
@@ -72,15 +83,6 @@ export default function SurveyPopup() {
             Professional site assessment — absolutely no cost.
           </p>
         </div>
-
-        {/* Close button */}
-        <button
-          onClick={dismiss}
-          aria-label="Close popup"
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
-        >
-          <X className="w-4 h-4" />
-        </button>
 
         {/* Body */}
         <div className="px-8 py-7">
@@ -103,6 +105,18 @@ export default function SurveyPopup() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Honeypot — hidden from sighted users and screen readers, bots tend to fill every field */}
+              <input
+                type="text"
+                name="company"
+                value={form.company}
+                onChange={(e) => setForm({ ...form, company: e.target.value })}
+                className="absolute -left-[9999px] w-px h-px overflow-hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
+
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-1">
                   Full Name <span className="text-green-600">*</span>

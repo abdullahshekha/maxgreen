@@ -12,6 +12,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
     city: "Karachi",
     capacity: "",
     message: "",
+    company: "", // honeypot — hidden from real users, left blank; bots tend to fill every field
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
 
@@ -42,7 +43,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");
       setStatus("success");
-      setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "" });
+      setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "", company: "" });
     } catch {
       setStatus("error");
     }
@@ -136,6 +137,18 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot — hidden from sighted users and screen readers, bots tend to fill every field */}
+                <input
+                  type="text"
+                  name="company"
+                  value={form.company}
+                  onChange={handleChange}
+                  className="absolute -left-[9999px] w-px h-px overflow-hidden"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
                 <h3 className="text-xl font-extrabold text-gray-900 mb-6">
                   Get a Free Quote
                 </h3>

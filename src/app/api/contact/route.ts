@@ -18,7 +18,13 @@ const transporter = nodemailer.createTransport({
 });
 
 export async function POST(request: NextRequest) {
-  const { name, phone, email, city, capacity, message, source } = await request.json();
+  const { name, phone, email, city, capacity, message, source, company } = await request.json();
+
+  // Honeypot — a hidden field real users never see or fill. If it's filled, it's a bot.
+  // Return a fake success so the bot doesn't learn to adapt, but skip all processing.
+  if (company) {
+    return NextResponse.json({ success: true });
+  }
 
   if (!name || !phone || !city) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
