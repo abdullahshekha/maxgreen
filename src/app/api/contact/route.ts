@@ -48,12 +48,16 @@ async function verifyRecaptcha(token: string | undefined): Promise<{ ok: boolean
 }
 
 export async function POST(request: NextRequest) {
-  const { name, phone, email, city, capacity, message, source, company, recaptchaToken } =
+  const { name, phone, email, city, capacity, message, source, website, recaptchaToken } =
     await request.json();
 
   // Honeypot — a hidden field real users never see or fill. If it's filled, it's a bot.
   // Return a fake success so the bot doesn't learn to adapt, but skip all processing.
-  if (company) {
+  // Named "website" (not "company"/"organization") so browser autofill — which maps
+  // those names to a saved profile value — can never silently fill it for a real visitor
+  // and get their genuine submission dropped here by mistake.
+  if (website) {
+    console.warn(`[contact-api][honeypot] blocked submission — website field was: "${website}"`);
     return NextResponse.json({ success: true });
   }
 

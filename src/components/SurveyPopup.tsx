@@ -16,7 +16,7 @@ export default function SurveyPopup() {
     phone: "",
     city: "",
     capacity: "",
-    company: "", // honeypot — hidden from real users, left blank; bots tend to fill every field
+    website: "", // honeypot — hidden from real users, left blank; bots tend to fill every field. Named "website" rather than "company"/"organization" so browser autofill (which maps those names to a saved profile) never fills it for a real visitor.
   });
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export default function SurveyPopup() {
           capacity: form.capacity,
           message: "Requested via the free solar survey popup.",
           source: "survey-popup",
-          company: form.company,
+          website: form.website,
           recaptchaToken,
         }),
       });
@@ -121,9 +121,9 @@ export default function SurveyPopup() {
               {/* Honeypot — hidden from sighted users and screen readers, bots tend to fill every field */}
               <input
                 type="text"
-                name="company"
-                value={form.company}
-                onChange={(e) => setForm({ ...form, company: e.target.value })}
+                name="website"
+                value={form.website}
+                onChange={(e) => setForm({ ...form, website: e.target.value })}
                 className="absolute -left-[9999px] w-px h-px overflow-hidden"
                 tabIndex={-1}
                 autoComplete="off"

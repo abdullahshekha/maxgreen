@@ -14,7 +14,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
     city: "Karachi",
     capacity: "",
     message: "",
-    company: "", // honeypot — hidden from real users, left blank; bots tend to fill every field
+    website: "", // honeypot — hidden from real users, left blank; bots tend to fill every field. Named "website" rather than "company"/"organization" so browser autofill (which maps those names to a saved profile) never fills it for a real visitor.
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -54,7 +54,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");
       setStatus("success");
-      setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "", company: "" });
+      setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "", website: "" });
     } catch {
       setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");
@@ -152,8 +152,8 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                 {/* Honeypot — hidden from sighted users and screen readers, bots tend to fill every field */}
                 <input
                   type="text"
-                  name="company"
-                  value={form.company}
+                  name="website"
+                  value={form.website}
                   onChange={handleChange}
                   className="absolute -left-[9999px] w-px h-px overflow-hidden"
                   tabIndex={-1}
