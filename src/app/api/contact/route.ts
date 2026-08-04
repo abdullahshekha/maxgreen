@@ -28,15 +28,23 @@ async function verifyRecaptcha(token: string | undefined): Promise<{ ok: boolean
     return { ok: true, score: null };
   }
 
-  const params = new URLSearchParams({ secret, response: token });
-  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: params.toString(),
-  });
-  const data = await res.json();
-  const score = typeof data.score === "number" ? data.score : null;
-  return { ok: !!data.success && score !== null && score >= RECAPTCHA_SCORE_THRESHOLD, score };
+  // Any failure here (network hiccup, Google outage, bad response) must fail open —
+  // a lead should never be lost because a *verification* call broke, only because
+  // the score genuinely came back low.
+  try {
+    const params = new URLSearchParams({ secret, response: token });
+    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
+    });
+    const data = await res.json();
+    const score = typeof data.score === "number" ? data.score : null;
+    return { ok: !!data.success && score !== null && score >= RECAPTCHA_SCORE_THRESHOLD, score };
+  } catch (error) {
+    console.error("[contact-api][recaptcha] verification call failed, failing open:", error);
+    return { ok: true, score: null };
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -53,10 +61,11 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
+  // Logged for visibility, never blocks — same "don't risk losing a real lead"
+  // philosophy as the honeypot. Revisit once real traffic gives us score data to tune against.
   const recaptchaResult = await verifyRecaptcha(recaptchaToken);
   if (!recaptchaResult.ok) {
-    console.error(`[contact-api][recaptcha] blocked — score=${recaptchaResult.score}`);
-    return NextResponse.json({ error: "Verification failed. Please try again." }, { status: 400 });
+    console.warn(`[contact-api][recaptcha] low score, allowing anyway — score=${recaptchaResult.score}`);
   }
 
   let sheetOk = false;
