@@ -34,9 +34,7 @@ export default function SurveyPopup() {
     e.preventDefault();
 
     if (!isValidPkPhone(form.phone)) {
-      setErrorMessage(
-        "Enter a valid Pakistani mobile number (e.g. 03337566883 or +923337566883)."
-      );
+      setErrorMessage("Enter a valid mobile number.");
       setStatus("error");
       return;
     }
