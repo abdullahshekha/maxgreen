@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
+import { isValidPkPhone } from "@/lib/phone";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
@@ -15,6 +17,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
     company: "", // honeypot — hidden from real users, left blank; bots tend to fill every field
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const handleEstimate = (e: Event) => {
@@ -33,18 +36,29 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isValidPkPhone(form.phone)) {
+      setErrorMessage(
+        "Enter a valid Pakistani mobile number (e.g. 03337566883 or +923337566883)."
+      );
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
     try {
+      const recaptchaToken = await getRecaptchaToken("contact_form_submit");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "contact-form" }),
+        body: JSON.stringify({ ...form, source: "contact-form", recaptchaToken }),
       });
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");
       setStatus("success");
       setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "", company: "" });
     } catch {
+      setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");
     }
   };
@@ -178,7 +192,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                       required
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="+92 300 0000000"
+                      placeholder="03337566883"
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>
@@ -245,9 +259,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-500 text-sm">
-                    Something went wrong. Please try again or call us directly.
-                  </p>
+                  <p className="text-red-500 text-sm">{errorMessage}</p>
                 )}
 
                 <button

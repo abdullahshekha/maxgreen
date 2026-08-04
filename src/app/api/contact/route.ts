@@ -17,8 +17,31 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const RECAPTCHA_SCORE_THRESHOLD = 0.5;
+
+// Verifies a reCAPTCHA v3 token with Google. Fails open (treats as passing) if the
+// secret isn't configured or the token is missing — a broken/blocked script should
+// never be the reason a real lead gets rejected.
+async function verifyRecaptcha(token: string | undefined): Promise<{ ok: boolean; score: number | null }> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  if (!secret || !token) {
+    return { ok: true, score: null };
+  }
+
+  const params = new URLSearchParams({ secret, response: token });
+  const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: params.toString(),
+  });
+  const data = await res.json();
+  const score = typeof data.score === "number" ? data.score : null;
+  return { ok: !!data.success && score !== null && score >= RECAPTCHA_SCORE_THRESHOLD, score };
+}
+
 export async function POST(request: NextRequest) {
-  const { name, phone, email, city, capacity, message, source, company } = await request.json();
+  const { name, phone, email, city, capacity, message, source, company, recaptchaToken } =
+    await request.json();
 
   // Honeypot — a hidden field real users never see or fill. If it's filled, it's a bot.
   // Return a fake success so the bot doesn't learn to adapt, but skip all processing.
@@ -28,6 +51,12 @@ export async function POST(request: NextRequest) {
 
   if (!name || !phone || !city) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+  }
+
+  const recaptchaResult = await verifyRecaptcha(recaptchaToken);
+  if (!recaptchaResult.ok) {
+    console.error(`[contact-api][recaptcha] blocked — score=${recaptchaResult.score}`);
+    return NextResponse.json({ error: "Verification failed. Please try again." }, { status: 400 });
   }
 
   let sheetOk = false;

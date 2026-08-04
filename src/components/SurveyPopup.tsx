@@ -3,11 +3,14 @@
 import { useState, useEffect } from "react";
 import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
+import { isValidPkPhone } from "@/lib/phone";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 export default function SurveyPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -29,8 +32,18 @@ export default function SurveyPopup() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!isValidPkPhone(form.phone)) {
+      setErrorMessage(
+        "Enter a valid Pakistani mobile number (e.g. 03337566883 or +923337566883)."
+      );
+      setStatus("error");
+      return;
+    }
+
     setStatus("loading");
     try {
+      const recaptchaToken = await getRecaptchaToken("survey_popup_submit");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -42,6 +55,7 @@ export default function SurveyPopup() {
           message: "Requested via the free solar survey popup.",
           source: "survey-popup",
           company: form.company,
+          recaptchaToken,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -50,6 +64,7 @@ export default function SurveyPopup() {
       setStatus("idle");
       sessionStorage.setItem("survey_dismissed", "1");
     } catch {
+      setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");
     }
   };
@@ -138,7 +153,7 @@ export default function SurveyPopup() {
                 <input
                   type="tel"
                   required
-                  placeholder="e.g. 0300 1234567"
+                  placeholder="03337566883"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none text-gray-900 text-sm transition-colors"
@@ -179,9 +194,7 @@ export default function SurveyPopup() {
               </div>
 
               {status === "error" && (
-                <p className="text-red-500 text-sm">
-                  Something went wrong. Please try again or call us directly.
-                </p>
+                <p className="text-red-500 text-sm">{errorMessage}</p>
               )}
 
               <button
