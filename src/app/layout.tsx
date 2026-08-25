@@ -4,7 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import SurveyPopup from "@/components/SurveyPopup";
 import WhatsappButton from "@/components/WhatsappButton";
-import { GOOGLE_ADS_ID, GA4_ID } from "@/lib/gtag";
+import { GOOGLE_ADS_ID, GA4_ID, CLARITY_PROJECT_ID } from "@/lib/gtag";
 import { RECAPTCHA_SITE_KEY } from "@/lib/recaptcha";
 
 const montserrat = Montserrat({
@@ -73,8 +73,14 @@ const localBusinessJsonLd = {
   url: "https://maxgreenenergy.com.pk",
   telephone: "+92-300-0341048",
   email: "sales@maxgreenenergy.com.pk",
-  priceRange: "$$",
   areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 24.7931963,
+    longitude: 67.0679557,
+  },
+  hasMap:
+    "https://www.google.com/maps/place/MaxGreen+Energy+(Pvt.)+Ltd./@24.7931963,67.0679557,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33f746afe5585:0x7526c738319786b0!8m2!3d24.7931963!4d67.0679557!16s%2Fg%2F11nxpb6869",
   address: [
     {
       "@type": "PostalAddress",
@@ -93,6 +99,7 @@ const localBusinessJsonLd = {
     "https://www.facebook.com/share/18smy6akyA/?mibextid=wwXIfr",
     "https://www.instagram.com/maxgreenenergypakistan?igsh=dHJtc2VzeTE5c2Fs",
     "https://www.linkedin.com/company/maxenergypakistan/",
+    "https://www.google.com/maps/place/MaxGreen+Energy+(Pvt.)+Ltd./@24.7931963,67.0679557,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33f746afe5585:0x7526c738319786b0!8m2!3d24.7931963!4d67.0679557!16s%2Fg%2F11nxpb6869",
   ],
 };
 
@@ -120,6 +127,17 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${GA4_ID}');
             gtag('config', '${GOOGLE_ADS_ID}');
+          `}
+        </Script>
+
+        {/* Microsoft Clarity — session recordings and heatmaps */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
           `}
         </Script>
 

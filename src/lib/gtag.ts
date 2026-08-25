@@ -1,5 +1,6 @@
 export const GOOGLE_ADS_ID = "AW-677487887";
 export const GA4_ID = "G-8LD4K709ZV";
+export const CLARITY_PROJECT_ID = "y7vjneung2";
 
 type ConversionLabel = "whatsapp_click" | "phone_click" | "email_click" | "lead_form_submit";
 
