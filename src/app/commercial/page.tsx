@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Commercial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy's commercial solar systems help businesses reduce energy costs, earn from excess power, and support sustainability with efficient, custom solutions.",
+  alternates: { canonical: "/commercial/" },
 };
 
 const benefits = [
@@ -63,6 +64,14 @@ export default function CommercialPage() {
                   { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/commercial/", name: "Commercial Solar" } },
                 ],
               },
+              {
+                "@type": "Service",
+                serviceType: "Commercial Solar Installation",
+                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
+                description:
+                  "Commercial solar systems for offices, schools, hospitals, and retail buildings — reducing energy costs and improving sustainability.",
+              },
             ],
           }),
         }}
@@ -74,6 +83,7 @@ export default function CommercialPage() {
         title="Solar Solutions for Commercial"
         subtitle="Clean energy solutions designed for offices, schools, hospitals, and commercial buildings — reducing costs and improving sustainability."
         bgImage="/images/solar/commercial.jpeg"
+        bgImageAlt="Commercial rooftop solar panel installation in Pakistan"
       />
 
       {/* Intro */}

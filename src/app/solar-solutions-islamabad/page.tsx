@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Islamabad | MaxGreen Energy",
   description:
     "MaxGreen Energy offers trusted solar solutions in Islamabad — residential, commercial, and industrial solar systems with IESCO net metering support.",
+  alternates: { canonical: "/solar-solutions-islamabad/" },
 };
 
 const services = [
@@ -82,6 +83,7 @@ export default function IslamabadPage() {
         title="Solar Solutions Company in Islamabad"
         subtitle="MaxGreen Energy brings trusted solar expertise to Islamabad — delivering clean, custom solar systems for homes, businesses, and industries across the capital."
         bgImage="/images/solar/islamabad.jpeg"
+        bgImageAlt="Solar panel installation in Islamabad, Pakistan"
       />
 
       {/* Intro */}

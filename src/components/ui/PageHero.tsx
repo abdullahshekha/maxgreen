@@ -8,16 +8,17 @@ interface PageHeroProps {
   title: string;
   subtitle?: string;
   bgImage?: string;
+  bgImageAlt?: string;
 }
 
-export default function PageHero({ breadcrumb, breadcrumbHref, title, subtitle, bgImage }: PageHeroProps) {
+export default function PageHero({ breadcrumb, breadcrumbHref, title, subtitle, bgImage, bgImageAlt }: PageHeroProps) {
   return (
     <section className="relative bg-green-950 pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden">
       {/* Background photo */}
       {bgImage && (
         <Image
           src={bgImage}
-          alt=""
+          alt={bgImageAlt ?? ""}
           fill
           className="object-cover opacity-20"
           priority

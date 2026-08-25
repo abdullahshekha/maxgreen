@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Industrial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy's industrial solar solutions scale from 100 kW to 3 MW+ for factories, mills, warehouses. Reduce operating costs, improve sustainability &amp; ROI.",
+  alternates: { canonical: "/industrial/" },
 };
 
 const benefits = [
@@ -54,6 +55,14 @@ export default function IndustrialPage() {
                   { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/industrial/", name: "Industrial Solar" } },
                 ],
               },
+              {
+                "@type": "Service",
+                serviceType: "Industrial Solar Installation",
+                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
+                description:
+                  "Large-scale industrial solar systems from 100 kW to 3 MW+ for factories, mills, and warehouses.",
+              },
             ],
           }),
         }}
@@ -65,6 +74,7 @@ export default function IndustrialPage() {
         title="Industrial Solar Solutions"
         subtitle="Large-scale solar systems engineered for Pakistan&apos;s factories, mills, and warehouses — from 100 kW to 3 MW+."
         bgImage="/images/solar/industrial.jpeg"
+        bgImageAlt="Industrial-scale solar panel installation for factories and warehouses"
       />
 
       {/* Intro */}

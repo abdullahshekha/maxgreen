@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Karachi | MaxGreen Energy",
   description:
     "MaxGreen Energy is a trusted solar energy company in Karachi, delivering customized solar solutions for homes, businesses, and industries across the city.",
+  alternates: { canonical: "/solar-solutions-company-karachi/" },
 };
 
 const services = [
@@ -88,6 +89,7 @@ export default function KarachiPage() {
         title="Karachi&apos;s Top-Rated Solar Company"
         subtitle="MaxGreen Energy is DHA&apos;s No. 1 Choice, delivering custom solar systems for homes, businesses, and industries across the city."
         bgImage="/images/solar/karachi.jpeg"
+        bgImageAlt="Solar panel installation in Karachi, Pakistan"
       />
 
       {/* Intro */}

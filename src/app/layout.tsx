@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "MaxGreen Energy",
     "best solar company DHA",
   ],
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: "/images/maxgreen-favicon.png",
     shortcut: "/images/maxgreen-favicon.png",
@@ -61,6 +64,38 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://maxgreenenergy.com.pk/#organization",
+  name: "MaxGreen Energy",
+  image: "https://maxgreenenergy.com.pk/images/maxgreen-favicon.png",
+  url: "https://maxgreenenergy.com.pk",
+  telephone: "+92-300-0341048",
+  email: "sales@maxgreenenergy.com.pk",
+  priceRange: "$$",
+  areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Building no. 402, 44-C, Lane 5, Bukhari Commercial, Phase 6, DHA",
+      addressLocality: "Karachi",
+      addressCountry: "PK",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "Building no. 101, Fairways Commercial, Phase 6, Defence Raya Golf Resort, Sector M, DHA",
+      addressLocality: "Lahore",
+      addressCountry: "PK",
+    },
+  ],
+  sameAs: [
+    "https://www.facebook.com/share/18smy6akyA/?mibextid=wwXIfr",
+    "https://www.instagram.com/maxgreenenergypakistan?igsh=dHJtc2VzeTE5c2Fs",
+    "https://www.linkedin.com/company/maxenergypakistan/",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -69,6 +104,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="antialiased font-montserrat">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         {/* Google tag (gtag.js) — powers GA4 analytics and Google Ads conversion tracking */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}

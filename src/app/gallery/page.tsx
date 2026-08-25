@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Solar Installation Gallery | MaxGreen Energy Pakistan",
   description:
     "Explore MaxGreen Energy's gallery of solar installations — from residential to commercial and industrial projects.",
+  alternates: { canonical: "/gallery/" },
 };
 
 const images = [

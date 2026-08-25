@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Expert solar energy articles covering residential, commercial, and industrial solar systems in Pakistan.",
     url: "https://maxgreenenergy.com.pk/blogs/",
   },
+  alternates: { canonical: "/blogs/" },
 };
 
 export default function BlogsPage() {

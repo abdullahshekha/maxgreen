@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Solar System for Home in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy offers custom residential solar systems to cut bills, sell surplus power via net metering, and light your home sustainably with smart, eco-conscious solutions.",
+  alternates: { canonical: "/solar-system-for-home/" },
 };
 
 const benefits = [
@@ -61,6 +62,14 @@ export default function ResidentialPage() {
                   { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/solar-system-for-home/", name: "Solar System for Home" } },
                 ],
               },
+              {
+                "@type": "Service",
+                serviceType: "Residential Solar Installation",
+                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
+                description:
+                  "Custom residential solar systems to cut electricity bills and provide energy independence for homes.",
+              },
             ],
           }),
         }}
@@ -72,6 +81,7 @@ export default function ResidentialPage() {
         title="Solar System for Home"
         subtitle="Power your home with clean, affordable solar energy. Custom residential systems designed to cut bills and provide energy independence."
         bgImage="/images/solar/solar-system-for-home.jpeg"
+        bgImageAlt="Home solar system installation in Pakistan"
       />
 
       {/* Intro */}

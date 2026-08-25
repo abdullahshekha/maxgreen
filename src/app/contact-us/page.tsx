@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact MaxGreen Energy - Solar Experts in Pakistan",
   description:
     "Get in touch with MaxGreen Energy — Pakistan's trusted solar provider with offices in Karachi and Lahore. Connect via phone or email and begin your green energy journey.",
+  alternates: { canonical: "/contact-us/" },
 };
 
 export default function ContactPage() {

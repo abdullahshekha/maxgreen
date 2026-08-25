@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Our Solar Projects - 14 MW+ Installations by MaxGreen Energy",
   description:
     "Explore MaxGreen Energy's portfolio of 14 MW+ solar installations across Pakistan — residential, commercial and industrial projects in Karachi, Lahore and Islamabad.",
+  alternates: { canonical: "/projects/" },
 };
 
 const projects = [
@@ -132,6 +133,7 @@ export default function ProjectsPage() {
         title="Our Solar Projects"
         subtitle="From residential rooftops to industrial-scale installations — explore our growing portfolio of 14 MW+ in completed solar projects across Pakistan."
         bgImage="/images/solar/projects.jpeg"
+        bgImageAlt="MaxGreen Energy completed solar installation projects across Pakistan"
       />
 
       {/* Stats Banner */}

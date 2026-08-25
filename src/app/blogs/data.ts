@@ -2740,7 +2740,7 @@ export const blogs = ([
   },
   // ─── BLOG 67 ─────────────────────────────────────────────────────────
   {
-    slug: "__trashed-3",
+    slug: "solar-ac-price-in-pakistan-2024",
     title: "Solar AC Price in Pakistan 2024",
     metaDescription: "Dives deep into the world of solar ACs price in Pakistan, exploring their features, benefits, and brand-specific details to help you make an informed decision",
     date: "2025-11-12",

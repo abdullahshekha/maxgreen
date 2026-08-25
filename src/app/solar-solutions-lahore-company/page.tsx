@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Lahore | MaxGreen Energy",
   description:
     "MaxGreen Energy is a trusted solar provider in Lahore, delivering tailored solar solutions for homes, businesses, and industries across the city.",
+  alternates: { canonical: "/solar-solutions-lahore-company/" },
 };
 
 const services = [
@@ -88,6 +89,7 @@ export default function LahorePage() {
         title="Trusted Solar Solution in Lahore"
         subtitle="MaxGreen Energy is Lahore&apos;s trusted solar provider — delivering customised solar systems for homes, businesses, and industries across the city."
         bgImage="/images/solar/lahore.jpeg"
+        bgImageAlt="Solar panel installation in Lahore, Pakistan"
       />
 
       {/* Intro */}

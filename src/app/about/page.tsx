@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "About Us - MaxGreen Energy, Pakistan's Solar Innovators",
   description:
     "MaxGreen Energy brings 20+ years of combined solar expertise to Pakistan. We serve residential, commercial and industrial customers with highest-quality solar systems.",
+  alternates: { canonical: "/about/" },
 };
 
 const stats = [
@@ -101,6 +102,7 @@ export default function AboutPage() {
         title="Pakistan&apos;s Trusted Solar Innovators"
         subtitle="We are a leading solar company in Pakistan, specialising in residential, commercial, and industrial solar solutions — backed by 9 Years of experience."
         bgImage="/images/solar/about-us.jpeg"
+        bgImageAlt="MaxGreen Energy solar installation team in Pakistan"
       />
 
       {/* Who We Are */}

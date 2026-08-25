@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Syed Taha Alam Shah - Co-Founder, MaxGreen Energy",
   description:
     "Syed Taha Alam Shah is the Co-Founder of MaxGreen Energy, a leading solar energy company delivering innovative and sustainable energy solutions across Pakistan.",
+  alternates: { canonical: "/author/taha-alam/" },
 };
 
 export default function TahaAlamAuthorPage() {

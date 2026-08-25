@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${blog.title} | MaxGreen Energy`,
     description: blog.metaDescription,
+    alternates: { canonical: `/blogs/${blog.slug}/` },
     openGraph: {
       title: `${blog.title} | MaxGreen Energy`,
       description: blog.metaDescription,
