@@ -101,6 +101,11 @@ const localBusinessJsonLd = {
     "https://www.linkedin.com/company/maxenergypakistan/",
     "https://www.google.com/maps/place/MaxGreen+Energy+(Pvt.)+Ltd./@24.7931963,67.0679557,17z/data=!3m1!4b1!4m6!3m5!1s0x3eb33f746afe5585:0x7526c738319786b0!8m2!3d24.7931963!4d67.0679557!16s%2Fg%2F11nxpb6869",
   ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "43",
+  },
 };
 
 export default function RootLayout({
