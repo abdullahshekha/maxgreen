@@ -5,7 +5,6 @@ import "./globals.css";
 import SurveyPopup from "@/components/SurveyPopup";
 import WhatsappButton from "@/components/WhatsappButton";
 import { GOOGLE_ADS_ID, GA4_ID, CLARITY_PROJECT_ID } from "@/lib/gtag";
-import { RECAPTCHA_SITE_KEY } from "@/lib/recaptcha";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -145,14 +144,6 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");
           `}
         </Script>
-
-        {/* reCAPTCHA v3 — invisible, scores every form submission for bot verification */}
-        {RECAPTCHA_SITE_KEY && (
-          <Script
-            src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
-            strategy="afterInteractive"
-          />
-        )}
 
         {children}
 

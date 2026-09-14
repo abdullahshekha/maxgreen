@@ -1,10 +1,11 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Script from "next/script";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
-import { getRecaptchaToken } from "@/lib/recaptcha";
+import { getRecaptchaToken, RECAPTCHA_SITE_KEY } from "@/lib/recaptcha";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
@@ -62,6 +63,15 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
   };
 
   return (
+    <>
+      {/* reCAPTCHA v3 — only loaded on pages that render this form, not site-wide.
+          next/script dedupes automatically if multiple form instances mount. */}
+      {RECAPTCHA_SITE_KEY && (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+          strategy="afterInteractive"
+        />
+      )}
     <section id="get-quote" className={`py-20 sm:py-28 ${light ? "bg-white" : "bg-green-950"}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
@@ -287,5 +297,6 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
         </div>
       </div>
     </section>
+    </>
   );
 }
