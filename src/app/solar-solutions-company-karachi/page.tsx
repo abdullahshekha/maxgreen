@@ -20,8 +20,8 @@ const services = [
   "Commercial Solar Installation",
   "Industrial Solar Solutions",
   "Net Metering Application",
-  "Site Assessment &amp; System Design",
-  "Solar Monitoring &amp; Maintenance",
+  "Site Assessment & System Design",
+  "Solar Monitoring & Maintenance",
   "Battery Storage Solutions",
   "After-Sales Support",
 ];

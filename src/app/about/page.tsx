@@ -10,7 +10,7 @@ import Testimonials from "@/components/sections/Testimonials";
 export const metadata: Metadata = {
   title: "About Us - MaxGreen Energy, Pakistan's Solar Innovators",
   description:
-    "MaxGreen Energy brings 20+ years of combined solar expertise to Pakistan. We serve residential, commercial and industrial customers with highest-quality solar systems.",
+    "MaxGreen Energy brings 20+ years of combined solar expertise to Pakistan, serving residential, commercial and industrial customers with high-quality solar systems.",
   alternates: { canonical: "/about/" },
 };
 

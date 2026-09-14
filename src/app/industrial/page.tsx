@@ -9,7 +9,7 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Industrial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
-    "MaxGreen Energy's industrial solar solutions scale from 100 kW to 3 MW+ for factories, mills, warehouses. Reduce operating costs, improve sustainability &amp; ROI.",
+    "MaxGreen Energy's industrial solar solutions scale from 100 kW to 3 MW+ for factories, mills and warehouses. Reduce operating costs and improve ROI.",
   alternates: { canonical: "/industrial/" },
 };
 
@@ -26,12 +26,12 @@ const benefits = [
   },
   {
     icon: Factory,
-    title: "Grid-Tie &amp; Hybrid Options",
+    title: "Grid-Tie & Hybrid Options",
     description: "Connect directly to the grid with net metering or pair with battery storage for hybrid backup — keeping production running through outages.",
   },
   {
     icon: Award,
-    title: "Fast Payback &amp; High ROI",
+    title: "Fast Payback & High ROI",
     description: "Industrial solar investments typically pay back in 2–4 years, after which your facility enjoys decades of near-free electricity generation.",
   },
 ];

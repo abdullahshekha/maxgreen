@@ -8,7 +8,7 @@ import ContactForm from "@/components/sections/ContactForm";
 export const metadata: Metadata = {
   title: "Solar Cost Estimator - Estimate System Size & Savings",
   description:
-    "Use MaxGreen Energy's cost estimator to calculate your ideal solar system size, annual savings, and payback. Get a tailored quote based on your electricity usage.",
+    "Use MaxGreen Energy's cost estimator to calculate your ideal solar system size, annual savings, and payback based on your electricity usage.",
   alternates: { canonical: "/cost-estimator/" },
 };
 

@@ -38,12 +38,12 @@ const benefits = [
 ];
 
 const sectors = [
-  { title: "Offices &amp; Plazas", icon: "🏢", description: "Reduce overhead for your office tower or commercial plaza with a high-efficiency rooftop solar system." },
-  { title: "Schools &amp; Universities", icon: "🎓", description: "Power educational institutions with clean energy and reduce administration costs year-round." },
-  { title: "Hospitals &amp; Clinics", icon: "🏥", description: "Ensure uninterrupted power for critical operations with hybrid solar and battery backup solutions." },
-  { title: "Retail &amp; Shopping Malls", icon: "🛍️", description: "Offset high daytime energy consumption with daytime solar generation exactly when demand peaks." },
-  { title: "Hotels &amp; Restaurants", icon: "🍽️", description: "Reduce running costs for HVAC-heavy hospitality businesses and improve sustainability credentials." },
-  { title: "Warehouses &amp; Logistics", icon: "📦", description: "Large rooftop areas on warehouses translate directly to large solar systems and maximum savings." },
+  { title: "Offices & Plazas", icon: "🏢", description: "Reduce overhead for your office tower or commercial plaza with a high-efficiency rooftop solar system." },
+  { title: "Schools & Universities", icon: "🎓", description: "Power educational institutions with clean energy and reduce administration costs year-round." },
+  { title: "Hospitals & Clinics", icon: "🏥", description: "Ensure uninterrupted power for critical operations with hybrid solar and battery backup solutions." },
+  { title: "Retail & Shopping Malls", icon: "🛍️", description: "Offset high daytime energy consumption with daytime solar generation exactly when demand peaks." },
+  { title: "Hotels & Restaurants", icon: "🍽️", description: "Reduce running costs for HVAC-heavy hospitality businesses and improve sustainability credentials." },
+  { title: "Warehouses & Logistics", icon: "📦", description: "Large rooftop areas on warehouses translate directly to large solar systems and maximum savings." },
 ];
 
 export default function CommercialPage() {

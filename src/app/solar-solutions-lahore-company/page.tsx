@@ -20,8 +20,8 @@ const services = [
   "Commercial Solar Installation",
   "Industrial Solar Solutions",
   "Net Metering Application",
-  "Site Assessment &amp; System Design",
-  "Solar Monitoring &amp; Maintenance",
+  "Site Assessment & System Design",
+  "Solar Monitoring & Maintenance",
   "Battery Storage Solutions",
   "After-Sales Support",
 ];
@@ -40,7 +40,7 @@ const reasons = [
     description: "A local installation crew and project manager based in Lahore ensures fast response times and on-site support when you need it.",
   },
   {
-    title: "NEPRA &amp; LESCO Compliant",
+    title: "NEPRA & LESCO Compliant",
     description: "We manage all regulatory approvals, LESCO applications, and documentation so you don&apos;t have to deal with any paperwork.",
   },
 ];

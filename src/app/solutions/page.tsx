@@ -6,9 +6,9 @@ import Footer from "@/components/ui/Footer";
 import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = {
-  title: "Solar Solutions in Pakistan - Residential, Commercial & Industrial | MaxGreen Energy",
+  title: "Solar Solutions in Pakistan | MaxGreen Energy",
   description:
-    "Explore MaxGreen Energy's tailored solar solutions for homes, businesses, and industries. Achieve energy independence with our expert installation and support.",
+    "Explore MaxGreen Energy's tailored solar solutions for homes, businesses, and industries. Achieve energy independence with expert installation and support.",
   alternates: { canonical: "/solutions/" },
 };
 

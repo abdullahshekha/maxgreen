@@ -7,7 +7,7 @@ import ContactForm from "@/components/sections/ContactForm";
 export const metadata: Metadata = {
   title: "Contact MaxGreen Energy - Solar Experts in Pakistan",
   description:
-    "Get in touch with MaxGreen Energy — Pakistan's trusted solar provider with offices in Karachi and Lahore. Connect via phone or email and begin your green energy journey.",
+    "Get in touch with MaxGreen Energy — Pakistan's trusted solar provider with offices in Karachi and Lahore. Call or email to start your solar journey.",
   alternates: { canonical: "/contact-us/" },
 };
 
