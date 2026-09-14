@@ -12,6 +12,17 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        // www and apex both serve live and were splitting ranking signal in Search
+        // Console (homepage avg. position 6.1 on www vs. 35.7 on apex) even though
+        // metadataBase/canonical already point at the apex domain. Force www -> apex
+        // so only one variant is crawlable/indexable. Found 2026-08-27, fixed
+        // 2026-09-14.
+        source: "/:path*",
+        has: [{ type: "host", value: "www.maxgreenenergy.com.pk" }],
+        destination: "https://maxgreenenergy.com.pk/:path*",
+        permanent: true,
+      },
+      {
         // Leftover WordPress "trashed" slug still ranking for "solar air conditioner
         // price in pakistan" (2.4K monthly searches) — preserve that ranking equity
         // by pointing it at the renamed, live post instead of a dead end.
