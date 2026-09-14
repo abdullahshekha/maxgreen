@@ -177,7 +177,7 @@ export default function ProjectsPage() {
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-lg font-extrabold text-gray-900 mb-2">{project.title}</h3>
+                  <h2 className="text-lg font-extrabold text-gray-900 mb-2">{project.title}</h2>
                   <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
                     <span className="flex items-center gap-1"><MapPin className="w-3.5 h-3.5" />{project.location}</span>
                     <span className="flex items-center gap-1"><Zap className="w-3.5 h-3.5" />{project.size}</span>
