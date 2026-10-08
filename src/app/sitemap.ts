@@ -19,6 +19,8 @@ const staticRoutes = [
   "/solar-solutions-islamabad",
   "/author/taha-alam",
   "/blogs",
+  "/privacy",
+  "/terms",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
