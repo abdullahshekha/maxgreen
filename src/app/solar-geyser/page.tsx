@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Check, Download, Phone, Wifi, ShieldCheck, Droplets, Flame, Layers, Sun, Wrench, TrendingDown, Leaf, Zap } from "lucide-react";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
 import PageHero from "@/components/ui/PageHero";
-import ContactForm from "@/components/sections/ContactForm";
+import GeyserOrderForm from "@/components/sections/GeyserOrderForm";
+import PlaceOrderButton from "@/components/PlaceOrderButton";
 import TrackedContactLink from "@/components/TrackedContactLink";
 
 export const metadata: Metadata = {
@@ -116,12 +116,9 @@ export default function SolarGeyserPage() {
                 MaxGreen Energy doesn&apos;t stop at installation. With 2100+ solar installations and 9+ years of experience, we provide end-to-end system guidance, professional setup, and dedicated after-sales service so your solar geyser keeps performing season after season. We are the sole distributor in Sindh only.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link
-                  href="#get-quote"
-                  className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  Book Free Consultation
-                </Link>
+                <PlaceOrderButton className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5">
+                  Place Order
+                </PlaceOrderButton>
                 <a
                   href="/downloads/MaxGreen-Solar-Geyser-Guide.pdf"
                   download
@@ -183,12 +180,12 @@ export default function SolarGeyserPage() {
                 </ul>
                 <div className="text-2xl font-extrabold text-green-600 mt-auto mb-5">{m.price}</div>
                 <div className="flex flex-col gap-3">
-                  <Link
-                    href="#get-quote"
+                  <PlaceOrderButton
+                    model={m.liters}
                     className="inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3 rounded-full transition-all duration-200"
                   >
-                    Book Free Consultation
-                  </Link>
+                    Place Order
+                  </PlaceOrderButton>
                   <TrackedContactLink
                     href="tel:+923000341048"
                     type="phone"
@@ -265,7 +262,7 @@ export default function SolarGeyserPage() {
         </div>
       </section>
 
-      <ContactForm />
+      <GeyserOrderForm />
       <Footer />
     </main>
   );

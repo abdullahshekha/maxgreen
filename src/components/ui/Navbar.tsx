@@ -16,6 +16,7 @@ const navLinks = [
       { label: "Residential Solar", href: "/solar-system-for-home/" },
       { label: "Commercial Solar", href: "/commercial/" },
       { label: "Industrial Solar", href: "/industrial/" },
+      { label: "Solar Geyser", href: "/solar-geyser/" },
     ],
   },
   {
@@ -27,7 +28,6 @@ const navLinks = [
       { label: "Solar in Islamabad", href: "/solar-solutions-islamabad/" },
     ],
   },
-  { label: "Solar Geyser", href: "/solar-geyser/" },
   { label: "Projects", href: "/projects/" },
   { label: "Blogs", href: "/blogs/" },
 ];

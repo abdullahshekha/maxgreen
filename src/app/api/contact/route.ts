@@ -72,6 +72,8 @@ export async function POST(request: NextRequest) {
     console.warn(`[contact-api][recaptcha] low score, allowing anyway — score=${recaptchaResult.score}`);
   }
 
+  const isGeyserOrder = source === "solar-geyser-order";
+
   let sheetOk = false;
   let emailOk = false;
 
@@ -85,7 +87,7 @@ export async function POST(request: NextRequest) {
       city,
       capacity: capacity || "Not specified",
       message: message || "No additional message",
-      source: source === "survey-popup" ? "survey-popup" : "contact-form",
+      source: ["survey-popup", "solar-geyser-order"].includes(source) ? source : "contact-form",
     });
     sheetOk = true;
   } catch (error) {
@@ -102,14 +104,14 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from: `"MaxGreen Energy" <${process.env.SMTP_USER}>`,
       to: salesRecipients,
-      subject: `New Quote Request — ${name} (${city})`,
+      subject: `${isGeyserOrder ? "New Solar Geyser Order" : "New Quote Request"} — ${name} (${city})`,
       html: `
-        <h2>New Solar Quote Request</h2>
+        <h2>${isGeyserOrder ? "New Solar Geyser Order" : "New Solar Quote Request"}</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Phone:</strong> ${phone}</p>
         <p><strong>Email:</strong> ${email || "Not provided"}</p>
         <p><strong>City:</strong> ${city}</p>
-        <p><strong>Capacity Required:</strong> ${capacity || "Not specified"}</p>
+        <p><strong>${isGeyserOrder ? "Order" : "Capacity Required"}:</strong> ${capacity || "Not specified"}</p>
         <p><strong>Message:</strong><br/>${message || "No additional message"}</p>
       `,
     });
