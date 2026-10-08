@@ -51,7 +51,8 @@ export default function GeyserOrderForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isValidPkPhone(form.phone)) {
+    const phone = form.phone.replace(/\s+/g, "");
+    if (!isValidPkPhone(phone)) {
       setErrorMessage("Enter a valid mobile number.");
       setStatus("error");
       return;
@@ -66,7 +67,7 @@ export default function GeyserOrderForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: form.name,
-          phone: form.phone,
+          phone,
           email: form.email,
           city: form.city,
           capacity: `Solar Geyser ${selected?.label ?? form.model} x ${form.quantity}`,
@@ -164,7 +165,7 @@ export default function GeyserOrderForm() {
                     </div>
                     <div>
                       <label className="block text-xs font-bold text-gray-600 mb-1.5">Phone Number *</label>
-                      <input type="tel" name="phone" required value={form.phone} onChange={handleChange} placeholder="03337566883" className={inputClass} />
+                      <input type="tel" name="phone" required value={form.phone} onChange={handleChange} placeholder="0300 1234567" className={inputClass} />
                     </div>
                   </div>
 
