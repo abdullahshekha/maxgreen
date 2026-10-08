@@ -38,7 +38,8 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isValidPkPhone(form.phone)) {
+    const phone = form.phone.replace(/\s+/g, "");
+    if (!isValidPkPhone(phone)) {
       setErrorMessage("Enter a valid mobile number.");
       setStatus("error");
       return;
@@ -50,7 +51,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "contact-form", recaptchaToken }),
+        body: JSON.stringify({ ...form, phone, source: "contact-form", recaptchaToken }),
       });
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");
@@ -200,7 +201,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
                       required
                       value={form.phone}
                       onChange={handleChange}
-                      placeholder="03337566883"
+                      placeholder="0300 1234567"
                       className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     />
                   </div>

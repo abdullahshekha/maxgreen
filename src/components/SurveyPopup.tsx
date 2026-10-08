@@ -33,7 +33,8 @@ export default function SurveyPopup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!isValidPkPhone(form.phone)) {
+    const phone = form.phone.replace(/\s+/g, "");
+    if (!isValidPkPhone(phone)) {
       setErrorMessage("Enter a valid mobile number.");
       setStatus("error");
       return;
@@ -47,7 +48,7 @@ export default function SurveyPopup() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: form.name,
-          phone: form.phone,
+          phone,
           city: form.city,
           capacity: form.capacity,
           message: "Requested via the free solar survey popup.",
@@ -151,7 +152,7 @@ export default function SurveyPopup() {
                 <input
                   type="tel"
                   required
-                  placeholder="03337566883"
+                  placeholder="0300 1234567"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none text-gray-900 text-sm transition-colors"
