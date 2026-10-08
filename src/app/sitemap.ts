@@ -21,6 +21,7 @@ const staticRoutes = [
   "/blogs",
   "/privacy",
   "/terms",
+  "/solar-geyser",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

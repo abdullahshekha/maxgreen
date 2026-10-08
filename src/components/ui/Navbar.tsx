@@ -27,6 +27,7 @@ const navLinks = [
       { label: "Solar in Islamabad", href: "/solar-solutions-islamabad/" },
     ],
   },
+  { label: "Solar Geyser", href: "/solar-geyser/" },
   { label: "Projects", href: "/projects/" },
   { label: "Blogs", href: "/blogs/" },
 ];
