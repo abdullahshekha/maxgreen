@@ -1,12 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
 import { getRecaptchaToken } from "@/lib/recaptcha";
 
+const GEYSER_MODELS = [
+  { value: "150 Liters", label: "150 Liters" },
+  { value: "200 Liters", label: "200 Liters" },
+  { value: "300 Liters", label: "300 Liters" },
+];
+
 export default function SurveyPopup() {
+  const pathname = usePathname();
+  const isGeyser = pathname?.startsWith("/solar-geyser") ?? false;
+  const dismissKey = isGeyser ? "geyser_survey_dismissed" : "survey_dismissed";
   const [isVisible, setIsVisible] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
@@ -20,14 +30,15 @@ export default function SurveyPopup() {
   });
 
   useEffect(() => {
-    if (sessionStorage.getItem("survey_dismissed")) return;
-    const timer = setTimeout(() => setIsVisible(true), 15000);
+    setIsVisible(false);
+    if (sessionStorage.getItem(dismissKey)) return;
+    const timer = setTimeout(() => setIsVisible(true), isGeyser ? 10000 : 15000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [dismissKey, isGeyser]);
 
   const dismiss = () => {
     setIsVisible(false);
-    sessionStorage.setItem("survey_dismissed", "1");
+    sessionStorage.setItem(dismissKey, "1");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -42,7 +53,7 @@ export default function SurveyPopup() {
 
     setStatus("loading");
     try {
-      const recaptchaToken = await getRecaptchaToken("survey_popup_submit");
+      const recaptchaToken = await getRecaptchaToken(isGeyser ? "geyser_popup_submit" : "survey_popup_submit");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -51,8 +62,10 @@ export default function SurveyPopup() {
           phone,
           city: form.city,
           capacity: form.capacity,
-          message: "Requested via the free solar survey popup.",
-          source: "survey-popup",
+          message: isGeyser
+            ? "Requested via the solar geyser popup."
+            : "Requested via the free solar survey popup.",
+          source: isGeyser ? "solar-geyser-order" : "survey-popup",
           website: form.website,
           recaptchaToken,
         }),
@@ -61,7 +74,7 @@ export default function SurveyPopup() {
       trackConversion("lead_form_submit");
       setIsSubmitted(true);
       setStatus("idle");
-      sessionStorage.setItem("survey_dismissed", "1");
+      sessionStorage.setItem(dismissKey, "1");
     } catch {
       setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");
@@ -91,10 +104,12 @@ export default function SurveyPopup() {
             <Sun className="w-7 h-7 text-green-400" />
           </div>
           <h2 className="text-2xl font-extrabold text-white mb-1">
-            Get Your FREE Solar Survey
+            {isGeyser ? "Place Your Order for Solar Geyser" : "Get Your FREE Solar Survey"}
           </h2>
           <p className="text-green-300 text-sm">
-            Professional site assessment — absolutely no cost.
+            {isGeyser
+              ? "Tell us your size and our team will call you to confirm."
+              : "Professional site assessment — absolutely no cost."}
           </p>
         </div>
 
@@ -107,8 +122,9 @@ export default function SurveyPopup() {
                 We&apos;ll Be in Touch!
               </h3>
               <p className="text-gray-500 text-sm mb-6">
-                Thank you! Our team will contact you shortly to schedule your
-                free solar survey.
+                {isGeyser
+                  ? "Thank you! Our team will contact you shortly about your solar geyser."
+                  : "Thank you! Our team will contact you shortly to schedule your free solar survey."}
               </p>
               <button
                 onClick={dismiss}
@@ -176,6 +192,24 @@ export default function SurveyPopup() {
                 </select>
               </div>
 
+              {isGeyser ? (
+                <div>
+                  <label className="block text-sm font-bold text-gray-700 mb-1">
+                    Geyser Size <span className="text-green-600">*</span>
+                  </label>
+                  <select
+                    required
+                    value={form.capacity}
+                    onChange={(e) => setForm({ ...form, capacity: e.target.value })}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none text-gray-900 text-sm transition-colors bg-white"
+                  >
+                    <option value="">Select a size</option>
+                    {GEYSER_MODELS.map((m) => (
+                      <option key={m.value} value={m.value}>{m.label}</option>
+                    ))}
+                  </select>
+                </div>
+              ) : (
               <div>
                 <label className="block text-sm font-bold text-gray-700 mb-1">
                   Solar Capacity Required (kW){" "}
@@ -191,6 +225,7 @@ export default function SurveyPopup() {
                   className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 outline-none text-gray-900 text-sm transition-colors"
                 />
               </div>
+              )}
 
               {status === "error" && (
                 <p className="text-red-500 text-sm">{errorMessage}</p>
@@ -207,12 +242,12 @@ export default function SurveyPopup() {
                     Sending...
                   </>
                 ) : (
-                  "Book My Free Survey"
+                  isGeyser ? "Place My Order" : "Book My Free Survey"
                 )}
               </button>
 
               <p className="text-center text-xs text-gray-400">
-                No spam. No commitments. Just a free expert visit.
+                {isGeyser ? "No spam. No commitments. Our team confirms by phone." : "No spam. No commitments. Just a free expert visit."}
               </p>
             </form>
           )}

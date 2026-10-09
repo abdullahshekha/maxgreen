@@ -8,9 +8,9 @@ import { isValidPkPhone } from "@/lib/phone";
 import { getRecaptchaToken, RECAPTCHA_SITE_KEY } from "@/lib/recaptcha";
 
 const MODELS = [
-  { value: "150", label: "150 Liters (PKR 125,000)" },
-  { value: "200", label: "200 Liters (PKR 140,000)" },
-  { value: "300", label: "300 Liters (PKR 185,000)" },
+  { value: "150", label: "150 Liters (PKR 130,000)" },
+  { value: "200", label: "200 Liters (PKR 145,000)" },
+  { value: "300", label: "300 Liters (PKR 190,000)" },
 ];
 
 const emptyForm = {

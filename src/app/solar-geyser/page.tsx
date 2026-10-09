@@ -20,19 +20,19 @@ const models = [
     liters: "150",
     spec: "150L / 40 Gallon / 15 Tube",
     suited: "Ideal for 2 to 3 people",
-    price: "PKR 125,000",
+    price: "PKR 130,000",
   },
   {
     liters: "200",
     spec: "200L / 52 Gallon / 20 Tube",
     suited: "Perfect for 3 to 4 people",
-    price: "PKR 140,000",
+    price: "PKR 145,000",
   },
   {
     liters: "300",
     spec: "300L / 80 Gallon / 30 Tube",
     suited: "Designed for 5 to 6 people",
-    price: "PKR 185,000",
+    price: "PKR 190,000",
   },
 ];
 
@@ -94,7 +94,7 @@ export default function SolarGeyserPage() {
         breadcrumb="Solar Geyser"
         title="Solar Geysers in Pakistan"
         subtitle="Efficient hot water solutions powered by the sun. Reliable solar water heaters, installed and supported by MaxGreen Energy."
-        bgImage="/images/solar/solar-geyser.jpg"
+        bgImage="/images/solar-geyser/solar-geyser-roof.webp"
         bgImageAlt="Solar geyser water heater on a rooftop in Pakistan"
       />
 
