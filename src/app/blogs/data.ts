@@ -4562,7 +4562,7 @@ export const blogs = ([
     date: "2026-10-04",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar-geyser/solar-geyser-large-tank.jpg",
+    featuredImage: "/images/solar-geyser/solar-geyser-rooftop-pakistan.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "A solar geyser, also called a solar water heater, uses sunlight to heat water instead of burning gas or drawing a large amount of electricity. The idea is simple, and the parts are easy to understand once you know what each one does." },
@@ -4588,7 +4588,7 @@ export const blogs = ([
     date: "2026-10-05",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar-geyser/solar-geyser-rooftop-pakistan.jpg",
+    featuredImage: "/images/solar-geyser/solar-geyser-large-tank.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "The most common question about solar geysers in Pakistan is whether they still work in winter, when you need hot water most. The honest answer: yes, but not identically to summer. Here is what to expect." },
@@ -4814,7 +4814,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/blogs/kelectric-green-net-meter-630x400.png",
+    featuredImage: "/images/blogs/net-metering-karachi.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Net metering lets a K-Electric customer with a solar system export surplus power to the grid and receive credit for it. The rules changed in 2026, so older guides, including many still ranking on Google, no longer describe how it works. This is a summary of the current K-Electric framework. Rules and fees can change, so confirm the details with K-Electric before you apply." },
