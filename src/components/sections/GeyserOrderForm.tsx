@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { ShoppingCart, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
@@ -29,6 +30,7 @@ const inputClass =
   "w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent";
 
 export default function GeyserOrderForm() {
+  const router = useRouter();
   const [form, setForm] = useState(emptyForm);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -82,6 +84,7 @@ export default function GeyserOrderForm() {
       trackConversion("lead_form_submit");
       setStatus("success");
       setForm(emptyForm);
+      router.push("/thank-you");
     } catch {
       setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");

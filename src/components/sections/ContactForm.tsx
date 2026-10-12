@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
@@ -8,6 +9,7 @@ import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
 import { getAttribution } from "@/lib/attribution";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -57,6 +59,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       trackConversion("lead_form_submit");
       setStatus("success");
       setForm({ name: "", phone: "", email: "", city: "Karachi", capacity: "", message: "", website: "" });
+      router.push("/thank-you");
     } catch {
       setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
@@ -16,6 +16,7 @@ const GEYSER_MODELS = [
 
 export default function SurveyPopup() {
   const pathname = usePathname();
+  const router = useRouter();
   const isGeyser = pathname?.startsWith("/solar-geyser") ?? false;
   const dismissKey = isGeyser ? "geyser_survey_dismissed" : "survey_dismissed";
   const [isVisible, setIsVisible] = useState(false);
@@ -32,10 +33,10 @@ export default function SurveyPopup() {
 
   useEffect(() => {
     setIsVisible(false);
-    if (sessionStorage.getItem(dismissKey)) return;
+    if (pathname === "/thank-you" || sessionStorage.getItem(dismissKey)) return;
     const timer = setTimeout(() => setIsVisible(true), isGeyser ? 10000 : 15000);
     return () => clearTimeout(timer);
-  }, [dismissKey, isGeyser]);
+  }, [dismissKey, isGeyser, pathname]);
 
   const dismiss = () => {
     setIsVisible(false);
@@ -77,6 +78,7 @@ export default function SurveyPopup() {
       setIsSubmitted(true);
       setStatus("idle");
       sessionStorage.setItem(dismissKey, "1");
+      router.push("/thank-you");
     } catch {
       setErrorMessage("Something went wrong. Please try again or call us directly.");
       setStatus("error");
