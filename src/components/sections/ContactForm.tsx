@@ -5,6 +5,7 @@ import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
 import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
+import { getAttribution } from "@/lib/attribution";
 
 export default function ContactForm({ light = false }: { light?: boolean }) {
   const [form, setForm] = useState({
@@ -50,7 +51,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, phone, source: "contact-form", recaptchaToken }),
+        body: JSON.stringify({ ...form, phone, source: "contact-form", recaptchaToken, attribution: getAttribution() }),
       });
       if (!res.ok) throw new Error("Request failed");
       trackConversion("lead_form_submit");

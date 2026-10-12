@@ -21,7 +21,16 @@ export type LeadRow = {
   city: string;
   capacity: string;
   message: string;
-  source: "contact-form" | "survey-popup";
+  source: "contact-form" | "survey-popup" | "solar-geyser-order";
+  // Traffic attribution columns — must exist as headers in the sheet to be written.
+  channel?: string;
+  landing_page?: string;
+  submit_page?: string;
+  referrer?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  gclid?: string;
 };
 
 export async function appendLeadToSheet(row: LeadRow): Promise<void> {
@@ -39,7 +48,7 @@ export async function appendLeadToSheet(row: LeadRow): Promise<void> {
       (key) => key.toLowerCase() === header.toLowerCase()
     );
     if (match) {
-      rowByActualHeader[header] = row[match as keyof LeadRow];
+      rowByActualHeader[header] = row[match as keyof LeadRow] ?? "";
     }
   }
 

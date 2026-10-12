@@ -24,6 +24,7 @@ const sections = [
     list: [
       "Details you submit through our quote form, free survey pop-up and contact page: your name, phone number, city, and optionally your email address, the solar capacity you need and any message you write.",
       "Details you share when you call, email or message us on WhatsApp.",
+      "How you reached the Site (the referring website, landing page and any campaign tags), saved in your browser for up to 30 days and attached to your enquiry so we can tell which channel it came from.",
       "Technical and usage data collected automatically: pages visited, approximate location, device and browser type, referring page, and interactions such as clicks on our phone, email and WhatsApp links.",
     ],
   },

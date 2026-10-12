@@ -48,8 +48,15 @@ async function verifyRecaptcha(token: string | undefined): Promise<{ ok: boolean
 }
 
 export async function POST(request: NextRequest) {
-  const { name, phone, email, city, capacity, message, source, website, recaptchaToken } =
+  const { name, phone, email, city, capacity, message, source, website, recaptchaToken, attribution } =
     await request.json();
+
+  // Client-supplied, so treat as untrusted text: strings only, length-capped.
+  const attr = (key: string): string =>
+    typeof attribution?.[key] === "string" ? attribution[key].slice(0, 300) : "";
+  const channel = attr("channel") || "Unknown";
+  const esc = (v: string): string =>
+    v.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
 
   // Honeypot — a hidden field real users never see or fill. If it's filled, it's a bot.
   // Return a fake success so the bot doesn't learn to adapt, but skip all processing.
@@ -88,6 +95,14 @@ export async function POST(request: NextRequest) {
       capacity: capacity || "Not specified",
       message: message || "No additional message",
       source: ["survey-popup", "solar-geyser-order"].includes(source) ? source : "contact-form",
+      channel,
+      landing_page: attr("landingPage"),
+      submit_page: attr("submitPage"),
+      referrer: attr("referrer"),
+      utm_source: attr("utmSource"),
+      utm_medium: attr("utmMedium"),
+      utm_campaign: attr("utmCampaign"),
+      gclid: attr("gclid") ? "yes" : "",
     });
     sheetOk = true;
   } catch (error) {
@@ -113,6 +128,10 @@ export async function POST(request: NextRequest) {
         <p><strong>City:</strong> ${city}</p>
         <p><strong>${isGeyserOrder ? "Order" : "Capacity Required"}:</strong> ${capacity || "Not specified"}</p>
         <p><strong>Message:</strong><br/>${message || "No additional message"}</p>
+        <hr/>
+        <p><strong>Traffic source:</strong> ${esc(channel)}${attr("referrer") ? ` (${esc(attr("referrer"))})` : ""}<br/>
+        <strong>Landing page:</strong> ${esc(attr("landingPage")) || "Unknown"}<br/>
+        <strong>Submitted from:</strong> ${esc(attr("submitPage")) || "Unknown"}</p>
       `,
     });
 

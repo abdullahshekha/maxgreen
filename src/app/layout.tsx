@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import SurveyPopup from "@/components/SurveyPopup";
 import WhatsappButton from "@/components/WhatsappButton";
+import AttributionTracker from "@/components/AttributionTracker";
 import { GOOGLE_ADS_ID, GA4_ID, CLARITY_PROJECT_ID } from "@/lib/gtag";
 
 const montserrat = Montserrat({
@@ -115,6 +116,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.variable}>
       <body className="antialiased font-montserrat">
+        <AttributionTracker />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}

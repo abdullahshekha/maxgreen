@@ -6,6 +6,7 @@ import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
 import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
+import { getAttribution } from "@/lib/attribution";
 
 const GEYSER_MODELS = [
   { value: "150 Liters", label: "150 Liters" },
@@ -68,6 +69,7 @@ export default function SurveyPopup() {
           source: isGeyser ? "solar-geyser-order" : "survey-popup",
           website: form.website,
           recaptchaToken,
+          attribution: getAttribution(),
         }),
       });
       if (!res.ok) throw new Error("Request failed");

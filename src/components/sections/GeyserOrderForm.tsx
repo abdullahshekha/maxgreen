@@ -5,6 +5,7 @@ import { ShoppingCart, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
 import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
+import { getAttribution } from "@/lib/attribution";
 
 const MODELS = [
   { value: "150", label: "150 Liters (PKR 130,000)" },
@@ -74,6 +75,7 @@ export default function GeyserOrderForm() {
           website: form.website,
           source: "solar-geyser-order",
           recaptchaToken,
+          attribution: getAttribution(),
         }),
       });
       if (!res.ok) throw new Error("Request failed");
