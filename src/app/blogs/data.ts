@@ -4472,7 +4472,7 @@ export const blogs = ([
     title: "Solar Geyser Price in Pakistan: 150L, 200L & 300L Models (2026)",
     metaDescription:
       "Solar geyser price in Pakistan: MaxGreen's 150L, 200L and 300L models start at PKR 130,000. See what each size includes and what to check before you buy.",
-    date: "2026-10-12",
+    date: "2026-10-01",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
@@ -4503,7 +4503,7 @@ export const blogs = ([
     title: "Solar Geyser vs Gas Geyser vs Electric Geyser in Pakistan",
     metaDescription:
       "Solar, gas or electric geyser? Compare running cost, safety, winter reliability and upfront price to choose the right water heater for a Pakistani home.",
-    date: "2026-10-12",
+    date: "2026-10-02",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/solar/solar-geyser.jpg",
@@ -4531,7 +4531,7 @@ export const blogs = ([
     title: "What Size Solar Geyser Do You Need? 150L, 200L or 300L",
     metaDescription:
       "Not sure whether to buy a 150, 200 or 300 liter solar geyser? Use this simple guide to match tank size to your family size and hot water use.",
-    date: "2026-10-12",
+    date: "2026-10-03",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/solar-geyser/solar-geyser-evacuated-tubes.jpg",
@@ -4559,7 +4559,7 @@ export const blogs = ([
     title: "How Does a Solar Geyser Work? Evacuated Tube Water Heaters Explained",
     metaDescription:
       "How a solar geyser heats water: evacuated tubes, an insulated tank, an electric backup element and a magnesium anode, explained for Pakistani homes.",
-    date: "2026-10-12",
+    date: "2026-10-04",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/solar-geyser/solar-geyser-large-tank.jpg",
@@ -4585,7 +4585,7 @@ export const blogs = ([
     title: "Does a Solar Geyser Work in Winter and on Cloudy Days in Pakistan?",
     metaDescription:
       "Will a solar geyser give hot water in a Pakistani winter or on cloudy days? Here is what to expect and how the electric backup element keeps water hot.",
-    date: "2026-10-12",
+    date: "2026-10-05",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/solar-geyser/solar-geyser-rooftop-pakistan.jpg",
@@ -4613,7 +4613,7 @@ export const blogs = ([
     title: "How to Choose a Solar Company in Karachi: 10 Questions to Ask",
     metaDescription:
       "Comparing solar companies in Karachi? Ask these 10 questions about experience, equipment, net metering, warranty and after-sales support before you sign.",
-    date: "2026-10-12",
+    date: "2026-10-06",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/blogs/solar-karachi-rooftops.jpg",
@@ -4653,7 +4653,7 @@ export const blogs = ([
     title: "Solar Panels in Karachi: How Humidity, Salt Air and Dust Affect Your System",
     metaDescription:
       "Karachi's coastal climate is hard on solar systems. Learn how humidity, salt air, dust and heat affect panels, structures and inverters, and how to protect them.",
-    date: "2026-10-12",
+    date: "2026-10-07",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/projects/9.jpg",
@@ -4684,7 +4684,7 @@ export const blogs = ([
     title: "How to Choose a Solar Company in Lahore: What to Check Before You Buy",
     metaDescription:
       "Choosing a solar company in Lahore? Check experience, equipment, LESCO paperwork, system sizing and after-sales support before you commit.",
-    date: "2026-10-12",
+    date: "2026-10-08",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/blogs/solar-lahore-rooftops.jpg",
@@ -4718,7 +4718,7 @@ export const blogs = ([
     title: "Solar Panels in Lahore: Smog, Dust and Summer Heat Explained",
     metaDescription:
       "How Lahore's smog, dust, monsoon and extreme summer heat affect solar panel output, and what to do about it with cleaning, design and maintenance.",
-    date: "2026-10-12",
+    date: "2026-10-09",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/blogs/solar-villa-lahore.jpg",
@@ -4749,7 +4749,7 @@ export const blogs = ([
     title: "How to Choose a Solar Company in Islamabad and Rawalpindi",
     metaDescription:
       "Hiring a solar company in Islamabad or Rawalpindi? Here is what to look for in design, equipment, IESCO paperwork, warranties and after-sales support.",
-    date: "2026-10-12",
+    date: "2026-10-10",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/blogs/solar-islamabad-rooftops.jpg",
@@ -4780,7 +4780,7 @@ export const blogs = ([
     title: "Solar Panels in Islamabad: Cold Winters, Monsoon Rain and Shade",
     metaDescription:
       "How Islamabad and Rawalpindi's cooler climate, monsoon rain, winter fog and tree shade affect solar panel output, and how to design around them.",
-    date: "2026-10-12",
+    date: "2026-10-11",
     category: "Residential",
     author: "MaxGreen Energy Team",
     featuredImage: "/images/blogs/solar-homes-islamabad-hills.jpg",
