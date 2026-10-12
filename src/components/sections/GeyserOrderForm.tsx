@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Script from "next/script";
 import { ShoppingCart, CheckCircle, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
-import { getRecaptchaToken, RECAPTCHA_SITE_KEY } from "@/lib/recaptcha";
+import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
 
 const MODELS = [
   { value: "150", label: "150 Liters (PKR 130,000)" },
@@ -89,13 +88,7 @@ export default function GeyserOrderForm() {
 
   return (
     <>
-      {RECAPTCHA_SITE_KEY && (
-        <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
-          strategy="afterInteractive"
-        />
-      )}
-      <section id="place-order" className="py-20 sm:py-28 bg-green-950">
+      <section id="place-order" onFocus={loadRecaptcha} className="py-20 sm:py-28 bg-green-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>

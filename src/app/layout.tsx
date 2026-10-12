@@ -122,7 +122,7 @@ export default function RootLayout({
         {/* Google tag (gtag.js) — powers GA4 analytics and Google Ads conversion tracking */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA4_ID}`}
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script id="google-gtag-init" strategy="afterInteractive">
           {`
@@ -135,7 +135,7 @@ export default function RootLayout({
         </Script>
 
         {/* Microsoft Clarity — session recordings and heatmaps */}
-        <Script id="microsoft-clarity" strategy="afterInteractive">
+        <Script id="microsoft-clarity" strategy="lazyOnload">
           {`
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { X, CheckCircle2, Sun, Loader2 } from "lucide-react";
 import { trackConversion } from "@/lib/gtag";
 import { isValidPkPhone } from "@/lib/phone";
-import { getRecaptchaToken } from "@/lib/recaptcha";
+import { getRecaptchaToken, loadRecaptcha } from "@/lib/recaptcha";
 
 const GEYSER_MODELS = [
   { value: "150 Liters", label: "150 Liters" },
@@ -134,7 +134,7 @@ export default function SurveyPopup() {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} onFocus={loadRecaptcha} className="space-y-4">
               {/* Honeypot — hidden from sighted users and screen readers, bots tend to fill every field */}
               <input
                 type="text"
