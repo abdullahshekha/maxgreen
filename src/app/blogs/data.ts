@@ -494,7 +494,7 @@ export const blogs = ([
   {
     slug: "10-reasons-your-solar-system-panels-may-not-be-working-properly",
     title: "10 Reasons Your Solar System/Panels May Not Be Working Properly.",
-    metaDescription: "Discover common reasons why your solar panels may under perform, including inverter issues, dirt buildup, and faulty meters. Optimize your system’s efficiency today.",
+    metaDescription: "10 reasons your solar panels may be underperforming, from inverter faults and dirt to PID, micro-cracks and poor workmanship, and what to check.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -1004,7 +1004,7 @@ export const blogs = ([
   {
     slug: "600-watt-solar-panel-price-in-pakistan",
     title: "600 Watt Solar Panel Price in Pakistan",
-    metaDescription: "Explore the top 600-watt solar panels available in Pakistan, providing detailed insights into 600 Watt Solar Panel Price in Pakistan, features, and what sets them apart from the competition.",
+    metaDescription: "600 watt solar panel price in Pakistan: compare the top 600W panels on features and see why this size suits larger home and business systems.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -1169,7 +1169,7 @@ export const blogs = ([
   {
     slug: "avoiding-peak-hour-electricity-charges-during-extreme-weather-in-karachi",
     title: "Avoiding Peak Hour Electricity Charges During Extreme Weather in Karachi",
-    metaDescription: "Discover effective strategies to reduce electricity costs during peak hours in Karachi, including pre-cooling, off-peak appliance use, and solar energy adoption.",
+    metaDescription: "How to avoid peak-hour electricity charges in Karachi: pre-cool your home, shift appliances to off-peak hours and use solar to cut the bill.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -1901,7 +1901,7 @@ export const blogs = ([
   {
     slug: "how-do-i-read-my-electricity-bill-and-understand-my-usage",
     title: "How Do I Read My Electricity Bill and Understand My Usage?",
-    metaDescription: "Break down your electricity bill clearly-understand usage, meter readings, supply and usage charges, taxes, and how solar export credits affect your bill.",
+    metaDescription: "How to read your electricity bill in Pakistan: meter readings, usage and supply charges, taxes, and how solar export credits change what you pay.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -2157,7 +2157,7 @@ export const blogs = ([
   {
     slug: "how-to-apply-for-a-solar-panel-scheme-in-pakistan",
     title: "How to Apply for a Solar Panel Scheme in Pakistan",
-    metaDescription: "The solar panel scheme in Pakistan is a government-backed initiative that provides financial assistance, low-interest loans, and subsidies to homeowners and businesses who want to switch to solar energy.",
+    metaDescription: "How to apply for a solar panel scheme in Pakistan: what government-backed schemes offer, the provincial programs, and the steps to apply.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -2533,7 +2533,7 @@ export const blogs = ([
   {
     slug: "on-grid-solar-inverters-goodwe-vs-sungrow-inverters",
     title: "On-Grid Solar Inverters: Goodwe Vs Sungrow Inverters",
-    metaDescription: "Discover the differences between Good We and Sungrow on-grid solar inverters. Compare their features, performance, and efficiency to make an informed choice for your energy needs.",
+    metaDescription: "GoodWe vs Sungrow on-grid solar inverters compared on features, performance and efficiency, with a clear verdict on which suits your system.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -2757,7 +2757,7 @@ export const blogs = ([
   {
     slug: "solar-ac-price-in-pakistan-2024",
     title: "Solar AC Price in Pakistan 2024",
-    metaDescription: "Dives deep into the world of solar ACs price in Pakistan, exploring their features, benefits, and brand-specific details to help you make an informed decision",
+    metaDescription: "Solar AC price in Pakistan: how solar air conditioners work, the top brands, how to choose the right one and the financing options to consider.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3081,7 +3081,7 @@ export const blogs = ([
   {
     slug: "solar-power-generation-summer-vs-winter",
     title: "Solar Power Generation: Summer vs Winter",
-    metaDescription: "See how solar power output varies seasonally in Pakistan-40–60% lower in winter due to shorter days, sun angle, and weather, with net metering helping bridge gaps.",
+    metaDescription: "How much does solar output drop in winter in Pakistan? See why production falls 40-60% versus summer and how net metering fills the gap.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3630,7 +3630,7 @@ export const blogs = ([
   {
     slug: "solar-system-on-installments-in-pakistan",
     title: "Solar System on Installments in Pakistan",
-    metaDescription: "Discover how to get a solar system on installments in Pakistan! Learn about solar financing options, leading banks, and government-backed schemes making solar power affordable in Karachi, Lahore, Islamabad, and near you.",
+    metaDescription: "Solar system on installments in Pakistan: how solar financing works, which banks and companies offer it, and how to apply in Karachi, Lahore and Islamabad.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3665,7 +3665,7 @@ export const blogs = ([
   {
     slug: "lead-acid-vs-lithium-batteries-for-solar-in-pakistan",
     title: "Tall Tubular Lead-Acid vs Lithium Batteries for Solar in Pakistan",
-    metaDescription: "These two types of batteries in terms of performance, price, lifespan, maintenance, and suitability for Pakistan&#39;s unique energy needs. Tall Tubular Lead-Acid vs. Lithium Batteries for Solar",
+    metaDescription: "Tall tubular lead-acid vs lithium batteries for solar in Pakistan: compare performance, lifespan, maintenance and price to choose the right one.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3712,7 +3712,7 @@ export const blogs = ([
   {
     slug: "tax-on-solar-panels-pakistan",
     title: "Tax On Solar Panels Pakistan",
-    metaDescription: "Tax On Solar Panels Pakistan? Government has introduced tax incentives for solar panels, not a tax. The federal government has exempted duties on the import of key components used to manufacture solar panels, inverters, and batteries.",
+    metaDescription: "Tax on solar panels in Pakistan: the government's clarification, import-duty incentives on solar components, and federal and provincial policy.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3881,7 +3881,7 @@ export const blogs = ([
   {
     slug: "top-10-renewable-energy-sources-in-pakistan",
     title: "Top 10 Renewable Energy Sources in Pakistan",
-    metaDescription: "Explore the top 10 renewable energy sources in Pakistan and why solar power is considered the best.",
+    metaDescription: "The top 10 renewable energy sources in Pakistan, and why solar power stands out as the best option for homes and businesses.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -3993,7 +3993,7 @@ export const blogs = ([
   {
     slug: "top-10-solar-companies-in-lahore-pakistan",
     title: "Top 10 Solar Companies in Lahore, Pakistan",
-    metaDescription: "Go through the top 10 solar companies in Lahore, Pakistan to help you make the best choice for your home or business. Find Solar System Installation near you in Lahore",
+    metaDescription: "Compare the top 10 solar companies in Lahore: what to check before you choose, how they stack up, and why MaxGreen is on top.",
     date: "2025-11-12",
     category: "Commercial",
     author: "Taha Alam",
@@ -4062,7 +4062,7 @@ export const blogs = ([
   {
     slug: "top-10-solar-inverters-pakistan",
     title: "Top 10 Solar Inverters in Pakistan",
-    metaDescription: "Find the best Solar Inverters in Pakistan We listed Top 10 Solar Inverters in Pakistan, solar inverter brands in Pakistan, based on factors like efficiency, durability, features, and customer satisfaction.",
+    metaDescription: "The 10 best solar inverters in Pakistan compared on efficiency, durability and features, plus how to choose the right one and what to watch out for.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -4139,7 +4139,7 @@ export const blogs = ([
   {
     slug: "top-10-solar-panels-in-karachi",
     title: "Top 10 Solar Panels in Karachi for 2024",
-    metaDescription: "Find Top 10 Solar Panels in Karachi for 2024 current Solar Panels price in Karachi",
+    metaDescription: "Top 10 solar panels in Karachi: what to look for, the leading brands compared, and how Grade A, B and C panels differ before you buy.",
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
@@ -4287,7 +4287,7 @@ export const blogs = ([
   {
     slug: "understanding-net-metering-how-it-works-and-why-it-matters",
     title: "Understanding Net Metering: How It Works and Why It Matters",
-    metaDescription: "Learn how net metering in Pakistan works, its benefits for homes and industries, and why it matters for lowering bills, boosting energy efficiency, and supporting clean power.",
+    metaDescription: "Net metering in Pakistan explained: how it works, who benefits, how it lowers your electricity bill, and the challenges to know about before you apply.",
     date: "2025-11-26",
     category: "Residential",
     author: "Taha Alam",
