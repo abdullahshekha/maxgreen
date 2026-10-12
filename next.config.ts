@@ -503,6 +503,16 @@ const nextConfig: NextConfig = {
         destination: "/blogs/why-proper-mounting-structures-matter-in-solar-panel-efficiency",
         permanent: true,
       },
+      {
+        source: "/privacy-policy",
+        destination: "/privacy",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service",
+        destination: "/terms",
+        permanent: true,
+      },
     ];
   },
   async headers() {
