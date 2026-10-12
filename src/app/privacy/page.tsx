@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy - MaxGreen Energy",
   description:
     "How MaxGreen Energy collects, uses and protects the personal information you share through our website, quote forms and contact channels.",
-  alternates: { canonical: "/privacy/" },
+  alternates: { canonical: "/privacy" },
 };
 
 const sections = [

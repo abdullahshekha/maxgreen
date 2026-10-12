@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Our Solar Projects - 14 MW+ Installations by MaxGreen Energy",
   description:
     "Explore MaxGreen Energy's portfolio of 14 MW+ solar installations across Pakistan — residential, commercial and industrial projects in Karachi, Lahore and Islamabad.",
-  alternates: { canonical: "/projects/" },
+  alternates: { canonical: "/projects" },
 };
 
 const projects = [
@@ -117,10 +117,10 @@ export default function ProjectsPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/projects/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/projects#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/projects/", name: "Projects" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/projects", name: "Projects" } },
                 ],
               },
             ],

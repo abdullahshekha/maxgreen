@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Commercial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy's commercial solar systems help businesses reduce energy costs, earn from excess power, and support sustainability with efficient, custom solutions.",
-  alternates: { canonical: "/commercial/" },
+  alternates: { canonical: "/commercial" },
 };
 
 const benefits = [
@@ -57,17 +57,17 @@ export default function CommercialPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/commercial/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/commercial#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solutions/", name: "Solutions" } },
-                  { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/commercial/", name: "Commercial Solar" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solutions", name: "Solutions" } },
+                  { "@type": "ListItem", position: 3, item: { "@id": "https://www.maxgreenenergy.com.pk/commercial", name: "Commercial Solar" } },
                 ],
               },
               {
                 "@type": "Service",
                 serviceType: "Commercial Solar Installation",
-                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                provider: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
                 description:
                   "Commercial solar systems for offices, schools, hospitals, and retail buildings — reducing energy costs and improving sustainability.",

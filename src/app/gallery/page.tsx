@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Solar Installation Gallery | MaxGreen Energy Pakistan",
   description:
     "Explore MaxGreen Energy's gallery of solar installations — from residential to commercial and industrial projects.",
-  alternates: { canonical: "/gallery/" },
+  alternates: { canonical: "/gallery" },
 };
 
 const images = [
@@ -47,10 +47,10 @@ export default function GalleryPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/gallery/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/gallery#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/gallery/", name: "Gallery" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/gallery", name: "Gallery" } },
                 ],
               },
             ],

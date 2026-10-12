@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Syed Taha Alam Shah - Co-Founder, MaxGreen Energy",
   description:
     "Syed Taha Alam Shah is the Co-Founder of MaxGreen Energy, a leading solar energy company delivering innovative and sustainable energy solutions across Pakistan.",
-  alternates: { canonical: "/author/taha-alam/" },
+  alternates: { canonical: "/author/taha-alam" },
 };
 
 export default function TahaAlamAuthorPage() {
@@ -27,16 +27,16 @@ export default function TahaAlamAuthorPage() {
                 name: "Syed Taha Alam Shah",
                 jobTitle: "Co-Founder, MaxGreen Energy",
                 worksFor: { "@type": "Organization", name: "MaxGreen Energy" },
-                url: "https://maxgreenenergy.com.pk/author/taha-alam/",
-                image: "https://maxgreenenergy.com.pk/images/team/taha-alam.jpeg",
+                url: "https://www.maxgreenenergy.com.pk/author/taha-alam",
+                image: "https://www.maxgreenenergy.com.pk/images/team/taha-alam.jpeg",
               },
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/author/taha-alam/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/author/taha-alam#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/blogs/", name: "Blogs" } },
-                  { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/author/taha-alam/", name: "Syed Taha Alam Shah" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/blogs", name: "Blogs" } },
+                  { "@type": "ListItem", position: 3, item: { "@id": "https://www.maxgreenenergy.com.pk/author/taha-alam", name: "Syed Taha Alam Shah" } },
                 ],
               },
             ],

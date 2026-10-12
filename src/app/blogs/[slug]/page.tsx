@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${blog.title} | MaxGreen Energy`,
     description: blog.metaDescription,
-    alternates: { canonical: `/blogs/${blog.slug}/` },
+    alternates: { canonical: `/blogs/${blog.slug}` },
     openGraph: {
       title: `${blog.title} | MaxGreen Energy`,
       description: blog.metaDescription,
-      url: `https://maxgreenenergy.com.pk/blogs/${blog.slug}/`,
-      images: [{ url: `https://maxgreenenergy.com.pk${blog.featuredImage}`, alt: blog.title }],
+      url: `https://www.maxgreenenergy.com.pk/blogs/${blog.slug}`,
+      images: [{ url: `https://www.maxgreenenergy.com.pk${blog.featuredImage}`, alt: blog.title }],
       type: "article",
     },
   };
@@ -161,10 +161,10 @@ export default async function BlogPostPage({ params }: Props) {
     publisher: {
       "@type": "Organization",
       name: "MaxGreen Energy",
-      url: "https://maxgreenenergy.com.pk",
+      url: "https://www.maxgreenenergy.com.pk",
     },
-    image: `https://maxgreenenergy.com.pk${blog.featuredImage}`,
-    url: `https://maxgreenenergy.com.pk/blogs/${blog.slug}/`,
+    image: `https://www.maxgreenenergy.com.pk${blog.featuredImage}`,
+    url: `https://www.maxgreenenergy.com.pk/blogs/${blog.slug}`,
     articleSection: blog.category,
   };
 

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "About Us - MaxGreen Energy, Pakistan's Solar Innovators",
   description:
     "MaxGreen Energy brings 20+ years of combined solar expertise to Pakistan, serving residential, commercial and industrial customers with high-quality solar systems.",
-  alternates: { canonical: "/about/" },
+  alternates: { canonical: "/about" },
 };
 
 const stats = [
@@ -86,10 +86,10 @@ export default function AboutPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/about/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/about#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/about/", name: "About" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/about", name: "About" } },
                 ],
               },
             ],

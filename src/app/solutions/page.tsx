@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions in Pakistan | MaxGreen Energy",
   description:
     "Explore MaxGreen Energy's tailored solar solutions for homes, businesses, and industries. Achieve energy independence with expert installation and support.",
-  alternates: { canonical: "/solutions/" },
+  alternates: { canonical: "/solutions" },
 };
 
 const solutions = [
@@ -60,16 +60,16 @@ export default function SolutionsPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solutions/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solutions#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solutions/", name: "Solutions" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solutions", name: "Solutions" } },
                 ],
               },
               {
                 "@type": "Service",
                 serviceType: "Solar Panel Installation",
-                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                provider: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
                 description:
                   "Residential, commercial, and industrial solar installation solutions across Pakistan.",

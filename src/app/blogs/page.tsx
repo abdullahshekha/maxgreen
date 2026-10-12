@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     title: "Solar Energy Blogs & Guides | MaxGreen Energy",
     description:
       "Expert solar energy articles covering residential, commercial, and industrial solar systems in Pakistan.",
-    url: "https://maxgreenenergy.com.pk/blogs/",
+    url: "https://www.maxgreenenergy.com.pk/blogs",
   },
-  alternates: { canonical: "/blogs/" },
+  alternates: { canonical: "/blogs" },
 };
 
 export default function BlogsPage() {

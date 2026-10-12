@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Industrial Solar Solutions in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy's industrial solar solutions scale from 100 kW to 3 MW+ for factories, mills and warehouses. Reduce operating costs and improve ROI.",
-  alternates: { canonical: "/industrial/" },
+  alternates: { canonical: "/industrial" },
 };
 
 const benefits = [
@@ -48,17 +48,17 @@ export default function IndustrialPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/industrial/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/industrial#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solutions/", name: "Solutions" } },
-                  { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/industrial/", name: "Industrial Solar" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solutions", name: "Solutions" } },
+                  { "@type": "ListItem", position: 3, item: { "@id": "https://www.maxgreenenergy.com.pk/industrial", name: "Industrial Solar" } },
                 ],
               },
               {
                 "@type": "Service",
                 serviceType: "Industrial Solar Installation",
-                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                provider: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
                 description:
                   "Large-scale industrial solar systems from 100 kW to 3 MW+ for factories, mills, and warehouses.",

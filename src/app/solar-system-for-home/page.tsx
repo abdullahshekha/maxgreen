@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Solar System for Home in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy offers custom residential solar systems to cut bills, sell surplus power via net metering, and light your home sustainably with smart, eco-conscious solutions.",
-  alternates: { canonical: "/solar-system-for-home/" },
+  alternates: { canonical: "/solar-system-for-home" },
 };
 
 const benefits = [
@@ -55,17 +55,17 @@ export default function ResidentialPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solar-system-for-home/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solar-system-for-home#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solutions/", name: "Solutions" } },
-                  { "@type": "ListItem", position: 3, item: { "@id": "https://maxgreenenergy.com.pk/solar-system-for-home/", name: "Solar System for Home" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solutions", name: "Solutions" } },
+                  { "@type": "ListItem", position: 3, item: { "@id": "https://www.maxgreenenergy.com.pk/solar-system-for-home", name: "Solar System for Home" } },
                 ],
               },
               {
                 "@type": "Service",
                 serviceType: "Residential Solar Installation",
-                provider: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                provider: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],
                 description:
                   "Custom residential solar systems to cut electricity bills and provide energy independence for homes.",

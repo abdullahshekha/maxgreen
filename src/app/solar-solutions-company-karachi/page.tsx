@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Karachi | MaxGreen Energy",
   description:
     "MaxGreen Energy is a trusted solar energy company in Karachi, delivering customized solar solutions for homes, businesses, and industries across the city.",
-  alternates: { canonical: "/solar-solutions-company-karachi/" },
+  alternates: { canonical: "/solar-solutions-company-karachi" },
 };
 
 const services = [
@@ -56,18 +56,18 @@ export default function KarachiPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solar-solutions-company-karachi/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-company-karachi#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solar-solutions-company-karachi/", name: "Solar in Karachi" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-company-karachi", name: "Solar in Karachi" } },
                 ],
               },
               {
                 "@type": "LocalBusiness",
-                "@id": "https://maxgreenenergy.com.pk/#karachi",
+                "@id": "https://www.maxgreenenergy.com.pk/#karachi",
                 name: "MaxGreen Energy – Karachi",
-                image: "https://maxgreenenergy.com.pk/images/MaxGreen-logo.png",
-                url: "https://maxgreenenergy.com.pk/solar-solutions-company-karachi/",
+                image: "https://www.maxgreenenergy.com.pk/images/MaxGreen-logo.png",
+                url: "https://www.maxgreenenergy.com.pk/solar-solutions-company-karachi",
                 telephone: "+923000341048",
                 email: "sales@maxgreenenergy.com.pk",
                 address: {

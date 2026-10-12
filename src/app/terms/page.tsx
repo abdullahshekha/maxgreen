@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Terms of Service - MaxGreen Energy",
   description:
     "The terms that apply when you use the MaxGreen Energy website, request a quotation or use our online solar calculator.",
-  alternates: { canonical: "/terms/" },
+  alternates: { canonical: "/terms" },
 };
 
 const sections = [

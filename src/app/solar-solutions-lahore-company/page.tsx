@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Lahore | MaxGreen Energy",
   description:
     "MaxGreen Energy is a trusted solar provider in Lahore, delivering tailored solar solutions for homes, businesses, and industries across the city.",
-  alternates: { canonical: "/solar-solutions-lahore-company/" },
+  alternates: { canonical: "/solar-solutions-lahore-company" },
 };
 
 const services = [
@@ -56,18 +56,18 @@ export default function LahorePage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solar-solutions-lahore-company/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-lahore-company#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solar-solutions-lahore-company/", name: "Solar in Lahore" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-lahore-company", name: "Solar in Lahore" } },
                 ],
               },
               {
                 "@type": "LocalBusiness",
-                "@id": "https://maxgreenenergy.com.pk/#lahore",
+                "@id": "https://www.maxgreenenergy.com.pk/#lahore",
                 name: "MaxGreen Energy – Lahore",
-                image: "https://maxgreenenergy.com.pk/images/MaxGreen-logo.png",
-                url: "https://maxgreenenergy.com.pk/solar-solutions-lahore-company/",
+                image: "https://www.maxgreenenergy.com.pk/images/MaxGreen-logo.png",
+                url: "https://www.maxgreenenergy.com.pk/solar-solutions-lahore-company",
                 telephone: "+923000341048",
                 email: "sales@maxgreenenergy.com.pk",
                 address: {

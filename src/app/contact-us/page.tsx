@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Contact MaxGreen Energy - Solar Experts in Pakistan",
   description:
     "Get in touch with MaxGreen Energy — Pakistan's trusted solar provider with offices in Karachi and Lahore. Call or email to start your solar journey.",
-  alternates: { canonical: "/contact-us/" },
+  alternates: { canonical: "/contact-us" },
 };
 
 export default function ContactPage() {
@@ -22,10 +22,10 @@ export default function ContactPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/contact-us/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/contact-us#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/contact-us/", name: "Contact Us" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/contact-us", name: "Contact Us" } },
                 ],
               },
             ],

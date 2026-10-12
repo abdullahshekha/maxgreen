@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maxgreenenergy.com.pk"),
+  metadataBase: new URL("https://www.maxgreenenergy.com.pk"),
   title: "Best Solar Company in Pakistan | MaxGreen Energy",
   description:
     "MaxGreen Energy — 9+ years, 2100+ projects. Top rated solar company in DHA providing custom NEPRA-compliant systems for homes and businesses in Karachi, Lahore & Islamabad.",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "MaxGreen Energy — Top Rated Solar Company Across Pakistan",
     description:
       "9+ years, 2100+ projects. Custom NEPRA-compliant solar systems making your electricity bills drop to ZERO.",
-    url: "https://maxgreenenergy.com.pk",
+    url: "https://www.maxgreenenergy.com.pk",
     siteName: "MaxGreen Energy",
     images: [
       {
@@ -66,10 +66,10 @@ export const metadata: Metadata = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://maxgreenenergy.com.pk/#organization",
+  "@id": "https://www.maxgreenenergy.com.pk/#organization",
   name: "MaxGreen Energy",
-  image: "https://maxgreenenergy.com.pk/images/maxgreen-favicon.png",
-  url: "https://maxgreenenergy.com.pk",
+  image: "https://www.maxgreenenergy.com.pk/images/maxgreen-favicon.png",
+  url: "https://www.maxgreenenergy.com.pk",
   telephone: "+92-300-0341048",
   email: "sales@maxgreenenergy.com.pk",
   areaServed: ["Karachi", "Lahore", "Islamabad", "Pakistan"],

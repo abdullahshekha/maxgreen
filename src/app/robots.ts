@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://maxgreenenergy.com.pk/sitemap.xml",
+    sitemap: "https://www.maxgreenenergy.com.pk/sitemap.xml",
   };
 }

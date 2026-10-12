@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Solutions Company in Islamabad | MaxGreen Energy",
   description:
     "MaxGreen Energy offers trusted solar solutions in Islamabad — residential, commercial, and industrial solar systems with IESCO net metering support.",
-  alternates: { canonical: "/solar-solutions-islamabad/" },
+  alternates: { canonical: "/solar-solutions-islamabad" },
 };
 
 const services = [
@@ -56,18 +56,18 @@ export default function IslamabadPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solar-solutions-islamabad/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-islamabad#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solar-solutions-islamabad/", name: "Solar in Islamabad" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solar-solutions-islamabad", name: "Solar in Islamabad" } },
                 ],
               },
               {
                 "@type": "LocalBusiness",
-                "@id": "https://maxgreenenergy.com.pk/#islamabad",
+                "@id": "https://www.maxgreenenergy.com.pk/#islamabad",
                 name: "MaxGreen Energy – Islamabad",
-                image: "https://maxgreenenergy.com.pk/images/MaxGreen-logo.png",
-                url: "https://maxgreenenergy.com.pk/solar-solutions-islamabad/",
+                image: "https://www.maxgreenenergy.com.pk/images/MaxGreen-logo.png",
+                url: "https://www.maxgreenenergy.com.pk/solar-solutions-islamabad",
                 telephone: "+923000341048",
                 email: "sales@maxgreenenergy.com.pk",
                 areaServed: "Islamabad",

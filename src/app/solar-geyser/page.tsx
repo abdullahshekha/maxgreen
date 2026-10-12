@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Solar Geyser in Pakistan | Solar Water Heaters | MaxGreen Energy",
   description:
     "Solar geysers (solar water heaters) in 150, 200 and 300 litre sizes with stainless steel tank, 60 mm insulation and WiFi controller. Installed by MaxGreen Energy across Pakistan.",
-  alternates: { canonical: "/solar-geyser/" },
+  alternates: { canonical: "/solar-geyser" },
 };
 
 const models = [
@@ -65,24 +65,24 @@ export default function SolarGeyserPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/solar-geyser/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/solar-geyser#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/solar-geyser/", name: "Solar Geyser" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/solar-geyser", name: "Solar Geyser" } },
                 ],
               },
               ...models.map((m) => ({
                 "@type": "Product",
                 name: `MaxGreen Solar Water Heater ${m.liters} Liters`,
                 description: `${m.spec}. ${m.suited}. 60 mm insulation, digital WiFi controller, magnesium rod.`,
-                image: "https://maxgreenenergy.com.pk/images/solar-geyser/solar-geyser-roof.png",
+                image: "https://www.maxgreenenergy.com.pk/images/solar-geyser/solar-geyser-roof.png",
                 brand: { "@type": "Brand", name: "MaxGreen Energy" },
                 offers: {
                   "@type": "Offer",
                   priceCurrency: "PKR",
                   price: m.price.replace(/[^0-9]/g, ""),
                   availability: "https://schema.org/InStock",
-                  seller: { "@id": "https://maxgreenenergy.com.pk/#organization" },
+                  seller: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 },
               })),
             ],

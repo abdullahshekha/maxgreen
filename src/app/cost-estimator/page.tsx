@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Solar Cost Estimator - Estimate System Size & Savings",
   description:
     "Use MaxGreen Energy's cost estimator to calculate your ideal solar system size, annual savings, and payback based on your electricity usage.",
-  alternates: { canonical: "/cost-estimator/" },
+  alternates: { canonical: "/cost-estimator" },
 };
 
 export default function CostEstimatorPage() {
@@ -23,10 +23,10 @@ export default function CostEstimatorPage() {
             "@graph": [
               {
                 "@type": "BreadcrumbList",
-                "@id": "https://maxgreenenergy.com.pk/cost-estimator/#breadcrumb",
+                "@id": "https://www.maxgreenenergy.com.pk/cost-estimator#breadcrumb",
                 itemListElement: [
-                  { "@type": "ListItem", position: 1, item: { "@id": "https://maxgreenenergy.com.pk", name: "Home" } },
-                  { "@type": "ListItem", position: 2, item: { "@id": "https://maxgreenenergy.com.pk/cost-estimator/", name: "Cost Estimator" } },
+                  { "@type": "ListItem", position: 1, item: { "@id": "https://www.maxgreenenergy.com.pk", name: "Home" } },
+                  { "@type": "ListItem", position: 2, item: { "@id": "https://www.maxgreenenergy.com.pk/cost-estimator", name: "Cost Estimator" } },
                 ],
               },
             ],
