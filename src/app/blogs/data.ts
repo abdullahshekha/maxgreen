@@ -1,9 +1,10 @@
 export type BlogCategory = "Commercial" | "Residential" | "Industrial";
 
 export interface BlogSection {
-  type: "h2" | "h3" | "h4" | "p" | "ul" | "ol" | "table";
+  type: "h2" | "h3" | "h4" | "p" | "ul" | "ol" | "table" | "link";
   content: string;
   // ul/ol: items separated by " || "
+  // link: "Link text | /internal-path"
   // table: "H1 | H2 || R1C1 | R1C2 || R2C1 | R2C2" (first row = header)
 }
 
@@ -1345,6 +1346,7 @@ export const blogs = ([
       { type: "p", content: "Investing in a solar geyser not only helps you save on energy costs but also supports a sustainable future. With professional installation from MaxGreen Energy, you can ensure that your solar geyser will serve you efficiently for years to come. Don’t wait any longer—take the first step towards energy independence today!" },
       { type: "h3", content: "Frequently Asked Questions (FAQs) about Solar Geysers" },
       { type: "ol", content: "What is a solar geyser, and how does it work? A solar geyser is a system that uses solar energy to heat water. It typically consists of solar collectors, which capture sunlight and convert it into heat, and a storage tank that holds the heated water for use. The system can provide hot water for various domestic needs, such as bathing and cleaning. || How much can I save on my energy bills with a solar geyser? Savings can vary based on your hot water usage and local sunlight conditions, but many users report a reduction of up to 50-80% in their energy bills after installing a solar geyser. This makes it a cost-effective solution over time. || What maintenance does a solar geyser require? Solar geysers are relatively low-maintenance. Regular checks for leaks and cleaning the solar collectors to remove dirt or debris are typically all that’s needed. It’s advisable to schedule a professional inspection annually to ensure optimal performance. || How long does it take to install a solar geyser? Installation time can vary based on the complexity of the system and your home’s specific needs, but most installations can be completed within a day. MaxGreen Energy provides efficient installation services to ensure your system is up and running quickly. || Is a solar geyser suitable for homes in Lahore? Yes, a solar geyser is an excellent choice for homes in Lahore due to the city’s abundant sunlight throughout the year. This makes it an effective solution for heating water, particularly during the warmer months. MaxGreen Energy can help you choose the right system tailored to Lahore’s climate." },
+      { type: "link", content: "See MaxGreen solar geyser models, prices and online ordering | /solar-geyser" },
     ],
   },
   // ─── BLOG 29 ─────────────────────────────────────────────────────────
@@ -1582,6 +1584,7 @@ export const blogs = ([
       { type: "h2", content: "Conclusion" },
       { type: "p", content: "Installing a solar geyser is a smart step toward energy efficiency and sustainability. It offers long-term savings, consistent hot water supply, and contributes to a cleaner environment. Before installation, assess your water needs, budget, and sunlight exposure, and partner with a reliable solar company in Karachi or Lahore to get expert guidance." },
       { type: "p", content: "With the right system and professional installation, your solar geyser will serve your home or business efficiently for years, proving that investing in solar energy is one of the wisest decisions you can make today." },
+      { type: "link", content: "See MaxGreen solar geyser models, prices and online ordering | /solar-geyser" },
     ],
   },
   // ─── BLOG 36 ─────────────────────────────────────────────────────────
@@ -2960,6 +2963,7 @@ export const blogs = ([
       { type: "p", content: "Your ultimate solution for efficient and eco-friendly hot water heating. Harnessing the abundant sunlight of Karachi, MaxGreen’s solar geysers provide reliable and cost-effective hot water all year round. With cutting-edge technology and robust design, our solar geysers ensure maximum energy efficiency and durability. Say goodbye to high energy bills and power outages, and embrace a greener future with MaxGreen. Invest in the best, and experience unparalleled performance and savings with MaxGreen’s solar geysers in Karachi. Choose MaxGreen for a sustainable, reliable, and eco-friendly hot water solution!" },
       { type: "h2", content: "Conclusion" },
       { type: "p", content: "Solar geysers are an efficient, eco-friendly, and cost-effective solution for hot water needs in Karachi. With the city’s abundant sunlight, they offer a reliable and sustainable alternative to conventional water heating methods. By reducing energy consumption and greenhouse gas emissions, solar geysers contribute to a greener and more sustainable future. Investing in a solar geyser not only brings long-term savings but also promotes environmental responsibility." },
+      { type: "link", content: "See MaxGreen solar geyser models, prices and online ordering | /solar-geyser" },
     ],
   },
   // ─── BLOG 71 ─────────────────────────────────────────────────────────
@@ -4460,6 +4464,147 @@ export const blogs = ([
       { type: "p", content: "The legitimacy and history of the company is something that we suggest you review thoroughly, before you spend your hard-earned money on a dodgy company and solar installation that could potentially harm your loved ones." },
       { type: "h2", content: "Remember – If you buy cheap – you buy twice!" },
       { type: "p", content: "At MaxGreen Energy we want to provide our customers with a real understanding of the solar industry and the things to be aware of. We are also appalled by some of the horrible tactics of a few but our aim is to educate Pakistan’s population on how to avoid the pain of going forth with a system install to only have to do it again. We pride ourselves on making solar simple and being 100% transparent with our customers. If you have any concerns at all – please feel free to reach out at any time through our contact us page, we’d be happy to answer our questions." },
+    ],
+  },
+  // ─── BLOG 110 — solar geyser cluster (2026-10-12) ───────────────────────
+  {
+    slug: "solar-geyser-price-in-pakistan",
+    title: "Solar Geyser Price in Pakistan: 150L, 200L & 300L Models (2026)",
+    metaDescription:
+      "Solar geyser price in Pakistan: MaxGreen's 150L, 200L and 300L models start at PKR 130,000. See what each size includes and what to check before you buy.",
+    date: "2026-10-12",
+    category: "Residential",
+    author: "MaxGreen Energy Team",
+    featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
+    readTime: 5,
+    sections: [
+      { type: "p", content: "If you are searching for a solar geyser price in Pakistan, you will find a wide spread of numbers: small imported units, basic local tanks and fully insulated stainless steel systems all get called solar geysers. The price only means something when you know the tank size, the build quality and what is included. This guide sets out MaxGreen Energy's current prices and explains what you are paying for." },
+      { type: "h2", content: "MaxGreen Solar Geyser Prices" },
+      { type: "table", content: "Model | Tank size | Suited for | Price || 150 Liter | 150L / 40 gallon / 15 tube | 2 to 3 people | PKR 130,000 || 200 Liter | 200L / 52 gallon / 20 tube | 3 to 4 people | PKR 145,000 || 300 Liter | 300L / 80 gallon / 30 tube | 5 to 6 people | PKR 190,000" },
+      { type: "p", content: "These are the prices listed on our solar geyser page at the time of writing. Prices for solar equipment can change with exchange rates, taxes and supply, so confirm the current price when you place your order." },
+      { type: "h2", content: "What Is Included in Every Model" },
+      { type: "ul", content: "Stainless steel tank built to resist corrosion || 60 mm insulation to keep water hot overnight and on winter mornings || Digital controller with WiFi, so you can manage the heater from your phone || Magnesium rod (anode) that protects the tank from scale and corrosion || Incoloy 800 electric backup element for cloudy days || Professional setup and after-sales support from MaxGreen" },
+      { type: "h2", content: "Why Solar Geyser Prices Vary So Much" },
+      { type: "p", content: "Two units with the same tank size can differ by tens of thousands of rupees. The usual reasons are:" },
+      { type: "ul", content: "Tank material and thickness: stainless steel lasts longer than thin or coated tanks, especially with hard water || Insulation: 60 mm of insulation keeps heat in; thinner insulation loses heat overnight, which is when you need it most || Tube quality: the evacuated tubes do the heating, so glass quality and the number of tubes matter || Backup heating: a proper electric element means you still get hot water on cloudy days || Installation and support: a cheap unit without installation or after-sales support can cost more in the long run" },
+      { type: "h2", content: "How a Solar Geyser Saves Money" },
+      { type: "p", content: "A conventional electric geyser heats water with grid electricity, and a gas geyser burns gas. A solar geyser uses the sun for most of the heating, so you pay for far less electricity or gas. How much you save depends on your family size, how much hot water you use and how sunny your location is. The higher upfront cost is recovered through lower monthly bills over the life of the system." },
+      { type: "h2", content: "Choosing the Right Size Before You Compare Prices" },
+      { type: "p", content: "The cheapest model is not the best value if it is too small for your household, and the biggest is wasted money if it is too large. As a guide, 150 liters suits 2 to 3 people, 200 liters suits 3 to 4 and 300 liters suits 5 to 6. Our guide to choosing a solar geyser size goes through this in more detail." },
+      { type: "link", content: "What size solar geyser do you need? | /blogs/what-size-solar-geyser-do-i-need-in-pakistan" },
+      { type: "h2", content: "How to Order" },
+      { type: "p", content: "You can place an order directly on the MaxGreen solar geyser page. Choose your model, enter your delivery details and our team will call you to confirm the order, delivery and installation. MaxGreen is the sole distributor for these solar geysers in Sindh, so call us to confirm availability if you are outside Sindh." },
+      { type: "link", content: "See models and place an order | /solar-geyser" },
+    ],
+  },
+  // ─── BLOG 111 ───────────────────────────────────────────────────────────
+  {
+    slug: "solar-geyser-vs-gas-geyser-vs-electric-geyser-pakistan",
+    title: "Solar Geyser vs Gas Geyser vs Electric Geyser in Pakistan",
+    metaDescription:
+      "Solar, gas or electric geyser? Compare running cost, safety, winter reliability and upfront price to choose the right water heater for a Pakistani home.",
+    date: "2026-10-12",
+    category: "Residential",
+    author: "MaxGreen Energy Team",
+    featuredImage: "/images/solar/solar-geyser.jpg",
+    readTime: 5,
+    sections: [
+      { type: "p", content: "Most Pakistani homes heat water with a gas geyser or an electric geyser. Both have well-known problems: gas pressure drops just when winter demand peaks, and electric geysers add a large load to a bill that is already high. A solar geyser is the third option. Here is how the three compare." },
+      { type: "h2", content: "Quick Comparison" },
+      { type: "table", content: "Factor | Solar geyser | Gas geyser | Electric geyser || Energy source | Sun, with electric backup | Natural gas or LPG | Grid electricity || Running cost | Lowest | Low to moderate, depends on gas supply | Highest of the three || Upfront cost | Highest | Lowest to moderate | Low to moderate || Works during gas shortage | Yes | No | Yes || Works during load-shedding | Solar heating yes, backup element no | Usually yes | No || Safety concerns | Few | Gas leaks, carbon monoxide if poorly ventilated | Few, if properly earthed || Best for | Long-term savings, rooftop space available | Homes with reliable gas supply | Flats with no roof access" },
+      { type: "h2", content: "Gas Geysers: Cheap to Buy, Hard to Rely On" },
+      { type: "p", content: "Gas geysers are inexpensive to buy and cheap to run when gas is available. The trouble is supply. In many parts of Pakistan, gas pressure is low or absent in winter mornings, and gas utilities have repeatedly advised consumers to arrange alternatives during shortfalls. Households that fall back on LPG cylinders face rising cylinder costs and extra storage and safety concerns." },
+      { type: "p", content: "Safety matters too. Any gas appliance needs ventilation. A poorly ventilated gas geyser can produce carbon monoxide, which is why geysers should never be installed in a sealed bathroom." },
+      { type: "h2", content: "Electric Geysers: Reliable but Expensive to Run" },
+      { type: "p", content: "An electric geyser works anywhere there is power, and the unit itself is not costly. But heating water electrically is one of the biggest loads in a home in winter. With electricity tariffs where they are, running an electric geyser every day shows up clearly on the monthly bill. It also stops working during load-shedding unless you have a backup system." },
+      { type: "h2", content: "Solar Geysers: Higher Upfront Cost, Lower Bills" },
+      { type: "p", content: "A solar geyser heats water with sunlight collected in rooftop tubes, so it uses little or no gas and far less electricity. It does not depend on gas pressure. The trade-off is the upfront price and the need for roof space with good sun. MaxGreen's 150 liter, 200 liter and 300 liter models include 60 mm insulation, a stainless steel tank, a WiFi controller and an electric backup element, so you still have hot water on cloudy days." },
+      { type: "h2", content: "Which Should You Choose?" },
+      { type: "ul", content: "Choose solar if you own your home, have roof space and plan to stay for several years || Choose gas if you have a dependable gas connection and a ventilated installation spot || Choose electric if you live in a flat without roof access and need a low-cost solution" },
+      { type: "p", content: "If you are weighing the options, you can see MaxGreen's prices and sizes on our solar geyser page." },
+      { type: "link", content: "View MaxGreen solar geysers | /solar-geyser" },
+    ],
+  },
+  // ─── BLOG 112 ───────────────────────────────────────────────────────────
+  {
+    slug: "what-size-solar-geyser-do-i-need-in-pakistan",
+    title: "What Size Solar Geyser Do You Need? 150L, 200L or 300L",
+    metaDescription:
+      "Not sure whether to buy a 150, 200 or 300 liter solar geyser? Use this simple guide to match tank size to your family size and hot water use.",
+    date: "2026-10-12",
+    category: "Residential",
+    author: "MaxGreen Energy Team",
+    featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
+    readTime: 4,
+    sections: [
+      { type: "p", content: "Solar geysers are sold by tank capacity in liters. Choosing the right size is the most important decision you make, because it decides how much hot water you have each morning and how much you pay upfront." },
+      { type: "h2", content: "Sizing Guide by Household" },
+      { type: "table", content: "Tank size | Tubes | Suited for | Price || 150 Liter (40 gallon) | 15 tube | 2 to 3 people | PKR 130,000 || 200 Liter (52 gallon) | 20 tube | 3 to 4 people | PKR 145,000 || 300 Liter (80 gallon) | 30 tube | 5 to 6 people | PKR 190,000" },
+      { type: "p", content: "These match the ranges on MaxGreen's solar geyser page. Prices are the current listed prices and can change, so confirm when ordering." },
+      { type: "h2", content: "What Changes the Size You Need" },
+      { type: "p", content: "Family size is only a starting point. Think about the following before you decide:" },
+      { type: "ul", content: "How many people shower at the same time in the morning || Whether you also use hot water for the kitchen, washing or laundry || Whether you have guests regularly, or a joint family that grows during holidays || Whether you want hot water for more than one bathroom from one system || Bathing habits: long hot showers use far more water than quick ones" },
+      { type: "h2", content: "If You Are Between Two Sizes" },
+      { type: "p", content: "If your household sits between two sizes, the larger tank is usually the safer choice. An undersized system runs out of hot water and falls back on the electric backup element, which defeats the purpose of going solar. An oversized one costs more upfront but gives you a reserve." },
+      { type: "h2", content: "Roof Space and Installation" },
+      { type: "p", content: "A solar geyser's tubes sit on the roof or an open terrace and need clear sun for most of the day. Larger models have more tubes and need more space. Shade from a water tank, a neighbouring building or a boundary wall can reduce heating, so tell the installer about anything that blocks the sun." },
+      { type: "h2", content: "Not Sure? Ask Before You Order" },
+      { type: "p", content: "If you are unsure, call the MaxGreen team and describe your household. We will recommend a size, and when you place an order our team confirms the model, delivery and installation with you before anything is installed." },
+      { type: "link", content: "See all models and prices | /solar-geyser" },
+    ],
+  },
+  // ─── BLOG 113 ───────────────────────────────────────────────────────────
+  {
+    slug: "how-does-a-solar-geyser-work-evacuated-tube-pakistan",
+    title: "How Does a Solar Geyser Work? Evacuated Tube Water Heaters Explained",
+    metaDescription:
+      "How a solar geyser heats water: evacuated tubes, an insulated tank, an electric backup element and a magnesium anode, explained for Pakistani homes.",
+    date: "2026-10-12",
+    category: "Residential",
+    author: "MaxGreen Energy Team",
+    featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
+    readTime: 4,
+    sections: [
+      { type: "p", content: "A solar geyser, also called a solar water heater, uses sunlight to heat water instead of burning gas or drawing a large amount of electricity. The idea is simple, and the parts are easy to understand once you know what each one does." },
+      { type: "h2", content: "The Main Parts" },
+      { type: "ol", content: "Evacuated tubes: glass tubes on the roof that absorb sunlight. The vacuum between the layers of glass reduces heat loss, so the tubes keep heating even when the air is cool. MaxGreen's 150L, 200L and 300L models use 15, 20 and 30 tubes respectively. || Insulated tank: a stainless steel tank wrapped in thick insulation. MaxGreen uses 60 mm of insulation so the water stays hot through the night. || Electric backup element: an Incoloy 800 heating element that switches on when there is not enough sun. || Magnesium anode: a rod inside the tank that attracts corrosion and scale instead of the tank wall. || Digital controller: manages the backup element and, on MaxGreen models, connects over WiFi so you can check and control it from your phone." },
+      { type: "h2", content: "Step by Step: From Sunlight to Hot Water" },
+      { type: "ol", content: "Sunlight strikes the evacuated tubes and heats the water inside them. || Hot water is lighter than cold water, so it rises into the insulated tank while colder water flows down into the tubes to be heated. || Water collects in the tank and stays hot because of the insulation. || If the water is not hot enough, for example after several cloudy days, the electric backup element tops it up. || When you open a hot tap, you draw hot water from the tank." },
+      { type: "h2", content: "Why Evacuated Tubes?" },
+      { type: "p", content: "Evacuated tube collectors are common in solar geysers because the vacuum insulation limits heat loss, which helps in cooler weather and in the morning and evening. Compared with simple flat collectors, they generally keep performing better when it is not bright and hot." },
+      { type: "h2", content: "Water Quality and Maintenance" },
+      { type: "p", content: "Tap water in many Pakistani cities is hard, which leaves scale inside tanks and tubes. The magnesium anode and a stainless steel tank are there to slow that down. Periodically check the anode and clean the tubes of dust, and ask your installer about a maintenance schedule. Regular care keeps a solar geyser running efficiently for years." },
+      { type: "h2", content: "Where to Go from Here" },
+      { type: "p", content: "If you want to see how these parts come together in a complete system, MaxGreen's solar geyser page lists every model with its specifications." },
+      { type: "link", content: "Explore MaxGreen solar geysers | /solar-geyser" },
+    ],
+  },
+  // ─── BLOG 114 ───────────────────────────────────────────────────────────
+  {
+    slug: "does-a-solar-geyser-work-in-winter-and-cloudy-weather-pakistan",
+    title: "Does a Solar Geyser Work in Winter and on Cloudy Days in Pakistan?",
+    metaDescription:
+      "Will a solar geyser give hot water in a Pakistani winter or on cloudy days? Here is what to expect and how the electric backup element keeps water hot.",
+    date: "2026-10-12",
+    category: "Residential",
+    author: "MaxGreen Energy Team",
+    featuredImage: "/images/solar/solar-geyser.jpg",
+    readTime: 4,
+    sections: [
+      { type: "p", content: "The most common question about solar geysers in Pakistan is whether they still work in winter, when you need hot water most. The honest answer: yes, but not identically to summer. Here is what to expect." },
+      { type: "h2", content: "What Changes in Winter" },
+      { type: "ul", content: "Days are shorter, so the tubes have fewer hours to collect heat || The sun is lower in the sky, so less energy reaches the tubes || Cold ambient air and incoming water start from a lower temperature || Fog and cloud, especially in northern and Punjab winters, can reduce heating for days" },
+      { type: "p", content: "Because of this, a solar geyser heats less water, or heats it less, in December and January than in May. That is true of every solar water heater, not only one brand." },
+      { type: "h2", content: "How the Electric Backup Element Helps" },
+      { type: "p", content: "Good solar geysers are built for this. MaxGreen's models include an Incoloy 800 electric backup element and a digital controller. When the sun is not enough, the element tops up the water, so you have hot water every morning without relying on gas. In effect, the sun does most of the work on good days and the element only fills the gap." },
+      { type: "h2", content: "Why Insulation Matters More in Winter" },
+      { type: "p", content: "Heat you collect in the afternoon has to last until the next morning. That is the job of the 60 mm insulation around the tank. Thinner insulation lets the water cool overnight, so you would use the backup element more often." },
+      { type: "h2", content: "Tips to Get the Best Winter Performance" },
+      { type: "ul", content: "Make sure the tubes have no shade from water tanks, walls or nearby buildings || Clean dust from the tubes regularly, because a dirty tube collects less heat || Use hot water in the evening or morning rather than spreading small draws through the day || Set the controller so the backup element only runs when needed || In very cold northern areas where frost is common, ask your installer about frost protection" },
+      { type: "h2", content: "Compared with Gas and Electric Geysers" },
+      { type: "p", content: "Gas geysers can lose pressure on cold mornings, and electric geysers use a lot of power the whole winter. A solar geyser with a backup element sits between them: it saves energy on sunny days and still delivers on bad ones. See our full comparison for details." },
+      { type: "link", content: "Solar vs gas vs electric geyser | /blogs/solar-geyser-vs-gas-geyser-vs-electric-geyser-pakistan" },
+      { type: "link", content: "View MaxGreen solar geysers | /solar-geyser" },
     ],
   },
 ] as Blog[]).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

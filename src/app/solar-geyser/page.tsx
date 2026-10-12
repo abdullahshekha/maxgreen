@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Check, Download, Phone, Wifi, ShieldCheck, Droplets, Flame, Layers, Sun, Wrench, TrendingDown, Leaf, Zap } from "lucide-react";
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";
@@ -11,7 +12,7 @@ import TrackedContactLink from "@/components/TrackedContactLink";
 export const metadata: Metadata = {
   title: "Solar Geyser Price in Pakistan | MaxGreen Energy",
   description:
-    "Solar geysers in 150, 200 and 300 litre sizes: stainless steel tank, 60 mm insulation, WiFi controller. Order online from MaxGreen Energy.",
+    "Solar geysers from PKR 130,000: 150L, 200L and 300L with stainless steel tank, 60 mm insulation and WiFi controller. Order online from MaxGreen Energy.",
   alternates: { canonical: "/solar-geyser" },
 };
 
@@ -54,6 +55,59 @@ const benefits = [
   { icon: Zap, title: "Power Independence", description: "No more relying on the grid or gas for hot water." },
 ];
 
+const faqs = [
+  {
+    q: "What is the price of a solar geyser in Pakistan?",
+    a: "MaxGreen solar geysers are priced at PKR 130,000 for the 150 liter model, PKR 145,000 for the 200 liter model and PKR 190,000 for the 300 liter model. Prices can change with exchange rates and taxes, so our team confirms the current price when you place an order.",
+  },
+  {
+    q: "Which solar geyser size do I need?",
+    a: "The 150 liter model suits 2 to 3 people, the 200 liter model suits 3 to 4 people and the 300 liter model suits 5 to 6 people. If your household sits between two sizes, the larger tank is usually the safer choice.",
+  },
+  {
+    q: "Does a solar geyser work in winter and on cloudy days?",
+    a: "Yes. The tubes collect less heat in winter and on cloudy days, so every MaxGreen model includes an Incoloy 800 electric backup element and a digital controller that tops up the water when the sun is not enough.",
+  },
+  {
+    q: "Is a solar geyser better than a gas geyser in Pakistan?",
+    a: "A solar geyser does not depend on gas pressure, which often drops in winter, and it avoids the ventilation and carbon monoxide concerns of gas appliances. The trade-off is a higher upfront price and the need for sunny roof space.",
+  },
+  {
+    q: "Can I control the geyser from my phone?",
+    a: "Yes. MaxGreen solar geysers come with a digital controller with WiFi, so you can manage the heater from your phone.",
+  },
+  {
+    q: "How is the tank protected from scale and corrosion?",
+    a: "The tank is stainless steel and each model includes a magnesium rod (anode) that protects it from scale and corrosion, which helps in areas with hard water.",
+  },
+  {
+    q: "Does MaxGreen install the solar geyser?",
+    a: "Yes. MaxGreen provides professional setup and after-sales service. We are the sole distributor for these solar geysers in Sindh, so call us on 0300 0341048 to confirm availability if you are outside Sindh.",
+  },
+  {
+    q: "How do I order a solar geyser?",
+    a: "Use the Place Order form on this page. Choose your model and enter your delivery details, and our team will call you to confirm your order, delivery and installation.",
+  },
+];
+
+const comparison = [
+  ["Energy source", "Sun, with electric backup", "Natural gas or LPG", "Grid electricity"],
+  ["Running cost", "Lowest", "Low to moderate, depends on gas supply", "Highest of the three"],
+  ["Works when gas supply is low", "Yes", "No", "Yes"],
+  ["Upfront cost", "Highest", "Lowest to moderate", "Low to moderate"],
+  ["Safety", "No gas, no combustion", "Needs ventilation, carbon monoxide risk", "Needs proper earthing"],
+];
+
+const guides = [
+  { href: "/blogs/solar-geyser-price-in-pakistan", title: "Solar Geyser Price in Pakistan" },
+  { href: "/blogs/solar-geyser-vs-gas-geyser-vs-electric-geyser-pakistan", title: "Solar vs Gas vs Electric Geyser" },
+  { href: "/blogs/what-size-solar-geyser-do-i-need-in-pakistan", title: "What Size Solar Geyser Do You Need?" },
+  { href: "/blogs/how-does-a-solar-geyser-work-evacuated-tube-pakistan", title: "How a Solar Geyser Works" },
+  { href: "/blogs/does-a-solar-geyser-work-in-winter-and-cloudy-weather-pakistan", title: "Solar Geysers in Winter and on Cloudy Days" },
+  { href: "/blogs/solar-geysers-in-karachi", title: "Solar Geysers in Karachi" },
+  { href: "/blogs/buying-and-installing-a-solar-geyser-in-lahore", title: "Buying and Installing a Solar Geyser in Lahore" },
+];
+
 export default function SolarGeyserPage() {
   return (
     <main>
@@ -76,15 +130,27 @@ export default function SolarGeyserPage() {
                 name: `MaxGreen Solar Water Heater ${m.liters} Liters`,
                 description: `${m.spec}. ${m.suited}. 60 mm insulation, digital WiFi controller, magnesium rod.`,
                 image: "https://www.maxgreenenergy.com.pk/images/solar-geyser/solar-geyser-roof.png",
+                url: "https://www.maxgreenenergy.com.pk/solar-geyser",
+                category: "Solar water heater",
                 brand: { "@type": "Brand", name: "MaxGreen Energy" },
                 offers: {
                   "@type": "Offer",
                   priceCurrency: "PKR",
                   price: m.price.replace(/[^0-9]/g, ""),
                   availability: "https://schema.org/InStock",
+                  itemCondition: "https://schema.org/NewCondition",
+                  url: "https://www.maxgreenenergy.com.pk/solar-geyser",
                   seller: { "@id": "https://www.maxgreenenergy.com.pk/#organization" },
                 },
               })),
+              {
+                "@type": "FAQPage",
+                mainEntity: faqs.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              },
             ],
           }),
         }}
@@ -259,6 +325,89 @@ export default function SolarGeyserPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Why solar geyser in Pakistan */}
+      <section className="py-20 sm:py-28 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
+              Hot Water in Pakistan
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-5">
+              Why Choose a Solar Geyser Over Gas or Electric?
+            </h2>
+            <p className="text-gray-500 text-lg max-w-3xl mx-auto">
+              Gas pressure often drops in winter, exactly when hot water matters most, and running an electric geyser every day adds a large load to your electricity bill. A solar geyser uses the sun for most of the heating, with an electric backup for cloudy days.
+            </p>
+          </div>
+          <div className="overflow-x-auto rounded-2xl border border-gray-200">
+            <table className="w-full text-sm text-left">
+              <thead className="bg-green-950 text-white">
+                <tr>
+                  <th className="px-5 py-3 font-bold">Factor</th>
+                  <th className="px-5 py-3 font-bold">Solar geyser</th>
+                  <th className="px-5 py-3 font-bold">Gas geyser</th>
+                  <th className="px-5 py-3 font-bold">Electric geyser</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {comparison.map((row, ri) => (
+                  <tr key={row[0]} className={ri % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                    {row.map((cell, ci) => (
+                      <td key={ci} className={`px-5 py-3 ${ci === 0 ? "font-semibold text-gray-800" : "text-gray-600"}`}>
+                        {cell}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 sm:py-28 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <span className="inline-block text-green-600 font-bold text-sm tracking-widest uppercase mb-3">
+              FAQs
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">
+              Solar Geyser Questions, Answered
+            </h2>
+          </div>
+          <div className="space-y-3">
+            {faqs.map((f) => (
+              <details key={f.q} className="group bg-white rounded-2xl border border-gray-100 px-6 py-5">
+                <summary className="cursor-pointer list-none font-bold text-gray-900 text-sm sm:text-base flex items-start justify-between gap-4">
+                  {f.q}
+                  <span className="text-green-600 transition-transform group-open:rotate-45 text-xl leading-none">+</span>
+                </summary>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed mt-3">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Related guides */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-6 text-center">
+            Solar Geyser Guides
+          </h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {guides.map((g) => (
+              <li key={g.href}>
+                <Link href={g.href} className="block rounded-xl border border-gray-100 px-5 py-4 font-semibold text-green-700 hover:bg-green-50 hover:border-green-200 transition-colors">
+                  {g.title} &rarr;
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

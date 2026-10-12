@@ -152,6 +152,16 @@ function renderSection(section: BlogSection, index: number) {
         </div>
       );
     }
+    case "link": {
+      const [label, href] = content.split(" | ").map((x) => x.trim());
+      return (
+        <p key={index} className="mb-4">
+          <Link href={href} className="inline-flex items-center gap-1 font-bold text-green-600 hover:text-green-700 underline underline-offset-4">
+            {label} &rarr;
+          </Link>
+        </p>
+      );
+    }
     default:
       return null;
   }
@@ -172,10 +182,10 @@ export default async function BlogPostPage({ params }: Props) {
     headline: blog.title,
     description: blog.metaDescription,
     datePublished: blog.date,
-    author: {
-      "@type": "Person",
-      name: blog.author,
-    },
+    author:
+      blog.author === "Taha Alam"
+        ? { "@type": "Person", name: blog.author, url: "https://www.maxgreenenergy.com.pk/author/taha-alam" }
+        : { "@type": "Organization", name: blog.author, url: "https://www.maxgreenenergy.com.pk" },
     publisher: {
       "@type": "Organization",
       name: "MaxGreen Energy",
@@ -233,10 +243,17 @@ export default async function BlogPostPage({ params }: Props) {
 
           {/* Meta */}
           <div className="flex flex-wrap items-center gap-5 text-sm text-green-300">
-            <Link href="/author/taha-alam/" className="flex items-center gap-1.5 hover:text-green-400 transition-colors">
-              <User className="w-4 h-4" />
-              {blog.author}
-            </Link>
+            {blog.author === "Taha Alam" ? (
+              <Link href="/author/taha-alam" className="flex items-center gap-1.5 hover:text-green-400 transition-colors">
+                <User className="w-4 h-4" />
+                {blog.author}
+              </Link>
+            ) : (
+              <span className="flex items-center gap-1.5">
+                <User className="w-4 h-4" />
+                {blog.author}
+              </span>
+            )}
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {formatDate(blog.date)}
