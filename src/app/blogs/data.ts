@@ -4562,7 +4562,7 @@ export const blogs = ([
     date: "2026-10-04",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar-geyser/solar-geyser-rooftop-pakistan.jpg",
+    featuredImage: "/images/solar-geyser/solar-geyser-evacuated-tube-closeup.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "A solar geyser, also called a solar water heater, uses sunlight to heat water instead of burning gas or drawing a large amount of electricity. The idea is simple, and the parts are easy to understand once you know what each one does." },
