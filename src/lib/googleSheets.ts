@@ -31,6 +31,7 @@ export type LeadRow = {
   utm_medium?: string;
   utm_campaign?: string;
   gclid?: string;
+  fbclid?: string;
 };
 
 export async function appendLeadToSheet(row: LeadRow): Promise<void> {

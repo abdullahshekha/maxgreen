@@ -14,6 +14,8 @@ export type Attribution = {
   utmMedium: string;
   utmCampaign: string;
   gclid: string;
+  fbclid: string;
+  msclkid: string;
 };
 
 type Stored = Attribution & { ts: number };
@@ -22,11 +24,31 @@ const SEARCH_ENGINES = /(^|\.)(google|bing|yahoo|duckduckgo|yandex|ecosia|baidu|
 const AI_ASSISTANTS = /(chatgpt\.com|chat\.openai\.com|perplexity\.ai|gemini\.google\.com|copilot\.microsoft\.com|claude\.ai)/i;
 const SOCIAL = /(facebook\.com|fb\.com|instagram\.com|linkedin\.com|lnkd\.in|twitter\.com|x\.com|t\.co|youtube\.com|youtu\.be|whatsapp\.com|tiktok\.com|pinterest\.)/i;
 
-function classify(referrerHost: string, utmMedium: string, utmSource: string, gclid: string): string {
+const PAID_MEDIUMS = ["cpc", "ppc", "paid", "paidsearch", "paid_search", "paid-social", "paid_social", "paidsocial", "social_paid"];
+const META_SOURCE = /(facebook|instagram|^fb$|^ig$|meta)/i;
+const GOOGLE_SOURCE = /google/i;
+
+// Channels are chosen so Google Ads, Meta and Organic can be reported separately.
+// "Meta (Untagged)": the visitor carries Meta's fbclid but the ad has no UTM tags, so
+// we can't tell a paid ad click from an organic post click — tag the ads to fix that.
+function classify(
+  referrerHost: string,
+  utmMedium: string,
+  utmSource: string,
+  gclid: string,
+  fbclid: string,
+  msclkid: string
+): string {
   const medium = utmMedium.toLowerCase();
-  if (gclid || ["cpc", "ppc", "paid", "paidsearch", "paid_search"].includes(medium)) return "Paid";
+  const paid = PAID_MEDIUMS.includes(medium);
+  if (gclid) return "Google Ads";
+  if (paid && META_SOURCE.test(utmSource)) return "Meta Ads";
+  if (paid && GOOGLE_SOURCE.test(utmSource)) return "Google Ads";
+  if (msclkid) return "Bing Ads";
+  if (paid) return "Paid (Other)";
+  if (fbclid) return "Meta (Untagged)";
   if (medium === "organic") return "Organic Search";
-  if (["social", "social-network", "paid-social"].includes(medium)) return "Social";
+  if (["social", "social-network"].includes(medium)) return "Social";
   if (medium === "email") return "Email";
   if (referrerHost) {
     if (AI_ASSISTANTS.test(referrerHost)) return "AI Assistant";
@@ -62,7 +84,9 @@ export function captureAttribution(): void {
     const utmMedium = clean(params.get("utm_medium"));
     const utmCampaign = clean(params.get("utm_campaign"));
     const gclid = clean(params.get("gclid"));
-    const tagged = !!(utmSource || utmMedium || gclid);
+    const fbclid = clean(params.get("fbclid"));
+    const msclkid = clean(params.get("msclkid"));
+    const tagged = !!(utmSource || utmMedium || gclid || fbclid || msclkid);
 
     let referrerHost = "";
     let referrer = "";
@@ -80,13 +104,15 @@ export function captureAttribution(): void {
     if (existing && !tagged && existing.channel !== "Direct") return;
 
     const record: Stored = {
-      channel: classify(referrerHost, utmMedium, utmSource, gclid),
+      channel: classify(referrerHost, utmMedium, utmSource, gclid, fbclid, msclkid),
       landingPage: clean(window.location.pathname),
       referrer,
       utmSource,
       utmMedium,
       utmCampaign,
       gclid,
+      fbclid,
+      msclkid,
       ts: Date.now(),
     };
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
@@ -105,6 +131,8 @@ export function getAttribution(): Attribution & { submitPage: string } {
     utmMedium: "",
     utmCampaign: "",
     gclid: "",
+    fbclid: "",
+    msclkid: "",
   };
   let stored: Attribution = empty;
   if (typeof window !== "undefined") {

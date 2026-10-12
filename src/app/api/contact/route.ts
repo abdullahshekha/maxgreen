@@ -103,6 +103,7 @@ export async function POST(request: NextRequest) {
       utm_medium: attr("utmMedium"),
       utm_campaign: attr("utmCampaign"),
       gclid: attr("gclid") ? "yes" : "",
+      fbclid: attr("fbclid") ? "yes" : "",
     });
     sheetOk = true;
   } catch (error) {
