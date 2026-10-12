@@ -670,7 +670,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/low-angle-solar-pannels-arrangement-1200x800.jpg",
+    featuredImage: "/images/projects/askari-2.jpeg",
     readTime: 4,
     sections: [
       { type: "p", content: "As solar energy becomes increasingly popular in Pakistan, many homeowners and businesses are turning to solar power to meet their energy needs. A 15 kVA solar system is an excellent option for those with moderate to high electricity consumption, offering a reliable and cost-effective solution. This guide provides a detailed overview of the 15 kVA solar system, including its components, benefits, and most importantly, the price in Pakistan." },
@@ -3141,7 +3141,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Commercial",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/Screenshot-2024-06-13-042841-min.png",
+    featuredImage: "/images/projects/kps-s.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "Karachi, a bustling metropolis known for its dynamic lifestyle and relentless energy consumption, is increasingly turning towards sustainable solutions to address rising energy costs and environmental concerns. In this quest for green energy, Maxgreen Energy stands out as a beacon of innovation and reliability. Offering a comprehensive range of solar services for residential, commercial, and industrial sectors, Maxgreen Energy is spearheading Karachi’s transition to solar power." },
@@ -3314,7 +3314,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Commercial",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/solar-for-home.png",
+    featuredImage: "/images/blogs/solar-commercial-building-aerial.jpg",
     readTime: 2,
     sections: [
       { type: "p", content: "As Pakistan continues to grapple with energy shortages and rising costs, businesses in Lahore are seeking innovative ways to secure reliable and sustainable energy sources. Solar energy has emerged as a transformative solution, enabling commercial buildings to reduce costs while enhancing their environmental responsibility. Maxgreen Energy is leading the charge in Lahore, providing comprehensive solar solutions designed specifically for commercial enterprises." },
@@ -3352,7 +3352,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Industrial",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/Screenshot-2024-05-08-001835.png",
+    featuredImage: "/images/blogs/solar-industrial-rooftop.jpg",
     readTime: 2,
     sections: [
       { type: "p", content: "The industrial sector is a major contributor to the economy, but it also has a significant impact on the environment. Energy consumption is a major concern for factories, with rising electricity costs and a growing emphasis on sustainability. Fortunately, there’s a solution: solar power." },
@@ -3669,7 +3669,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Residential",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/solar-for-home.png",
+    featuredImage: "/images/blogs/inverter-room-solar-installation.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "With the growing adoption of solar energy in Pakistan, the choice of the right battery storage system becomes crucial. Among the various options available, Tall Tubular Lead-Acid and Lithium batteries are the most common for solar energy storage. This blog will compare these two types of batteries in terms of performance, cost, lifespan, maintenance, and suitability for Pakistan’s unique energy needs." },
@@ -4249,7 +4249,7 @@ export const blogs = ([
     date: "2025-11-12",
     category: "Commercial",
     author: "Taha Alam",
-    featuredImage: "/images/blogs/Screenshot-2024-07-08-201006-min.png",
+    featuredImage: "/images/blogs/solar-residential-sunset-roof.jpg",
     readTime: 4,
     sections: [
       { type: "h2", content: "Introduction" },
@@ -4534,7 +4534,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
+    featuredImage: "/images/solar-geyser/solar-geyser-evacuated-tubes.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "Solar geysers are sold by tank capacity in liters. Choosing the right size is the most important decision you make, because it decides how much hot water you have each morning and how much you pay upfront." },
@@ -4562,7 +4562,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar-geyser/solar-geyser-roof.png",
+    featuredImage: "/images/solar-geyser/solar-geyser-large-tank.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "A solar geyser, also called a solar water heater, uses sunlight to heat water instead of burning gas or drawing a large amount of electricity. The idea is simple, and the parts are easy to understand once you know what each one does." },
@@ -4588,7 +4588,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/solar-geyser.jpg",
+    featuredImage: "/images/solar-geyser/solar-geyser-rooftop-pakistan.jpg",
     readTime: 4,
     sections: [
       { type: "p", content: "The most common question about solar geysers in Pakistan is whether they still work in winter, when you need hot water most. The honest answer: yes, but not identically to summer. Here is what to expect." },
@@ -4616,7 +4616,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/karachi.jpeg",
+    featuredImage: "/images/blogs/solar-karachi-rooftops.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Karachi has hundreds of solar sellers, from established engineering companies to one-person operations. A solar system is a roof-mounted, long-term investment, so the company you choose matters as much as the panels. Use these ten questions to compare solar companies in Karachi on more than just the quotation." },
@@ -4656,7 +4656,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/karachi.jpeg",
+    featuredImage: "/images/projects/9.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Karachi gets plenty of sunshine, which is good for solar. It is also a coastal, humid, dusty and hot city, which is hard on equipment. A system designed for Karachi conditions will keep performing for years. A system that ignores them can lose output and need early repairs." },
@@ -4687,7 +4687,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/lahore.jpeg",
+    featuredImage: "/images/blogs/solar-lahore-rooftops.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Lahore is one of Pakistan's busiest solar markets, so you will find plenty of companies, and plenty of variation in quality. Here is what to check before you hire a solar company in Lahore." },
@@ -4721,7 +4721,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/lahore.jpeg",
+    featuredImage: "/images/blogs/solar-villa-lahore.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Lahore has strong sun for much of the year, but its weather is more extreme than most Pakistani cities: very hot summers, a monsoon season and heavy smog in late autumn and winter. Each affects how much power a solar system produces." },
@@ -4752,7 +4752,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/islamabad.jpeg",
+    featuredImage: "/images/blogs/solar-islamabad-rooftops.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Homes and businesses in Islamabad and Rawalpindi are turning to solar as electricity bills rise. The market is crowded, and the quality of the installer decides how well the system performs for the next twenty years or more. Use this guide to compare solar companies in Islamabad." },
@@ -4783,7 +4783,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/islamabad.jpeg",
+    featuredImage: "/images/blogs/solar-homes-islamabad-hills.jpg",
     readTime: 5,
     sections: [
       { type: "p", content: "Islamabad and Rawalpindi are cooler and greener than Pakistan's southern cities, with a pronounced monsoon and foggy winter mornings. That changes what a solar system has to deal with." },
@@ -4814,7 +4814,7 @@ export const blogs = ([
     date: "2026-10-12",
     category: "Residential",
     author: "MaxGreen Energy Team",
-    featuredImage: "/images/solar/karachi.jpeg",
+    featuredImage: "/images/blogs/kelectric-green-net-meter-630x400.png",
     readTime: 5,
     sections: [
       { type: "p", content: "Net metering lets a K-Electric customer with a solar system export surplus power to the grid and receive credit for it. The rules changed in 2026, so older guides, including many still ranking on Google, no longer describe how it works. This is a summary of the current K-Electric framework. Rules and fees can change, so confirm the details with K-Electric before you apply." },
