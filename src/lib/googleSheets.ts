@@ -32,6 +32,8 @@ export type LeadRow = {
   utm_campaign?: string;
   gclid?: string;
   fbclid?: string;
+  // SEO / Google Ads / Meta / Other — the simple filterable version of `channel`.
+  traffic_source?: string;
 };
 
 export async function appendLeadToSheet(row: LeadRow): Promise<void> {
@@ -45,9 +47,10 @@ export async function appendLeadToSheet(row: LeadRow): Promise<void> {
   await sheet.loadHeaderRow();
   const rowByActualHeader: Record<string, string> = {};
   for (const header of sheet.headerValues) {
-    const match = Object.keys(row).find(
-      (key) => key.toLowerCase() === header.toLowerCase()
-    );
+    // Compare ignoring case, spaces and underscores so the sheet header "Traffic Source"
+    // maps to the `traffic_source` key (and "Source" still maps only to `source`).
+    const norm = (v: string) => v.toLowerCase().replace(/[\s_]+/g, "");
+    const match = Object.keys(row).find((key) => norm(key) === norm(header));
     if (match) {
       rowByActualHeader[header] = row[match as keyof LeadRow] ?? "";
     }

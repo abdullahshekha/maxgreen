@@ -55,6 +55,17 @@ export async function POST(request: NextRequest) {
   const attr = (key: string): string =>
     typeof attribution?.[key] === "string" ? attribution[key].slice(0, 300) : "";
   const channel = attr("channel") || "Unknown";
+  // Collapse detailed channels into the three sources the client reports on.
+  // "Meta (Untagged)" is counted as Meta: the visitor came from Facebook/Instagram with
+  // Meta's click ID but the ad has no UTM tags, so paid vs organic post can't be told apart.
+  const trafficSource =
+    channel === "Organic Search"
+      ? "SEO"
+      : channel === "Google Ads"
+        ? "Google Ads"
+        : channel === "Meta Ads" || channel === "Meta (Untagged)"
+          ? "Meta"
+          : "Other";
   const esc = (v: string): string =>
     v.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
 
@@ -96,6 +107,7 @@ export async function POST(request: NextRequest) {
       message: message || "No additional message",
       source: ["survey-popup", "solar-geyser-order"].includes(source) ? source : "contact-form",
       channel,
+      traffic_source: trafficSource,
       landing_page: attr("landingPage"),
       submit_page: attr("submitPage"),
       referrer: attr("referrer"),
