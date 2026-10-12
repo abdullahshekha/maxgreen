@@ -9,9 +9,9 @@ import FAQ from "@/components/sections/FAQ";
 import TrackedContactLink from "@/components/TrackedContactLink";
 
 export const metadata: Metadata = {
-  title: "Solar Solutions Company in Islamabad | MaxGreen Energy",
+  title: "Best Solar Company in Islamabad | MaxGreen Energy",
   description:
-    "MaxGreen Energy offers trusted solar solutions in Islamabad — residential, commercial, and industrial solar systems with IESCO net metering support.",
+    "Solar company in Islamabad: residential, commercial and industrial solar systems with IESCO net metering support. Free site survey and quote.",
   alternates: { canonical: "/solar-solutions-islamabad" },
 };
 

@@ -9,9 +9,9 @@ import PlaceOrderButton from "@/components/PlaceOrderButton";
 import TrackedContactLink from "@/components/TrackedContactLink";
 
 export const metadata: Metadata = {
-  title: "Solar Geyser in Pakistan | Solar Water Heaters | MaxGreen Energy",
+  title: "Solar Geyser Price in Pakistan | MaxGreen Energy",
   description:
-    "Solar geysers (solar water heaters) in 150, 200 and 300 litre sizes with stainless steel tank, 60 mm insulation and WiFi controller. Installed by MaxGreen Energy across Pakistan.",
+    "Solar geysers in 150, 200 and 300 litre sizes: stainless steel tank, 60 mm insulation, WiFi controller. Order online from MaxGreen Energy.",
   alternates: { canonical: "/solar-geyser" },
 };
 

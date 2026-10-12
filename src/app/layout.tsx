@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.maxgreenenergy.com.pk"),
   title: "Best Solar Company in Pakistan | MaxGreen Energy",
   description:
-    "MaxGreen Energy — 9+ years, 2100+ projects. Top rated solar company in DHA providing custom NEPRA-compliant systems for homes and businesses in Karachi, Lahore & Islamabad.",
+    "Best solar company in Pakistan: 9+ years, 2,100+ projects. NEPRA-compliant solar systems for homes and businesses in Karachi, Lahore & Islamabad.",
   keywords: [
     "solar company Pakistan",
     "solar panels Karachi",

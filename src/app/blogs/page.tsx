@@ -7,7 +7,7 @@ import BlogsList from "./BlogsList";
 export const metadata: Metadata = {
   title: "Solar Energy Blogs & Guides | MaxGreen Energy",
   description:
-    "Expert solar energy articles covering residential, commercial, and industrial solar systems in Pakistan. Learn about pricing, maintenance, net metering, and more.",
+    "Solar guides for Pakistan: system prices, installments, net metering, panels, inverters and maintenance, written by MaxGreen Energy's solar experts.",
   openGraph: {
     title: "Solar Energy Blogs & Guides | MaxGreen Energy",
     description:

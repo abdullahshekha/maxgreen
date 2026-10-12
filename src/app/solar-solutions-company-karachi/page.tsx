@@ -9,9 +9,9 @@ import FAQ from "@/components/sections/FAQ";
 import TrackedContactLink from "@/components/TrackedContactLink";
 
 export const metadata: Metadata = {
-  title: "Solar Solutions Company in Karachi | MaxGreen Energy",
+  title: "Best Solar Company in Karachi | MaxGreen Energy",
   description:
-    "MaxGreen Energy is a trusted solar energy company in Karachi, delivering customized solar solutions for homes, businesses, and industries across the city.",
+    "Looking for a solar company in Karachi? MaxGreen designs and installs home, commercial and industrial solar systems. Free site survey and quote.",
   alternates: { canonical: "/solar-solutions-company-karachi" },
 };
 

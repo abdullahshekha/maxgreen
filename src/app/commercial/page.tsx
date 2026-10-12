@@ -8,9 +8,9 @@ import PageHero from "@/components/ui/PageHero";
 import FAQ from "@/components/sections/FAQ";
 
 export const metadata: Metadata = {
-  title: "Commercial Solar Solutions in Pakistan | MaxGreen Energy",
+  title: "Commercial Solar Installation Pakistan | MaxGreen Energy",
   description:
-    "MaxGreen Energy's commercial solar systems help businesses reduce energy costs, earn from excess power, and support sustainability with efficient, custom solutions.",
+    "Commercial solar installation for offices, malls and businesses in Pakistan. Cut energy costs, earn from excess power with net metering. Free site survey.",
   alternates: { canonical: "/commercial" },
 };
 

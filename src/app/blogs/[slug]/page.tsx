@@ -15,17 +15,35 @@ export async function generateStaticParams() {
   return blogs.map((b) => ({ slug: b.slug }));
 }
 
+const BRAND_SUFFIX = " | MaxGreen Energy";
+
+// Keep SERP titles under ~60 chars: drop the brand suffix when the post title is long.
+function seoTitle(title: string): string {
+  const withBrand = `${title}${BRAND_SUFFIX}`;
+  return withBrand.length <= 60 ? withBrand : title;
+}
+
+// Trim descriptions to <=155 chars, preferring a sentence boundary, else a word boundary.
+function seoDescription(text: string): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= 155) return clean;
+  const cut = clean.slice(0, 155);
+  const sentenceEnd = Math.max(cut.lastIndexOf(". "), cut.lastIndexOf("! "), cut.lastIndexOf("? "));
+  if (sentenceEnd >= 90) return cut.slice(0, sentenceEnd + 1);
+  return cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:\-–—]+$/, "") + "…";
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const blog = getBlogBySlug(slug);
   if (!blog) return {};
   return {
-    title: `${blog.title} | MaxGreen Energy`,
-    description: blog.metaDescription,
+    title: seoTitle(blog.title),
+    description: seoDescription(blog.metaDescription),
     alternates: { canonical: `/blogs/${blog.slug}` },
     openGraph: {
-      title: `${blog.title} | MaxGreen Energy`,
-      description: blog.metaDescription,
+      title: seoTitle(blog.title),
+      description: seoDescription(blog.metaDescription),
       url: `https://www.maxgreenenergy.com.pk/blogs/${blog.slug}`,
       images: [{ url: `https://www.maxgreenenergy.com.pk${blog.featuredImage}`, alt: blog.title }],
       type: "article",

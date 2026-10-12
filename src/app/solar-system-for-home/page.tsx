@@ -10,7 +10,7 @@ import FAQ from "@/components/sections/FAQ";
 export const metadata: Metadata = {
   title: "Solar System for Home in Pakistan | MaxGreen Energy",
   description:
-    "MaxGreen Energy offers custom residential solar systems to cut bills, sell surplus power via net metering, and light your home sustainably with smart, eco-conscious solutions.",
+    "Custom home solar systems in Pakistan: cut electricity bills by up to 70%, earn from surplus power with net metering. Get a free quote from MaxGreen.",
   alternates: { canonical: "/solar-system-for-home" },
 };
 

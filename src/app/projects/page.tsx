@@ -9,7 +9,7 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Our Solar Projects - 14 MW+ Installations by MaxGreen Energy",
   description:
-    "Explore MaxGreen Energy's portfolio of 14 MW+ solar installations across Pakistan — residential, commercial and industrial projects in Karachi, Lahore and Islamabad.",
+    "Explore 14 MW+ of solar installations by MaxGreen Energy across Pakistan: residential, commercial and industrial projects in Karachi, Lahore and Islamabad.",
   alternates: { canonical: "/projects" },
 };
 

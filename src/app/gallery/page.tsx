@@ -8,7 +8,7 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = {
   title: "Solar Installation Gallery | MaxGreen Energy Pakistan",
   description:
-    "Explore MaxGreen Energy's gallery of solar installations — from residential to commercial and industrial projects.",
+    "Photos of solar installations by MaxGreen Energy across Pakistan: home rooftop systems, commercial projects and industrial plants in Karachi and Lahore.",
   alternates: { canonical: "/gallery" },
 };
 

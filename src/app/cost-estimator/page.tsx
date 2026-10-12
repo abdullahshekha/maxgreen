@@ -6,9 +6,9 @@ import SolarCalculator from "@/components/sections/Calculator";
 import ContactForm from "@/components/sections/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Solar Cost Estimator - Estimate System Size & Savings",
+  title: "Solar Cost Calculator Pakistan | System Size & Savings",
   description:
-    "Use MaxGreen Energy's cost estimator to calculate your ideal solar system size, annual savings, and payback based on your electricity usage.",
+    "Free solar calculator for Pakistan: enter your electricity usage to estimate ideal system size, annual savings and payback period. By MaxGreen Energy.",
   alternates: { canonical: "/cost-estimator" },
 };
 
