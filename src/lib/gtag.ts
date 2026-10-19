@@ -15,10 +15,25 @@ const CONVERSION_SEND_TO: Record<ConversionLabel, string> = {
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
   }
 }
 
+// Meta Pixel standard events: form submits are Lead, every click-to-contact is Contact
+const META_EVENT: Record<ConversionLabel, { event: "Lead" | "Contact"; method?: string }> = {
+  whatsapp_click: { event: "Contact", method: "whatsapp" },
+  phone_click: { event: "Contact", method: "phone" },
+  email_click: { event: "Contact", method: "email" },
+  lead_form_submit: { event: "Lead" },
+};
+
 export function trackConversion(label: ConversionLabel) {
-  if (typeof window === "undefined" || !window.gtag) return;
-  window.gtag("event", "conversion", { send_to: CONVERSION_SEND_TO[label] });
+  if (typeof window === "undefined") return;
+  if (window.gtag) {
+    window.gtag("event", "conversion", { send_to: CONVERSION_SEND_TO[label] });
+  }
+  if (window.fbq) {
+    const { event, method } = META_EVENT[label];
+    window.fbq("track", event, method ? { content_name: method } : {});
+  }
 }
