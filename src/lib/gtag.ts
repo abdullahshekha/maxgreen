@@ -27,13 +27,15 @@ const META_EVENT: Record<ConversionLabel, { event: "Lead" | "Contact"; method?: 
   lead_form_submit: { event: "Lead" },
 };
 
-export function trackConversion(label: ConversionLabel) {
+// contentName tags the Meta event (e.g. "solar-geyser" on Lead) so audiences can be split by product
+export function trackConversion(label: ConversionLabel, contentName?: string) {
   if (typeof window === "undefined") return;
   if (window.gtag) {
     window.gtag("event", "conversion", { send_to: CONVERSION_SEND_TO[label] });
   }
   if (window.fbq) {
     const { event, method } = META_EVENT[label];
-    window.fbq("track", event, method ? { content_name: method } : {});
+    const name = contentName ?? method;
+    window.fbq("track", event, name ? { content_name: name } : {});
   }
 }

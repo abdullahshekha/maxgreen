@@ -74,7 +74,7 @@ export default function SurveyPopup() {
         }),
       });
       if (!res.ok) throw new Error("Request failed");
-      trackConversion("lead_form_submit");
+      trackConversion("lead_form_submit", isGeyser ? "solar-geyser" : undefined);
       setIsSubmitted(true);
       setStatus("idle");
       sessionStorage.setItem(dismissKey, "1");

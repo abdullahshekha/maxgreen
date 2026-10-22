@@ -81,7 +81,7 @@ export default function GeyserOrderForm() {
         }),
       });
       if (!res.ok) throw new Error("Request failed");
-      trackConversion("lead_form_submit");
+      trackConversion("lead_form_submit", "solar-geyser");
       setStatus("success");
       setForm(emptyForm);
       router.push("/thank-you");
