@@ -1,15 +1,15 @@
 import type { NextConfig } from "next";
 
 // Allow-list for the third parties the site actually uses: GA4 + Google Ads (gtag),
-// Microsoft Clarity, reCAPTCHA v3, YouTube + Google Maps embeds. Inline scripts/styles
+// Microsoft Clarity, Meta Pixel, reCAPTCHA v3, YouTube + Google Maps embeds. Inline scripts/styles
 // are permitted because Next.js emits inline bootstrap scripts and we have no nonce setup.
 const csp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.gstatic.com https://*.clarity.ms https://scripts.clarity.ms",
+  "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com https://www.gstatic.com https://*.clarity.ms https://scripts.clarity.ms https://connect.facebook.net",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data:",
-  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googleadservices.com https://*.doubleclick.net https://www.google.com https://*.clarity.ms",
+  "connect-src 'self' https://*.google-analytics.com https://analytics.google.com https://*.analytics.google.com https://www.googletagmanager.com https://*.googleadservices.com https://*.doubleclick.net https://www.google.com https://*.google.com.pk https://*.clarity.ms https://www.facebook.com https://connect.facebook.net",
   "frame-src https://www.google.com https://www.youtube.com https://www.youtube-nocookie.com https://td.doubleclick.net https://www.googletagmanager.com",
   "object-src 'none'",
   "base-uri 'self'",
