@@ -154,9 +154,16 @@ export default function RootLayout({
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
             if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
+            n.queue=[];
+            /* fbevents.js (~1 s of main-thread work) is injected on the visitor's
+               first interaction; init/PageView/Lead/Contact calls queue until then. */
+            var load=function(){
+              ['scroll','pointerdown','keydown','touchstart'].forEach(function(ev){
+                f.removeEventListener(ev,load)});
+              t=b.createElement(e);t.async=!0;t.src=v;
+              s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)};
+            ['scroll','pointerdown','keydown','touchstart'].forEach(function(ev){
+              f.addEventListener(ev,load,{once:!0,passive:!0})})}(window,document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '${META_PIXEL_ID}');
             fbq('track', 'PageView');
