@@ -45,6 +45,45 @@ const reasons = [
   },
 ];
 
+// Islamabad-specific FAQ. The visible text is also what goes into the page's FAQPage schema.
+const islamabadFaqs = [
+  {
+    question: "Do you handle IESCO net metering applications?",
+    answer:
+      "Yes. We prepare and submit the application to IESCO on your behalf. Systems of 25 kW or below do not need NEPRA concurrence and are approved by IESCO. Larger systems need NEPRA concurrence.",
+  },
+  {
+    question: "How does exporting solar power to IESCO work in 2026?",
+    answer:
+      "Since February 2026, NEPRA's Prosumer Regulations apply. Units IESCO supplies to you are billed at your tariff, and units you export are bought at the national average energy purchase price, which is lower than the retail rate. A system sized to cover your daytime use saves the most. The regulations name 3-phase and 11 kV consumers as eligible applicants.",
+  },
+  {
+    question: "How does Islamabad's weather affect solar panels?",
+    answer:
+      "Cooler weather helps panel efficiency, and monsoon rain keeps panels clean even though cloud lowers output. Winter fog and a lower sun reduce output in the colder months, and shade from trees, boundary walls and nearby buildings is the biggest variable, so a site survey should map the shade across the day and across seasons.",
+  },
+  {
+    question: "Which areas of Islamabad and Rawalpindi do you serve?",
+    answer:
+      "We serve homes in sectors such as F-6 and F-10, commercial plazas in Blue Area, and industrial units in Islamabad's industrial zones, as well as Rawalpindi.",
+  },
+  {
+    question: "Is solar suitable for commercial and industrial buildings in Islamabad?",
+    answer:
+      "Often, yes. Offices, plazas and factories use most of their power in daylight and usually have large roofs, which suits solar. We survey the building and review your bills before recommending a system size.",
+  },
+  {
+    question: "How do I choose a solar company in Islamabad?",
+    answer:
+      "Ask whether the company surveys your site before quoting, which panel and inverter models it uses, who honours the warranties, and who handles the IESCO application. Our guide lists the questions worth asking before you sign.",
+  },
+  {
+    question: "Do you offer a free site assessment in Islamabad?",
+    answer:
+      "Yes. We offer a free site assessment and custom system design, and we handle installation across Islamabad and Rawalpindi.",
+  },
+];
+
 export default function IslamabadPage() {
   return (
     <main>
@@ -171,7 +210,7 @@ export default function IslamabadPage() {
         </div>
       </section>
 
-      <FAQ />
+      <FAQ items={islamabadFaqs} />
 
       {/* CTA */}
       <section className="py-20 bg-green-950">

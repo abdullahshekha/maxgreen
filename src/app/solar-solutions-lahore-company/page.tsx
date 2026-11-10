@@ -45,6 +45,45 @@ const reasons = [
   },
 ];
 
+// Lahore-specific FAQ. The visible text is also what goes into the page's FAQPage schema.
+const lahoreFaqs = [
+  {
+    question: "Do you handle LESCO net metering applications?",
+    answer:
+      "Yes. Our Lahore team prepares and submits the application to LESCO on your behalf. Systems of 25 kW or below do not need NEPRA concurrence and are approved by LESCO. Larger systems need NEPRA concurrence.",
+  },
+  {
+    question: "How does exporting solar power to LESCO work in 2026?",
+    answer:
+      "Since February 2026, NEPRA's Prosumer Regulations apply. Units LESCO supplies to you are billed at your tariff, and units you export are bought at the national average energy purchase price, which is lower than the retail rate. A system sized to cover your daytime use saves the most. The regulations name 3-phase and 11 kV consumers as eligible applicants.",
+  },
+  {
+    question: "Do Lahore's smog, dust and summer heat affect solar panels?",
+    answer:
+      "Yes. Smog and dust reduce the sunlight reaching the cells and leave a film on the glass, so regular cleaning protects your output. Panels also produce less per unit of sunlight as they get hotter, so good ventilation under the panels and a shaded inverter location help the system cope with Lahore summers.",
+  },
+  {
+    question: "Which parts of Lahore do you serve?",
+    answer:
+      "Our Lahore office is in DHA Phase 6, and we serve clients across the city, from DHA and Gulberg to Model Town, Johar Town and Bahria Town.",
+  },
+  {
+    question: "Is solar suitable for commercial and industrial buildings in Lahore?",
+    answer:
+      "Often, yes. Offices, factories, schools and warehouses use most of their power in daylight and usually have large roofs, which suits solar. We survey the building and review your bills before recommending a system size.",
+  },
+  {
+    question: "How do I choose a solar company in Lahore?",
+    answer:
+      "Ask whether the company surveys your site before quoting, which panel and inverter models it uses, who honours the warranties, and who handles the LESCO application. Our guide lists ten questions worth asking before you sign.",
+  },
+  {
+    question: "Do you offer a free site assessment in Lahore?",
+    answer:
+      "Yes. We offer a free site assessment and custom system design, and our Lahore installations include 2 years of free after-sales service.",
+  },
+];
+
 export default function LahorePage() {
   return (
     <main>
@@ -181,7 +220,7 @@ export default function LahorePage() {
         </div>
       </section>
 
-      <FAQ />
+      <FAQ items={lahoreFaqs} />
 
       {/* CTA */}
       <section className="py-20 bg-green-950">

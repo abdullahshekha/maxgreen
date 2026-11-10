@@ -37,6 +37,25 @@ const nextConfig: NextConfig = {
         destination: "/blogs/solar-ac-price-in-pakistan-2024",
         permanent: true,
       },
+      // 2026-11: three thin, near-duplicate Karachi brand-pitch posts consolidated into the
+      // Karachi city page (the hub for the Karachi content cluster). They had ~24 impressions
+      // and 0 clicks combined in 90 days. The two legacy WordPress sources for these further
+      // down point straight at the city page too, so there is no redirect chain.
+      {
+        source: "/blogs/solar-expert-in-karachi",
+        destination: "/solar-solutions-company-karachi",
+        permanent: true,
+      },
+      {
+        source: "/blogs/solar-services-in-karachi",
+        destination: "/solar-solutions-company-karachi",
+        permanent: true,
+      },
+      {
+        source: "/blogs/green-energy-solutions-in-karachi",
+        destination: "/solar-solutions-company-karachi",
+        permanent: true,
+      },
       // Legacy flat WordPress blog permalinks (no /blogs/ prefix) — still indexed and
       // earning impressions in Search Console, but 404ing since the migration moved
       // this content under /blogs/[slug]/ without leaving redirects behind. Found via
@@ -91,7 +110,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/green-energy-solutions-in-karachi",
-        destination: "/blogs/green-energy-solutions-in-karachi",
+        destination: "/solar-solutions-company-karachi",
         permanent: true,
       },
       {
@@ -101,7 +120,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/solar-services-in-karachi",
-        destination: "/blogs/solar-services-in-karachi",
+        destination: "/solar-solutions-company-karachi",
         permanent: true,
       },
       {

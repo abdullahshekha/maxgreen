@@ -3,7 +3,12 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+const defaultFaqs: FaqItem[] = [
   {
     question: "How much can I save by switching to solar energy in Pakistan?",
     answer:
@@ -36,17 +41,19 @@ const faqs = [
   },
 ];
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: { "@type": "Answer", text: faq.answer },
-  })),
-};
-
-export default function FAQ() {
+// Pages can pass their own `items` so each page's FAQ (and its FAQPage schema) matches
+// the page topic. With no `items` it renders the shared sitewide FAQ, unchanged.
+export default function FAQ({ items }: { items?: FaqItem[] } = {}) {
+  const faqs = items && items.length > 0 ? items : defaultFaqs;
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  };
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
@@ -91,7 +98,7 @@ export default function FAQ() {
               </button>
               <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                  openIndex === index ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
                 <p className="px-6 pb-5 text-gray-600 text-sm sm:text-base leading-relaxed">
